@@ -22,7 +22,7 @@ const aboutLinks = ['عن المركز', 'الدعم الفني', 'سياسة ا
 
 export function Footer() {
   return (
-    <footer className="pattern-geo w-full bg-navy-950 text-pearl">
+    <footer className="w-full bg-navy-950 text-pearl">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>

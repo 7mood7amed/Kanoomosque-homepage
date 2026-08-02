@@ -5,7 +5,7 @@ import { SectionHeading } from './SectionHeading';
 
 export function Stats() {
   return (
-    <section id="stats" className="pattern-geo-light w-full bg-mist py-20 sm:py-28">
+    <section id="stats" className="w-full bg-mist py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="منجزات وثمرات"
@@ -40,7 +40,7 @@ export function Stats() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="pattern-geo relative mt-8 overflow-hidden border border-navy-900 bg-navy-900 p-3">
+          className="relative mt-8 overflow-hidden border border-navy-900 bg-navy-900 p-3">
           
           <div className="border border-silver-400/30 px-8 py-12 text-center sm:py-16">
             <p className="font-display text-5xl leading-[1.4] text-pearl sm:text-7xl">

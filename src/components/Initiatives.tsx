@@ -8,8 +8,6 @@ export function Initiatives() {
 
   return (
     <section id="invest" className="relative w-full overflow-hidden bg-navy-950 py-20 sm:py-28">
-      <div className="pattern-geo absolute inset-0" aria-hidden="true" />
-
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <motion.div

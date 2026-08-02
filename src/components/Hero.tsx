@@ -15,7 +15,6 @@ export function Hero() {
         className="absolute inset-0 -z-20 h-full w-full object-cover" />
       
       <div className="absolute inset-0 -z-10 bg-navy-950/85" aria-hidden="true" />
-      <div className="pattern-geo absolute inset-0 -z-10" aria-hidden="true" />
 
       <div className="mx-auto w-full max-w-7xl px-4 pb-20 pt-32 sm:px-6 lg:px-8">
         <motion.div

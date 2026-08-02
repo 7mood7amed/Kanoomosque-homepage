@@ -6,7 +6,7 @@ import { SectionHeading } from './SectionHeading';
 
 export function Camps() {
   return (
-    <section id="camps" className="pattern-geo-light w-full bg-mist py-20 sm:py-28">
+    <section id="camps" className="w-full bg-mist py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="الدورات المكثفة والبرامج"
