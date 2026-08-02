@@ -13,7 +13,7 @@ type Fields = {
 const empty: Fields = { name: '', email: '', phone: '', subject: '', message: '' };
 
 const inputClass =
-'w-full border border-navy-900/20 bg-mist px-4 py-3 text-[15px] text-navy-900 placeholder:text-navy-500/50 transition-colors focus:border-navy-700 focus:outline-none focus:ring-2 focus:ring-navy-700/20';
+'w-full rounded-2xl border border-outline-variant bg-surface-container-low px-4 py-3 text-[15px] text-navy-900 placeholder:text-navy-500/50 transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20';
 
 export function Contact() {
   const [values, setValues] = useState<Fields>(empty);
@@ -31,7 +31,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="w-full bg-mist py-20 sm:py-28">
+    <section id="contact" className="w-full border-t border-navy-900/10 bg-mist py-20 sm:py-28">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="تواصل معنا"
@@ -39,8 +39,7 @@ export function Contact() {
           description="اترك بياناتك وسيتواصل معك فريق المركز في أقرب وقت بإذن الله." />
         
 
-        <div className="mt-12 border border-navy-900/20 bg-pearl p-3 shadow-soft">
-          <div className="border border-navy-900/10 p-5 sm:p-9">
+        <div className="mt-12 rounded-3xl bg-pearl p-5 shadow-xl sm:p-9">
             <form onSubmit={onSubmit}>
               <div className="grid gap-5 sm:grid-cols-2">
                 <div>
@@ -124,7 +123,7 @@ export function Contact() {
 
               <button
                 type="submit"
-                className="mt-7 inline-flex w-full items-center justify-center gap-2 bg-navy-900 px-8 py-4 text-base font-bold text-pearl transition-colors hover:bg-navy-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-navy-700 focus-visible:ring-offset-2 sm:w-auto">
+                className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-8 py-4 text-base font-bold text-pearl shadow-xl transition-all hover:scale-[1.02] hover:bg-primary-light hover:shadow-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-navy-700 focus-visible:ring-offset-2 sm:w-auto">
                 
                 <SendIcon className="h-4 w-4" aria-hidden="true" />
                 إرسال الرسالة
@@ -139,7 +138,6 @@ export function Contact() {
                 }
               </p>
             </form>
-          </div>
         </div>
       </div>
     </section>);

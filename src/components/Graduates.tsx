@@ -5,7 +5,7 @@ import { SectionHeading } from './SectionHeading';
 
 export function Graduates() {
   return (
-    <section id="graduates" className="w-full bg-pearl py-20 sm:py-28">
+    <section id="graduates" className="w-full border-t border-navy-900/10 bg-pearl py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="خريجونا"
@@ -23,14 +23,14 @@ export function Graduates() {
             transition={{ duration: 0.45, delay: i * 0.06, ease: 'easeOut' }}
             className="w-56 shrink-0 snap-start lg:w-auto">
             
-              <figure className="group border border-navy-900/15 bg-pearl p-2.5 transition-colors hover:border-navy-700/50">
-                <div className="arch-full relative aspect-[4/5] overflow-hidden border border-navy-900/10">
+              <figure className="group rounded-2xl bg-white p-2.5 shadow-lg transition-shadow hover:shadow-xl">
+                <div className="arch-full relative aspect-[4/5] overflow-hidden">
                   <img
                   src={grad.image}
                   alt={grad.name}
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                
-                  <span className="absolute end-3 top-6 bg-navy-950/85 px-2.5 py-1 text-xs font-bold text-pearl">
+
+                  <span className="absolute end-3 top-6 rounded-full bg-primary/85 px-2.5 py-1 text-xs font-bold text-pearl backdrop-blur-sm">
                     {grad.year}
                   </span>
                 </div>

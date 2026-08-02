@@ -23,18 +23,18 @@ export function Hero() {
           transition={{ duration: 0.7, ease: 'easeOut' }}
           className="max-w-3xl">
           
-          <span className="inline-flex items-center gap-2 border border-silver-400/50 px-5 py-2 text-sm font-bold tracking-wide text-silver-200">
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-5 py-2 text-sm font-bold tracking-wide text-silver-200">
             <span className="h-1.5 w-1.5 rotate-45 bg-silver-200" aria-hidden="true" />
             التسجيل مفتوح الآن
           </span>
 
-          <h1 className="font-display mt-7 text-4xl leading-[1.6] text-pearl sm:text-5xl lg:text-6xl">
+          <h1 className="font-display mt-7 text-[40px] leading-[1.3] text-pearl sm:text-[56px] lg:text-[72px]">
             كن من أهل القرآن…
             <br />
             <span className="text-silver-400">وسجّل بداية رحلتك المباركة</span>
           </h1>
 
-          <p className="mt-6 max-w-2xl text-base leading-9 text-silver-200/80 sm:text-lg">
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-silver-200/80">
             مركز عبدالرحمن كانو لتعليم القرآن الكريم وعلومه في مملكة البحرين، نرافقك
             من أول حرف حتى الإجازة بالسند المتصل، في حلقات منظّمة على يد معلمين مجازين
             وبيئة تربوية هادئة تليق بكتاب الله.
@@ -43,18 +43,18 @@ export function Hero() {
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <a
               href="#courses"
-              className="group inline-flex items-center justify-center gap-2 bg-pearl px-8 py-4 text-base font-bold text-navy-900 transition-colors hover:bg-silver-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-silver-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950">
-              
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-pearl px-8 py-4 text-base font-bold text-navy-900 shadow-xl transition-all hover:scale-[1.02] hover:shadow-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-silver-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950">
+
               اشترك الآن
               <ArrowLeftIcon
                 className="h-4 w-4 transition-transform group-hover:-translate-x-1"
                 aria-hidden="true" />
-              
+
             </a>
             <a
               href="#about"
-              className="inline-flex items-center justify-center border border-silver-400/50 px-8 py-4 text-base font-medium text-pearl transition-colors hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-silver-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950">
-              
+              className="inline-flex items-center justify-center rounded-full border border-white/30 px-8 py-4 text-base font-medium text-pearl transition-colors hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-silver-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950">
+
               تعرّف على المركز
             </a>
           </div>

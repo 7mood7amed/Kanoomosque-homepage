@@ -5,7 +5,7 @@ import { SectionHeading } from './SectionHeading';
 
 export function Stats() {
   return (
-    <section id="stats" className="w-full bg-mist py-20 sm:py-28">
+    <section id="stats" className="w-full border-t border-navy-900/10 bg-mist py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="منجزات وثمرات"
@@ -20,7 +20,7 @@ export function Stats() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.45, delay: i * 0.06, ease: 'easeOut' }}
-            className="arch-top border border-navy-900/15 bg-pearl px-6 pb-6 pt-8 text-center">
+            className="rounded-2xl bg-white px-6 pb-6 pt-8 text-center shadow-lg transition-shadow hover:shadow-xl">
             
               <p className="font-display text-4xl leading-[1.5] text-navy-900">
                 {stat.value === '—' ?
@@ -40,9 +40,9 @@ export function Stats() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="relative mt-8 overflow-hidden border border-navy-900 bg-navy-900 p-3">
-          
-          <div className="border border-silver-400/30 px-8 py-12 text-center sm:py-16">
+          className="frame-ornate-dark relative mt-8 overflow-hidden rounded-3xl bg-navy-900 p-3 shadow-2xl">
+
+          <div className="px-8 py-12 text-center sm:py-16">
             <p className="font-display text-5xl leading-[1.4] text-pearl sm:text-7xl">
               ٩ سنوات
             </p>

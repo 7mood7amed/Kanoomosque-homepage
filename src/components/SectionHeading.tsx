@@ -25,29 +25,29 @@ export function SectionHeading({
       
       <span
         className={[
-        'inline-block border-x-2 px-4 py-1 text-xs font-bold tracking-[0.2em]',
+        'inline-block rounded-full px-4 py-1.5 text-xs font-bold tracking-[0.2em]',
         isDark ?
-        'border-silver-400/50 text-silver-400' :
-        'border-navy-900/25 text-navy-700'].
+        'bg-white/10 text-silver-400' :
+        'bg-primary-container/40 text-primary'].
         join(' ')}>
-        
+
         {eyebrow}
       </span>
       <h2
         className={[
-        'font-display mt-4 text-3xl leading-[1.6] sm:text-4xl',
+        'font-display mt-4 text-4xl leading-[1.6] lg:text-5xl',
         isDark ? 'text-pearl' : 'text-navy-900'].
         join(' ')}>
-        
+
         {title}
       </h2>
       {description &&
       <p
         className={[
-        'mt-4 text-base leading-8',
+        'mt-4 text-lg leading-relaxed',
         isDark ? 'text-silver-200/75' : 'text-navy-500'].
         join(' ')}>
-        
+
           {description}
         </p>
       }

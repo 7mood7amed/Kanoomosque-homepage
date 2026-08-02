@@ -11,7 +11,7 @@ const pillars = [
 
 export function About() {
   return (
-    <section id="about" className="w-full bg-pearl py-20 sm:py-28">
+    <section id="about" className="w-full border-t border-navy-900/10 bg-pearl py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <motion.div
@@ -21,25 +21,25 @@ export function About() {
             transition={{ duration: 0.6, ease: 'easeOut' }}
             className="relative">
             
-            <div className="border border-navy-900/20 p-3 shadow-soft">
-              <div className="arch-full overflow-hidden border border-navy-900/10">
+            <div className="frame-ornate rounded-[40px] p-3 shadow-xl">
+              <div className="arch-full overflow-hidden">
                 <img
                   src={images.about}
                   alt="طلاب في حلقة قرآنية داخل المركز"
                   className="h-[340px] w-full object-cover sm:h-[480px]" />
-                
+
               </div>
             </div>
           </motion.div>
 
           <div>
-            <span className="inline-block border-x-2 border-navy-900/25 px-4 py-1 text-xs font-bold tracking-[0.2em] text-navy-700">
+            <span className="inline-block rounded-full bg-primary-container/40 px-4 py-1.5 text-xs font-bold tracking-[0.2em] text-primary">
               من نحن
             </span>
-            <h2 className="font-display mt-4 text-3xl leading-[1.6] text-navy-900 sm:text-4xl">
+            <h2 className="font-display mt-4 text-4xl leading-[1.6] text-navy-900 lg:text-5xl">
               مركزٌ يحمل رسالة القرآن في مملكة البحرين
             </h2>
-            <p className="mt-5 text-base leading-9 text-navy-500">
+            <p className="mt-5 text-lg leading-relaxed text-navy-500">
               مركز عبدالرحمن كانو لتعليم القرآن الكريم وعلومه هو أحد المراكز القرآنية
               العاملة تحت مظلة وزارة العدل والشؤون الإسلامية والأوقاف في مملكة البحرين.
               نسعى إلى تخريج جيل يحفظ كتاب الله ويتقن تلاوته ويعمل بأحكامه، من خلال
@@ -50,7 +50,7 @@ export function About() {
             <ul className="mt-7 space-y-3">
               {pillars.map((item) =>
               <li key={item} className="flex items-center gap-3 text-[15px] text-navy-800">
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center border border-navy-900/25 text-navy-700">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-navy-900/5 text-primary">
                     <CheckIcon className="h-3.5 w-3.5" aria-hidden="true" />
                   </span>
                   {item}
@@ -60,8 +60,8 @@ export function About() {
 
             <a
               href="#contact"
-              className="group mt-9 inline-flex items-center gap-2 bg-navy-900 px-8 py-4 text-base font-bold text-pearl transition-colors hover:bg-navy-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-navy-700 focus-visible:ring-offset-2">
-              
+              className="group mt-9 inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-base font-bold text-pearl shadow-xl transition-all hover:scale-[1.02] hover:bg-primary-light hover:shadow-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-navy-700 focus-visible:ring-offset-2">
+
               انضمّ إلى حلقاتنا
               <ArrowLeftIcon
                 className="h-4 w-4 transition-transform group-hover:-translate-x-1"

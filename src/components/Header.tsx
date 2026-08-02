@@ -26,13 +26,13 @@ export function Header() {
       className={[
       'fixed inset-x-0 top-0 z-50 transition-colors duration-300',
       scrolled || open ?
-      'border-b border-silver-400/25 bg-navy-950/95 backdrop-blur' :
+      'border-b border-silver-400/25 bg-navy-950/95 backdrop-blur-xl' :
       'bg-transparent'].
       join(' ')}>
       
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <a href="#home" className="flex items-center gap-3">
-          <span className="arch-top flex h-12 w-11 shrink-0 items-center justify-center border border-silver-400/40 bg-navy-900 text-silver-200">
+          <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white text-primary shadow-lg">
             <BookOpenIcon className="h-5 w-5" aria-hidden="true" />
           </span>
           <span className="leading-tight">
@@ -51,8 +51,8 @@ export function Header() {
             <li key={item.href}>
                 <a
                 href={item.href}
-                className="border border-transparent px-3 py-2 text-sm text-silver-200 transition-colors hover:border-silver-400/40 hover:text-pearl focus:outline-none focus-visible:ring-2 focus-visible:ring-silver-400">
-                
+                className="rounded-full px-3 py-2 text-sm text-silver-200 transition-colors hover:bg-white/10 hover:text-pearl focus:outline-none focus-visible:ring-2 focus-visible:ring-silver-400">
+
                   {item.label}
                 </a>
               </li>
@@ -69,8 +69,8 @@ export function Header() {
           </a>
           <a
             href="#courses"
-            className="hidden border border-silver-400/60 bg-pearl px-5 py-2.5 text-sm font-bold text-navy-900 transition-colors hover:bg-silver-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-silver-400 sm:inline-block">
-            
+            className="hidden rounded-full bg-pearl px-5 py-2.5 text-sm font-bold text-navy-900 shadow-md transition-all hover:scale-[1.02] hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-silver-400 sm:inline-block">
+
             اشترك الآن
           </a>
           <button
@@ -79,7 +79,7 @@ export function Header() {
             aria-expanded={open}
             aria-controls="mobile-nav"
             aria-label={open ? 'إغلاق القائمة' : 'فتح القائمة'}
-            className="flex h-11 w-11 items-center justify-center border border-silver-400/40 text-pearl transition-colors hover:bg-white/10 xl:hidden">
+            className="flex h-11 w-11 items-center justify-center rounded-full text-pearl transition-colors hover:bg-white/10 xl:hidden">
             
             {open ?
             <XIcon className="h-5 w-5" aria-hidden="true" /> :
@@ -118,15 +118,15 @@ export function Header() {
                 <a
                 href="#courses"
                 onClick={() => setOpen(false)}
-                className="flex-1 bg-pearl px-5 py-3 text-center text-sm font-bold text-navy-900">
-                
+                className="flex-1 rounded-full bg-pearl px-5 py-3 text-center text-sm font-bold text-navy-900 shadow-md">
+
                   اشترك الآن
                 </a>
                 <a
                 href="#contact"
                 onClick={() => setOpen(false)}
-                className="flex-1 border border-silver-400/50 px-5 py-3 text-center text-sm font-medium text-pearl">
-                
+                className="flex-1 rounded-full border border-silver-400/50 px-5 py-3 text-center text-sm font-medium text-pearl">
+
                   تسجيل الدخول
                 </a>
               </div>

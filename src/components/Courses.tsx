@@ -6,7 +6,7 @@ import { SectionHeading } from './SectionHeading';
 
 export function Courses() {
   return (
-    <section id="courses" className="w-full bg-pearl py-20 sm:py-28">
+    <section id="courses" className="w-full border-t border-navy-900/10 bg-pearl py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="مسارات التعليم"
@@ -22,21 +22,21 @@ export function Courses() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.5, delay: i * 0.1, ease: 'easeOut' }}
-            className="group border border-navy-900/15 bg-pearl p-3 shadow-soft transition-colors hover:border-navy-700/50">
-            
-              <div className="arch-full relative h-60 overflow-hidden border border-navy-900/10 sm:h-72">
+            className="group rounded-3xl bg-white p-3 shadow-xl transition-shadow hover:shadow-2xl">
+
+              <div className="arch-full relative h-60 overflow-hidden sm:h-72">
                 <img
                 src={course.image}
                 alt={course.title}
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
-              
+
                 <div className="absolute inset-0 bg-navy-950/25" aria-hidden="true" />
                 <span
                 className={[
-                'absolute end-4 top-8 px-3 py-1 text-xs font-bold',
+                'absolute end-4 top-8 rounded-full px-3 py-1 text-xs font-bold',
                 course.badgeTone === 'active' ?
                 'bg-navy-900 text-pearl' :
-                'bg-pearl text-navy-900'].
+                'bg-white/90 text-primary'].
                 join(' ')}>
                 
                   {course.badge}

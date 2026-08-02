@@ -6,7 +6,7 @@ import { SectionHeading } from './SectionHeading';
 
 export function Camps() {
   return (
-    <section id="camps" className="w-full bg-mist py-20 sm:py-28">
+    <section id="camps" className="w-full border-t border-navy-900/10 bg-mist py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="الدورات المكثفة والبرامج"
@@ -23,18 +23,18 @@ export function Camps() {
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.45, delay: i * 0.07, ease: 'easeOut' }}>
             
-              <article className="group flex flex-col gap-5 border border-navy-900/15 bg-pearl p-5 transition-colors hover:border-navy-700/50 sm:flex-row sm:items-center sm:gap-8 sm:p-6">
+              <article className="group flex flex-col gap-5 rounded-3xl bg-white p-5 shadow-lg transition-shadow hover:shadow-xl sm:flex-row sm:items-center sm:gap-8 sm:p-6">
                 <div className="flex shrink-0 items-center gap-4 sm:w-56 sm:flex-col sm:items-start sm:gap-3 sm:border-e sm:border-navy-900/12 sm:pe-8">
-                  <span className="arch-top flex h-12 w-10 items-center justify-center border border-navy-900/20 bg-mist">
+                  <span className="arch-top flex h-12 w-10 items-center justify-center bg-mist">
                     <span className="font-display text-lg text-navy-800">{camp.index}</span>
                   </span>
                   <div className="flex flex-wrap items-center gap-2">
                     <span
                     className={[
-                    'inline-flex items-center gap-1.5 px-3 py-1 text-xs font-bold',
+                    'inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold',
                     camp.statusTone === 'active' ?
                     'bg-navy-900 text-pearl' :
-                    'border border-navy-900/20 text-navy-700'].
+                    'border border-outline-variant text-secondary'].
                     join(' ')}>
                     
                       {camp.statusTone === 'active' &&
@@ -61,8 +61,8 @@ export function Camps() {
                 <a
                 href="#contact"
                 aria-label={`سجّل في ${camp.title}`}
-                className="inline-flex shrink-0 items-center justify-center gap-2 border border-navy-900/25 px-6 py-3 text-sm font-bold text-navy-900 transition-colors hover:bg-navy-900 hover:text-pearl">
-                
+                className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full border border-primary/20 px-6 py-3 text-sm font-bold text-navy-900 transition-colors hover:bg-primary hover:text-white">
+
                   التفاصيل
                   <ArrowLeftIcon className="h-4 w-4" aria-hidden="true" />
                 </a>
