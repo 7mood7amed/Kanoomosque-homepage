@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { HeartHandshakeIcon, MinusIcon, PlusIcon } from 'lucide-react';
 import { images, tiers } from '../data/site';
-import { Ornament } from './Ornament';
 
 export function Initiatives() {
   const [openIndex, setOpenIndex] = useState(0);
@@ -49,9 +48,6 @@ export function Initiatives() {
             <h2 className="font-display mt-4 text-3xl leading-[1.6] text-pearl sm:text-4xl">
               استثمر في أعظم مشروع
             </h2>
-            <div className="mt-4">
-              <Ornament tone="dark" align="start" />
-            </div>
             <p className="mt-5 text-base leading-9 text-silver-200/75">
               كفالتك اليوم تعني حلقة تُعقد، ومعلّماً يُصحّح، وطالباً يحمل كتاب الله في
               صدره. اختر باب الكفالة الذي يناسبك وكن شريكاً في الأجر.

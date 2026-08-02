@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeftIcon, CheckIcon } from 'lucide-react';
 import { images } from '../data/site';
-import { Ornament } from './Ornament';
 
 const pillars = [
 'معلمون مجازون بالسند المتصل',
@@ -40,9 +39,6 @@ export function About() {
             <h2 className="font-display mt-4 text-3xl leading-[1.6] text-navy-900 sm:text-4xl">
               مركزٌ يحمل رسالة القرآن في مملكة البحرين
             </h2>
-            <div className="mt-4">
-              <Ornament align="start" />
-            </div>
             <p className="mt-5 text-base leading-9 text-navy-500">
               مركز عبدالرحمن كانو لتعليم القرآن الكريم وعلومه هو أحد المراكز القرآنية
               العاملة تحت مظلة وزارة العدل والشؤون الإسلامية والأوقاف في مملكة البحرين.

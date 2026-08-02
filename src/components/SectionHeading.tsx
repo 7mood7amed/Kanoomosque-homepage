@@ -1,5 +1,4 @@
 import React from 'react';
-import { Ornament } from './Ornament';
 
 type SectionHeadingProps = {
   eyebrow: string;
@@ -42,9 +41,6 @@ export function SectionHeading({
         
         {title}
       </h2>
-      <div className="mt-4">
-        <Ornament tone={tone} align={align} />
-      </div>
       {description &&
       <p
         className={[

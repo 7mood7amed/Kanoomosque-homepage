@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { stats } from '../data/site';
-import { Ornament } from './Ornament';
 import { SectionHeading } from './SectionHeading';
 
 export function Stats() {
@@ -50,9 +49,6 @@ export function Stats() {
             <p className="font-display mt-2 text-2xl text-silver-400 sm:text-3xl">
               من العطاء
             </p>
-            <div className="mt-5">
-              <Ornament tone="dark" />
-            </div>
             <p className="mx-auto mt-5 max-w-xl text-sm leading-8 text-silver-200/70">
               تسع سنوات متواصلة في خدمة كتاب الله وأهله، حلقةً بعد حلقة، وجيلاً بعد جيل.
             </p>

@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeftIcon } from 'lucide-react';
 import { images } from '../data/site';
-import { Ornament } from './Ornament';
 
 export function Hero() {
   return (
@@ -35,10 +34,6 @@ export function Hero() {
             <br />
             <span className="text-silver-400">وسجّل بداية رحلتك المباركة</span>
           </h1>
-
-          <div className="mt-6">
-            <Ornament tone="dark" align="start" />
-          </div>
 
           <p className="mt-6 max-w-2xl text-base leading-9 text-silver-200/80 sm:text-lg">
             مركز عبدالرحمن كانو لتعليم القرآن الكريم وعلومه في مملكة البحرين، نرافقك
