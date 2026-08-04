@@ -5,10 +5,10 @@ export type NavItem = {
 
 export const navItems: NavItem[] = [
 { label: 'الرئيسية', href: '#home' },
+{ label: 'من نحن', href: '#about' },
 { label: 'مسارات التعليم', href: '#courses' },
 { label: 'الدورات المكثفة', href: '#camps' },
 { label: 'استثمر معنا', href: '#invest' },
-{ label: 'من نحن', href: '#about' },
 { label: 'تواصل معنا', href: '#contact' }];
 
 

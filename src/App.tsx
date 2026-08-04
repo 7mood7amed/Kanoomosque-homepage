@@ -22,12 +22,12 @@ export function App() {
       <Header />
       <main>
         <Hero />
+        <About />
+        <Stats />
         <Courses />
         <Camps />
-        <Initiatives />
         <Graduates />
-        <Stats />
-        <About />
+        <Initiatives />
         <Contact />
       </main>
       <Footer />
