@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { HeartHandshakeIcon, MinusIcon, PlusIcon } from 'lucide-react';
 import { images, tiers } from '../data/site';
 
@@ -100,12 +101,12 @@ export function Initiatives() {
                             <p className="text-[15px] leading-8 text-silver-200/70">
                               {tier.details}
                             </p>
-                            <button
-                            type="button"
+                            <Link
+                            to={`/donate?tier=${i}`}
                             className="mt-5 inline-flex items-center justify-center rounded-full bg-pearl px-7 py-3 text-sm font-bold text-primary shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl">
-                            
+
                               تبرّع الآن
-                            </button>
+                            </Link>
                           </div>
                         </motion.div>
                       }

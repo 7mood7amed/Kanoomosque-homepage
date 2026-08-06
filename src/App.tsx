@@ -1,36 +1,46 @@
 import React, { useEffect } from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { Header } from './components/Header';
-import { Hero } from './components/Hero';
-import { Courses } from './components/Courses';
-import { Camps } from './components/Camps';
-import { Initiatives } from './components/Initiatives';
-import { Graduates } from './components/Graduates';
-import { Stats } from './components/Stats';
-import { About } from './components/About';
-import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
+import { Home } from './pages/Home';
+import { Donate } from './pages/Donate';
+
+function ScrollManager() {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const el = document.getElementById(hash.slice(1));
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+    }
+    window.scrollTo({ top: 0 });
+  }, [pathname, hash]);
+
+  return null;
+}
 
 export function App() {
   useEffect(() => {
     document.documentElement.lang = 'ar';
     document.documentElement.dir = 'rtl';
-    document.title = 'مركز عبدالرحمن كانو لتعليم القرآن الكريم وعلومه';
   }, []);
 
   return (
-    <div dir="rtl" lang="ar" className="min-h-screen w-full bg-pearl">
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Stats />
-        <Courses />
-        <Camps />
-        <Graduates />
-        <Initiatives />
-        <Contact />
-      </main>
-      <Footer />
-    </div>);
+    <BrowserRouter>
+      <div dir="rtl" lang="ar" className="min-h-screen w-full bg-pearl">
+        <ScrollManager />
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/donate" element={<Donate />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </BrowserRouter>);
 
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import {
   BookOpenIcon,
   InstagramIcon,
@@ -18,6 +19,9 @@ const socials = [
 const aboutLinks = ['عن المركز', 'الدعم الفني', 'سياسة الخصوصية', 'الأسئلة الشائعة'];
 
 export function Footer() {
+  const { pathname } = useLocation();
+  const homeHref = (hash: string) => (pathname === '/' ? hash : `/${hash}`);
+
   return (
     <footer className="w-full border-t border-silver-400/15 bg-navy-950 text-pearl">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
@@ -41,13 +45,13 @@ export function Footer() {
             <ul className="mt-6 flex items-center gap-3">
               {socials.map(({ label, Icon }) =>
               <li key={label}>
-                  <a
-                  href="#home"
+                  <Link
+                  to={homeHref('#home')}
                   aria-label={label}
                   className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-silver-200 transition-colors hover:border-white/40 hover:bg-white/10 hover:text-pearl">
 
                     <Icon className="h-4 w-4" aria-hidden="true" />
-                  </a>
+                  </Link>
                 </li>
               )}
             </ul>
@@ -60,14 +64,22 @@ export function Footer() {
             <ul className="mt-5 space-y-3">
               {navItems.map((item) =>
               <li key={item.href}>
-                  <a
-                  href={item.href}
+                  <Link
+                  to={homeHref(item.href)}
                   className="text-sm text-silver-200/70 transition-colors hover:text-pearl">
-                  
+
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               )}
+              <li>
+                <Link
+                  to="/donate"
+                  className="text-sm text-silver-200/70 transition-colors hover:text-pearl">
+
+                  تبرّع الآن
+                </Link>
+              </li>
             </ul>
           </nav>
 
@@ -78,12 +90,12 @@ export function Footer() {
             <ul className="mt-5 space-y-3">
               {aboutLinks.map((label) =>
               <li key={label}>
-                  <a
-                  href="#about"
+                  <Link
+                  to={homeHref('#about')}
                   className="text-sm text-silver-200/70 transition-colors hover:text-pearl">
-                  
+
                     {label}
-                  </a>
+                  </Link>
                 </li>
               )}
             </ul>
