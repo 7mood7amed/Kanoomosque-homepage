@@ -16,13 +16,15 @@ export function Home() {
   return (
     <>
       <Hero />
-      <About />
-      <Stats />
-      <Courses />
-      <Camps />
-      <Graduates />
-      <Initiatives />
-      <Contact />
+      <div className="relative z-10 mx-auto flex w-full max-w-[1280px] flex-col gap-10 px-4 py-12 sm:gap-16 sm:px-8 sm:py-20 lg:px-12">
+        <About />
+        <Stats />
+        <Courses />
+        <Camps />
+        <Graduates />
+        <Initiatives />
+        <Contact />
+      </div>
     </>);
 
 }

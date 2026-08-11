@@ -158,7 +158,8 @@ export function Donate() {
         </div>
       </section>
 
-      <section className="w-full border-t border-navy-900/10 bg-mist py-16 sm:py-24">
+      <div className="relative z-10 mx-auto flex w-full max-w-[1280px] flex-col px-4 py-12 sm:px-8 sm:py-20 lg:px-12">
+      <section className="relative w-full overflow-hidden rounded-lg border border-white/40 bg-white/60 py-16 shadow-[0_25px_60px_-30px_rgba(38,43,33,0.35)] backdrop-blur-2xl sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-3 lg:gap-12">
             <div className="lg:col-span-2">
@@ -462,6 +463,7 @@ export function Donate() {
           </div>
         </div>
       </section>
+      </div>
     </>);
 
 }

@@ -31,7 +31,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="w-full border-t border-navy-900/10 bg-mist py-20 sm:py-28">
+    <section id="contact" className="relative w-full overflow-hidden rounded-lg border border-white/40 bg-white/60 py-20 shadow-[0_25px_60px_-30px_rgba(38,43,33,0.35)] backdrop-blur-2xl sm:py-28">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="تواصل معنا"
@@ -39,7 +39,7 @@ export function Contact() {
           description="اترك بياناتك وسيتواصل معك فريق المركز في أقرب وقت بإذن الله." />
         
 
-        <div className="mt-12 rounded-3xl bg-pearl p-5 shadow-xl sm:p-9">
+        <div className="mt-12 rounded-lg border border-navy-900/10 bg-mist p-5 shadow-sm sm:p-9">
             <form onSubmit={onSubmit}>
               <div className="grid gap-5 sm:grid-cols-2">
                 <div>

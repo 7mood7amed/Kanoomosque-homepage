@@ -30,7 +30,8 @@ export function App() {
 
   return (
     <BrowserRouter>
-      <div dir="rtl" lang="ar" className="min-h-screen w-full bg-pearl">
+      <div className="bg-pattern" aria-hidden="true" />
+      <div dir="rtl" lang="ar" className="relative z-10 min-h-screen w-full">
         <ScrollManager />
         <Header />
         <main>

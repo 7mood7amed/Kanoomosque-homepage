@@ -5,7 +5,7 @@ import { SectionHeading } from './SectionHeading';
 
 export function Graduates() {
   return (
-    <section id="graduates" className="w-full border-t border-navy-900/10 bg-pearl py-20 sm:py-28">
+    <section id="graduates" className="relative w-full overflow-hidden rounded-lg border border-white/40 bg-white/60 py-20 shadow-[0_25px_60px_-30px_rgba(38,43,33,0.35)] backdrop-blur-2xl sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="خريجونا"
@@ -23,7 +23,7 @@ export function Graduates() {
             transition={{ duration: 0.45, delay: i * 0.06, ease: 'easeOut' }}
             className="w-56 shrink-0 snap-start lg:w-auto">
             
-              <figure className="group rounded-2xl bg-white p-2.5 shadow-lg transition-shadow hover:shadow-xl">
+              <figure className="group rounded-lg border border-navy-900/10 bg-mist p-2.5 shadow-sm transition-shadow hover:shadow-md">
                 <div className="arch-full relative aspect-[4/5] overflow-hidden">
                   <img
                   src={grad.image}

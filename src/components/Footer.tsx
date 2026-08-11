@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import {
-  BookOpenIcon,
   InstagramIcon,
   SendIcon,
   TwitterIcon,
@@ -27,16 +26,11 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <div className="flex items-center gap-3">
-              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-silver-200">
-                <BookOpenIcon className="h-5 w-5" aria-hidden="true" />
-              </span>
-              <span className="leading-tight">
-                <span className="font-display block text-lg">مركز عبدالرحمن كانو</span>
-                <span className="block text-[11px] text-silver-400">
-                  لتعليم القرآن الكريم وعلومه
-                </span>
-              </span>
+            <div className="flex items-center">
+              <img
+                src="/logo-full.jpeg"
+                alt="جامع عبدالرحمن بن جاسم كانو"
+                className="h-24 w-auto rounded-lg bg-white p-2" />
             </div>
             <p className="mt-5 text-sm leading-8 text-silver-200/65">
               مركز قرآني في مملكة البحرين يُعنى بتعليم القرآن الكريم وعلومه وتخريج

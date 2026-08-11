@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
-import { BookOpenIcon, HeartHandshakeIcon, MenuIcon, XIcon } from 'lucide-react';
+import { HeartHandshakeIcon, MenuIcon, XIcon } from 'lucide-react';
 import { navItems } from '../data/site';
 
 export function Header() {
@@ -32,11 +32,11 @@ export function Header() {
       'border-b border-silver-400/25 bg-navy-950/95 backdrop-blur-xl' :
       'bg-transparent'].
       join(' ')}>
-      
+
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Link to="/" className="flex items-center gap-3">
-          <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white text-primary shadow-lg">
-            <BookOpenIcon className="h-5 w-5" aria-hidden="true" />
+          <span className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-full bg-white p-1.5 shadow-lg">
+            <img src="/logo-mark.jpeg" alt="شعار المركز" className="h-full w-full object-contain" />
           </span>
           <span className="leading-tight">
             <span className="font-display block text-lg text-pearl sm:text-xl">
@@ -90,7 +90,7 @@ export function Header() {
             aria-controls="mobile-nav"
             aria-label={open ? 'إغلاق القائمة' : 'فتح القائمة'}
             className="flex h-11 w-11 items-center justify-center rounded-full text-pearl transition-colors hover:bg-white/10 xl:hidden">
-            
+
             {open ?
             <XIcon className="h-5 w-5" aria-hidden="true" /> :
 
@@ -109,7 +109,7 @@ export function Header() {
           exit={{ height: 0, opacity: 0 }}
           transition={{ duration: 0.25, ease: 'easeOut' }}
           className="overflow-hidden border-t border-silver-400/20 bg-navy-950 xl:hidden">
-          
+
             <nav aria-label="التنقل للجوال" className="px-4 py-5 sm:px-6">
               <ul className="divide-y divide-white/10">
                 {navItems.map((item) =>

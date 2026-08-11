@@ -5,7 +5,7 @@ import { SectionHeading } from './SectionHeading';
 
 export function Stats() {
   return (
-    <section id="stats" className="w-full border-t border-navy-900/10 bg-mist py-20 sm:py-28">
+    <section id="stats" className="relative w-full overflow-hidden rounded-lg border border-white/40 bg-white/60 py-20 shadow-[0_25px_60px_-30px_rgba(38,43,33,0.35)] backdrop-blur-2xl sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="منجزات وثمرات"
@@ -20,7 +20,7 @@ export function Stats() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.45, delay: i * 0.06, ease: 'easeOut' }}
-            className="rounded-2xl bg-white px-6 pb-6 pt-8 text-center shadow-lg transition-shadow hover:shadow-xl">
+            className="rounded-lg border border-navy-900/10 bg-mist px-6 pb-6 pt-8 text-center shadow-sm transition-shadow hover:shadow-md">
             
               <p className="font-display text-4xl leading-[1.5] text-navy-900">
                 {stat.value === '—' ?

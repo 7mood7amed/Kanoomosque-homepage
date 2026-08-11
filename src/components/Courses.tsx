@@ -6,7 +6,7 @@ import { SectionHeading } from './SectionHeading';
 
 export function Courses() {
   return (
-    <section id="courses" className="w-full border-t border-navy-900/10 bg-pearl py-20 sm:py-28">
+    <section id="courses" className="relative w-full overflow-hidden rounded-lg border border-white/40 bg-white/60 py-20 shadow-[0_25px_60px_-30px_rgba(38,43,33,0.35)] backdrop-blur-2xl sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="مسارات التعليم"
@@ -22,7 +22,7 @@ export function Courses() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.5, delay: i * 0.1, ease: 'easeOut' }}
-            className="group rounded-3xl bg-white p-3 shadow-xl transition-shadow hover:shadow-2xl">
+            className="group rounded-lg border border-navy-900/10 bg-mist p-3 shadow-sm transition-shadow hover:shadow-md">
 
               <div className="arch-full relative h-60 overflow-hidden sm:h-72">
                 <img
@@ -30,15 +30,13 @@ export function Courses() {
                 alt={course.title}
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
 
-                <div className="absolute inset-0 bg-navy-950/25" aria-hidden="true" />
+                <div className="absolute inset-0 bg-navy-950/20" aria-hidden="true" />
                 <span
                 className={[
-                'absolute end-4 top-8 rounded-full px-3 py-1 text-xs font-bold',
-                course.badgeTone === 'active' ?
-                'bg-navy-900 text-pearl' :
-                'bg-white/90 text-primary'].
+                'absolute end-4 top-8 rounded-full px-3 py-1 text-xs font-bold text-white shadow-sm',
+                course.badgeTone === 'active' ? 'bg-primary' : 'bg-gold'].
                 join(' ')}>
-                
+
                   {course.badge}
                 </span>
               </div>

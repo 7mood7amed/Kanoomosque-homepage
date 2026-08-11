@@ -11,7 +11,7 @@ const pillars = [
 
 export function About() {
   return (
-    <section id="about" className="w-full border-t border-navy-900/10 bg-pearl py-20 sm:py-28">
+    <section id="about" className="relative w-full overflow-hidden rounded-lg border border-white/40 bg-white/60 py-20 shadow-[0_25px_60px_-30px_rgba(38,43,33,0.35)] backdrop-blur-2xl sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <motion.div

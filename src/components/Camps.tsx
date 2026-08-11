@@ -6,7 +6,7 @@ import { SectionHeading } from './SectionHeading';
 
 export function Camps() {
   return (
-    <section id="camps" className="w-full border-t border-navy-900/10 bg-mist py-20 sm:py-28">
+    <section id="camps" className="relative w-full overflow-hidden rounded-lg border border-white/40 bg-white/60 py-20 shadow-[0_25px_60px_-30px_rgba(38,43,33,0.35)] backdrop-blur-2xl sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="الدورات المكثفة والبرامج"
@@ -23,9 +23,9 @@ export function Camps() {
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.45, delay: i * 0.07, ease: 'easeOut' }}>
             
-              <article className="group flex flex-col gap-5 rounded-3xl bg-white p-5 shadow-lg transition-shadow hover:shadow-xl sm:flex-row sm:items-center sm:gap-8 sm:p-6">
+              <article className="group flex flex-col gap-5 rounded-lg border border-navy-900/10 bg-mist p-5 shadow-sm transition-shadow hover:shadow-md sm:flex-row sm:items-center sm:gap-8 sm:p-6">
                 <div className="flex shrink-0 items-center gap-4 sm:w-56 sm:flex-col sm:items-start sm:gap-3 sm:border-e sm:border-navy-900/12 sm:pe-8">
-                  <span className="arch-top flex h-12 w-10 items-center justify-center bg-mist">
+                  <span className="arch-top flex h-12 w-10 items-center justify-center bg-pearl">
                     <span className="font-display text-lg text-navy-800">{camp.index}</span>
                   </span>
                   <div className="flex flex-wrap items-center gap-2">
@@ -33,12 +33,12 @@ export function Camps() {
                     className={[
                     'inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold',
                     camp.statusTone === 'active' ?
-                    'bg-navy-900 text-pearl' :
-                    'border border-outline-variant text-secondary'].
+                    'bg-primary text-white' :
+                    'border border-gold/30 bg-gold-50 text-gold-700'].
                     join(' ')}>
-                    
+
                       {camp.statusTone === 'active' &&
-                    <span className="h-1.5 w-1.5 rotate-45 bg-pearl" aria-hidden="true" />
+                    <span className="h-1.5 w-1.5 rotate-45 bg-white" aria-hidden="true" />
                     }
                       {camp.status}
                     </span>
