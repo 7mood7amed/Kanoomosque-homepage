@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeftIcon, CheckIcon } from 'lucide-react';
+import { ArrowLeftIcon } from 'lucide-react';
 import { images } from '../data/site';
+import { StarMark } from './Ornament';
 
 const pillars = [
 'معلمون مجازون بالسند المتصل',
@@ -11,8 +12,9 @@ const pillars = [
 
 export function About() {
   return (
-    <section id="about" className="relative w-full overflow-hidden rounded-lg border border-white/40 bg-white/60 py-20 shadow-[0_25px_60px_-30px_rgba(38,43,33,0.35)] backdrop-blur-2xl sm:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="about" className="relative w-full overflow-hidden rounded-lg border border-tertiary-fixed-dim/20 bg-surface-container-lowest/85 py-20 shadow-[0_25px_60px_-30px_rgba(24,29,21,0.35)] backdrop-blur-2xl sm:py-28">
+      <div className="pattern-geo-light absolute inset-0 opacity-[0.6]" aria-hidden="true" />
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
@@ -20,7 +22,7 @@ export function About() {
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
             className="relative">
-            
+
             <div className="frame-ornate rounded-[40px] p-3 shadow-xl">
               <div className="arch-full overflow-hidden">
                 <img
@@ -30,16 +32,19 @@ export function About() {
 
               </div>
             </div>
+            <span className="absolute -top-4 start-8 flex h-12 w-12 items-center justify-center rounded-full border border-tertiary-fixed-dim/50 bg-surface-container-lowest text-tertiary shadow-lg sm:-top-5 sm:start-12">
+              <StarMark className="h-5 w-5" />
+            </span>
           </motion.div>
 
           <div>
-            <span className="inline-block rounded-full bg-primary-container/40 px-4 py-1.5 text-xs font-bold tracking-[0.2em] text-primary">
+            <span className="inline-block rounded-full bg-secondary-container/60 px-4 py-1.5 text-label-md tracking-[0.15em] text-on-secondary-container">
               من نحن
             </span>
-            <h2 className="font-display mt-4 text-4xl leading-[1.6] text-navy-900 lg:text-5xl">
+            <h2 className="font-headline-md mt-4 text-4xl leading-[1.6] text-on-surface lg:text-5xl">
               مركزٌ يحمل رسالة القرآن في مملكة البحرين
             </h2>
-            <p className="mt-5 text-lg leading-relaxed text-navy-500">
+            <p className="mt-5 text-body-lg leading-relaxed text-on-surface-variant">
               مركز عبدالرحمن كانو لتعليم القرآن الكريم وعلومه هو أحد المراكز القرآنية
               العاملة تحت مظلة وزارة العدل والشؤون الإسلامية والأوقاف في مملكة البحرين.
               نسعى إلى تخريج جيل يحفظ كتاب الله ويتقن تلاوته ويعمل بأحكامه، من خلال
@@ -47,11 +52,11 @@ export function About() {
               تجمع بين الانضباط والرحمة.
             </p>
 
-            <ul className="mt-7 space-y-3">
+            <ul className="mt-7 divide-y divide-tertiary/20">
               {pillars.map((item) =>
-              <li key={item} className="flex items-center gap-3 text-[15px] text-navy-800">
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-navy-900/5 text-primary">
-                    <CheckIcon className="h-3.5 w-3.5" aria-hidden="true" />
+              <li key={item} className="flex items-center gap-3 py-3 text-body-md text-on-surface first:pt-0">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-tertiary-container/15 text-tertiary">
+                    <StarMark className="h-3 w-3" />
                   </span>
                   {item}
                 </li>
@@ -60,13 +65,14 @@ export function About() {
 
             <a
               href="#contact"
-              className="group mt-9 inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-base font-bold text-pearl shadow-xl transition-all hover:scale-[1.02] hover:bg-primary-light hover:shadow-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-navy-700 focus-visible:ring-offset-2">
+              className="group mt-9 inline-flex items-center gap-2 rounded-xl bg-primary px-8 py-4 text-body-md font-bold text-on-primary shadow-xl transition-all hover:scale-[1.02] hover:bg-primary-container hover:shadow-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
 
               انضمّ إلى حلقاتنا
               <ArrowLeftIcon
                 className="h-4 w-4 transition-transform group-hover:-translate-x-1"
+                strokeWidth={1.5}
                 aria-hidden="true" />
-              
+
             </a>
           </div>
         </div>
