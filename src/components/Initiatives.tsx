@@ -1,118 +1,170 @@
-import React, { useRef } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ChevronLeftIcon, ChevronRightIcon, HeartHandshakeIcon } from 'lucide-react';
-import { tiers } from '../data/site';
+import { ArrowLeftIcon, HeartHandshakeIcon } from 'lucide-react';
+import { images, tiers } from '../data/site';
+
+const quickAmounts = [10, 20, 50];
+
+const cardCorner = ['mihrab-corner-start', '', 'mihrab-corner-end'];
 
 export function Initiatives() {
-  const scrollerRef = useRef<HTMLDivElement>(null);
+  const [amount, setAmount] = useState<number | null>(50);
+  const [customAmount, setCustomAmount] = useState('');
 
-  const scrollByCard = (direction: 'start' | 'end') => {
-    const el = scrollerRef.current;
-    if (!el) return;
-    const amount = el.clientWidth * 0.8 * (direction === 'end' ? 1 : -1);
-    el.scrollBy({ left: amount, behavior: 'smooth' });
-  };
+  const selectedAmount = customAmount ? Number(customAmount) || 0 : amount ?? 0;
+  const donateHref = `/donate?tier=3${selectedAmount ? `&amount=${selectedAmount}` : ''}`;
 
   return (
-    <section id="invest" className="relative w-full overflow-hidden rounded-lg bg-navy-800 py-16 shadow-[0_25px_60px_-30px_rgba(38,43,33,0.55)] sm:py-20">
-      <div className="pattern-geo absolute inset-0 opacity-[0.06]" aria-hidden="true" />
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-5 lg:gap-10">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
+    <section id="invest" className="relative w-full overflow-hidden rounded-lg bg-inverse-surface py-16 shadow-[0_25px_60px_-30px_rgba(24,29,21,0.55)] sm:py-20">
+      <div className="pattern-geo absolute inset-0 opacity-[0.08]" aria-hidden="true" />
+      <div className="relative mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+        <div className="relative inline-block">
+          <p className="font-headline-sm text-tertiary-fixed-dim/90">
+            وَمَا أَنفَقْتُم مِّن شَيْءٍ فَهُوَ يُخْلِفُهُ
+          </p>
+          <h2 className="font-display-lg mt-2 text-4xl leading-[1.3] text-inverse-on-surface lg:text-5xl">
+            استثمر في أعظم مشروع
+          </h2>
+          <div className="absolute -top-4 -end-12 -z-10 h-24 w-24 rounded-full bg-tertiary-fixed-dim/10 blur-2xl" aria-hidden="true" />
+        </div>
+        <p className="mx-auto mt-5 max-w-2xl text-body-lg text-secondary-fixed-dim/80">
+          كفالة طالب، أو دعم حلقة، أو المساهمة في برامج تعليم القرآن الكريم: صدقةٌ جاريةٌ يمتد
+          أثرها ما دام القرآن يُتلى ويُحفَظ. اختر مبادرتك وشاركنا صناعة هذا الأثر المبارك.
+        </p>
+      </div>
+
+      <div className="relative mx-auto mt-12 max-w-4xl px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+          className="relative overflow-hidden rounded-2xl bg-white/10 p-6 shadow-2xl backdrop-blur-2xl sm:p-8">
+
+          <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-l from-tertiary-fixed-dim via-primary-fixed to-transparent opacity-50" aria-hidden="true" />
+          <div className="relative grid gap-8 md:grid-cols-2">
+            <div className="flex flex-col justify-center gap-6">
+              <div>
+                <h3 className="font-headline-md text-inverse-on-surface">التبرع المباشر</h3>
+                <p className="mt-1 text-body-md text-secondary-fixed-dim/80">
+                  دعم عام لمشاريع وأنشطة المركز
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <div className="grid grid-cols-3 gap-3">
+                  {quickAmounts.map((value) =>
+                  <button
+                    key={value}
+                    type="button"
+                    onClick={() => {
+                      setAmount(value);
+                      setCustomAmount('');
+                    }}
+                    className={[
+                    'rounded-lg py-3 text-label-md transition-all duration-300',
+                    !customAmount && amount === value ?
+                    'border border-tertiary-fixed-dim/30 bg-tertiary/40 text-tertiary-fixed-dim shadow-[0_0_15px_rgba(224,195,135,0.15)]' :
+                    'bg-white/10 text-inverse-on-surface backdrop-blur-md hover:bg-tertiary/30'].
+                    join(' ')}>
+
+                      {value} د.ب
+                    </button>
+                  )}
+                </div>
+                <div className="relative">
+                  <input
+                    type="number"
+                    min={1}
+                    value={customAmount}
+                    onChange={(e) => setCustomAmount(e.target.value)}
+                    placeholder="مبلغ آخر"
+                    className="w-full border-b border-secondary-fixed-dim/30 bg-transparent px-2 py-3 text-body-lg text-inverse-on-surface placeholder:text-secondary-fixed-dim/50 focus:border-tertiary-fixed-dim focus:outline-none" />
+
+                  <span className="pointer-events-none absolute start-2 top-1/2 -translate-y-1/2 text-label-md text-tertiary-fixed-dim">
+                    د.ب
+                  </span>
+                </div>
+                <Link
+                  to={donateHref}
+                  className="group mt-2 flex w-full items-center justify-center gap-2 rounded-xl bg-tertiary-container py-4 text-label-md text-on-tertiary shadow-lg transition-all duration-300 hover:bg-tertiary">
+
+                  <span>تبرع الآن</span>
+                  <ArrowLeftIcon className="h-4 w-4 transition-transform group-hover:-translate-x-1" strokeWidth={1.5} aria-hidden="true" />
+                </Link>
+              </div>
+            </div>
+
+            <div className="relative hidden h-64 overflow-hidden rounded-xl md:block">
+              <img
+                src={images.donation}
+                alt="مصحف مفتوح على حامل خشبي"
+                className="absolute inset-0 h-full w-full object-cover opacity-80 [mix-blend-mode:luminosity]" />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-inverse-surface via-transparent to-transparent" aria-hidden="true" />
+              <div className="absolute inset-x-4 bottom-4 flex items-center gap-3 rounded-lg border border-white/10 bg-white/10 p-3 backdrop-blur-md">
+                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-tertiary/20 text-tertiary-fixed-dim">
+                  <HeartHandshakeIcon className="h-5 w-5" strokeWidth={1.5} aria-hidden="true" />
+                </span>
+                <div>
+                  <span className="block text-label-md text-inverse-on-surface">مساهماتكم نور</span>
+                  <span className="block text-caption text-secondary-fixed-dim/70">يصل أثرها إلى آلاف الطلاب</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+
+      <div className="relative mx-auto mt-14 max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-6 flex items-end justify-between border-b border-secondary-fixed-dim/20 pb-3">
+          <h3 className="font-headline-md text-inverse-on-surface">أبواب الكفالة الشهرية</h3>
+          <Link
+            to="/donate"
+            className="inline-flex items-center gap-1.5 text-label-md text-tertiary-fixed-dim transition-colors hover:text-tertiary-fixed">
+
+            عرض الكل
+            <ArrowLeftIcon className="h-3.5 w-3.5" strokeWidth={1.5} aria-hidden="true" />
+          </Link>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-3">
+          {tiers.map((tier, i) =>
+          <motion.article
+            key={tier.title}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.5, ease: 'easeOut' }}
-            className="lg:col-span-2">
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.45, delay: i * 0.08, ease: 'easeOut' }}
+            className={`group relative overflow-hidden bg-white/10 p-4 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 ${cardCorner[i] || 'rounded-2xl'}`}>
 
-            <span className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-silver-400">
-              اختر مساهمتك القرآنية
-              <span className="h-px w-8 bg-silver-400/40" aria-hidden="true" />
-              <HeartHandshakeIcon className="h-4 w-4" aria-hidden="true" />
-            </span>
-            <h2 className="font-display mt-4 text-4xl leading-[1.6] text-pearl lg:text-5xl">
-              استثمر في أعظم مشروع
-            </h2>
-            <p className="mt-5 text-[15px] leading-8 text-silver-200/75">
-              كفالة طالب، أو دعم حلقة، أو المساهمة في برامج تعليم القرآن الكريم: صدقةٌ جاريةٌ
-              يمتد أثرها ما دام القرآن يُتلى ويُحفَظ. اختر مبادرتك وشاركنا صناعة هذا الأثر
-              المبارك.
-            </p>
+              <div className="relative mb-4 h-48 overflow-hidden rounded-xl">
+                <img
+                  src={tier.image}
+                  alt={tier.title}
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
 
-            <div className="mt-8 flex items-center gap-3">
-              <button
-                type="button"
-                onClick={() => scrollByCard('start')}
-                aria-label="السابق"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-pearl transition-colors hover:bg-white/10">
+                <span className="absolute end-3 top-3 rounded-full bg-white/30 px-3 py-1 text-caption text-inverse-on-surface backdrop-blur-md">
+                  كفالة شهرية
+                </span>
+              </div>
+              <h4 className="font-headline-sm mb-2 text-inverse-on-surface">{tier.title}</h4>
+              <p className="mb-4 line-clamp-2 text-body-md text-secondary-fixed-dim/75">
+                {tier.details}
+              </p>
+              <div className="mb-4 flex items-baseline justify-between">
+                <span className="font-headline-sm text-tertiary-fixed-dim">{tier.price}</span>
+                <span className="text-caption text-secondary-fixed-dim/70">{tier.unit}</span>
+              </div>
+              <Link
+                to={`/donate?tier=${i}`}
+                className="flex w-full items-center justify-center gap-2 rounded-lg bg-white/10 py-3 text-label-md text-inverse-on-surface transition-colors hover:bg-primary-container">
 
-                <ChevronRightIcon className="h-5 w-5" aria-hidden="true" />
-              </button>
-              <button
-                type="button"
-                onClick={() => scrollByCard('end')}
-                aria-label="التالي"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-pearl transition-colors hover:bg-white/10">
-
-                <ChevronLeftIcon className="h-5 w-5" aria-hidden="true" />
-              </button>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.97 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="lg:col-span-3">
-
-            <div
-              ref={scrollerRef}
-              className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-5 overflow-x-auto px-4 pb-2">
-
-              {tiers.map((tier, i) =>
-              <article
-                key={tier.title}
-                className="w-[260px] shrink-0 snap-start overflow-hidden rounded-2xl bg-pearl shadow-xl sm:w-[280px]">
-
-                  <div className="relative h-64 overflow-hidden">
-                    <span className="absolute start-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white/90 font-display text-sm text-navy-900 shadow">
-                      {i + 1}
-                    </span>
-                    <img
-                      src={tier.image}
-                      alt={tier.title}
-                      className="h-full w-full object-cover" />
-
-                  </div>
-                  <div className="p-5">
-                    <h3 className="font-display text-lg text-navy-900">{tier.title}</h3>
-                    <p className="mt-2 line-clamp-4 text-[13px] leading-7 text-navy-500">
-                      {tier.details}
-                    </p>
-                    <div className="mt-4 flex items-end justify-between border-t border-navy-900/10 pt-4">
-                      <div>
-                        <span className="font-display block text-2xl text-navy-900">
-                          {tier.price.replace(' د.ب', '')} دينار
-                        </span>
-                        <span className="block text-[11px] text-navy-500">{tier.unit}</span>
-                      </div>
-                      <Link
-                        to={`/donate?tier=${i}`}
-                        className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-xs font-bold text-white shadow-md transition-all hover:scale-[1.03] hover:bg-navy-700">
-
-                        تبرّع الآن
-                      </Link>
-                    </div>
-                    <p className="mt-3 text-[11px] text-navy-500/80">
-                      السهم الواحد يبدأ بدينار واحد فقط
-                    </p>
-                  </div>
-                </article>
-              )}
-            </div>
-          </motion.div>
+                المساهمة
+              </Link>
+            </motion.article>
+          )}
         </div>
       </div>
     </section>);
