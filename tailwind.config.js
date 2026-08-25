@@ -5,88 +5,107 @@ export default {content: [
   theme: {
     extend: {
       colors: {
-        navy: {
-          950: '#161813',
-          900: '#262B21',
-          800: '#363D2F',
-          700: '#464E3C',
-          600: '#56614B',
-          500: '#667358',
-        },
-        silver: {
-          600: '#A2AD96',
-          500: '#B5BEAA',
-          400: '#C7CEBE',
-          200: '#DFE4D8',
-          100: '#EBEFE5',
-        },
-        // pearl = bright white, used for card surfaces and the main light
-        // sections; mist = a distinct soft-sage tint one step down, used on
-        // alternating sections so adjacent bands read as separate without
-        // needing a border. Keeping these different is what gives the page
-        // rhythm — collapsing them to one value flattens the whole page.
-        pearl: '#FFFFFF',
-        mist: '#EAEFE1',
-        ink: '#262B21',
+        // "Manuscript Modernity" design system (Stitch) — Material 3 tokens
+        // synthesized from historic Quranic illumination pigments: sage
+        // green (growth/peace), deep ink (authority/legibility), warm gold
+        // (illuminated accents, used sparingly).
+        surface: '#f6fbed',
+        'surface-dim': '#d7dcce',
+        'surface-bright': '#f6fbed',
+        'surface-container-lowest': '#ffffff',
+        'surface-container-low': '#f1f5e7',
+        'surface-container': '#ebf0e2',
+        'surface-container-high': '#e5eadc',
+        'surface-container-highest': '#dfe4d7',
+        'surface-variant': '#dfe4d7',
+        'surface-tint': '#556346',
+        'on-surface': '#181d15',
+        'on-surface-variant': '#454840',
+        'inverse-surface': '#2d3229',
+        'inverse-on-surface': '#eef3e5',
+        outline: '#75786f',
+        'outline-variant': '#c5c8bd',
+        background: '#f6fbed',
+        'on-background': '#181d15',
 
-        // Full sage ramp (mirrors the live site's --sage-* custom
-        // properties) so components can reach for a tint/shade directly
-        // instead of only the flat M3 aliases below.
-        primary: {
-          50: '#F1F4EC',
-          100: '#E8ECDF',
-          200: '#D6DCCB',
-          300: '#BFC8B2',
-          400: '#A4B199',
-          500: '#8F9D83',
-          600: '#788768',
-          700: '#65745A',
-          800: '#4F5A45',
-          DEFAULT: '#788768',
-        },
-        // Soft secondary accents used for status/tag variety, matching the
-        // gold / blue / mauve tint system on the live site.
-        gold: {
-          DEFAULT: '#B59B62',
-          soft: '#D8C79B',
-          50: '#F1EBDB',
-          700: '#8C7647',
-        },
-        blue: {
-          DEFAULT: '#7F99A6',
-          50: '#E8EFF2',
-          700: '#5C7480',
-        },
-        mauve: {
-          DEFAULT: '#C5A9A9',
-          50: '#EFE3E3',
-          700: '#9A7A7A',
-        },
+        primary: '#526044',
+        'on-primary': '#ffffff',
+        'primary-container': '#6b795b',
+        'on-primary-container': '#f9ffec',
+        'inverse-primary': '#bccca9',
+        'primary-fixed': '#d8e8c4',
+        'primary-fixed-dim': '#bccca9',
+        'on-primary-fixed': '#131f08',
+        'on-primary-fixed-variant': '#3d4b30',
 
-        // M3-style aliases matching the Stitch mockup's token names
-        'primary-light': '#8C997F',
-        'on-primary': '#FFFFFF',
-        secondary: '#F1F4EC',
-        surface: '#F1F4EC',
-        'on-surface': '#262B21',
-        'surface-variant': '#DFE4D8',
-        'on-surface-variant': '#56614B',
-        outline: '#A8B39D',
-        'outline-variant': '#CDD3C4',
-        'primary-container': '#EBEDE8',
-        'on-primary-container': '#262B21',
-        'secondary-container': '#E2E7DC',
-        'on-secondary-container': '#363D2F',
-        'surface-container-low': '#ECF0E7',
-        'surface-container-high': '#E5E9DF',
-        'surface-container-highest': '#DEE3D7',
+        secondary: '#5b6054',
+        'on-secondary': '#ffffff',
+        'secondary-container': '#dde2d2',
+        'on-secondary-container': '#5f6458',
+        'secondary-fixed': '#e0e4d5',
+        'secondary-fixed-dim': '#c3c8ba',
+        'on-secondary-fixed': '#181d14',
+        'on-secondary-fixed-variant': '#43483d',
+
+        tertiary: '#6e5927',
+        'on-tertiary': '#ffffff',
+        'tertiary-container': '#89723d',
+        'on-tertiary-container': '#fffbff',
+        'tertiary-fixed': '#fddfa0',
+        'tertiary-fixed-dim': '#e0c387',
+        'on-tertiary-fixed': '#251a00',
+        'on-tertiary-fixed-variant': '#574414',
+
+        error: '#ba1a1a',
+        'on-error': '#ffffff',
+        'error-container': '#ffdad6',
+        'on-error-container': '#93000a',
+
+        // Accent chips called out in the brand doc alongside the M3 set —
+        // kept as their own tokens since they sit outside the M3 ramp.
+        blue: { DEFAULT: '#7F99A6', 50: '#E8EFF2', 700: '#5C7480' },
+        mauve: { DEFAULT: '#C5A9A9', 50: '#EFE3E3', 700: '#9A7A7A' },
       },
       fontFamily: {
         sans: ['Tajawal', 'system-ui', 'sans-serif'],
         display: ['Aref Ruqaa', 'Tajawal', 'serif'],
+        'display-lg': ['Aref Ruqaa', 'serif'],
+        'display-lg-mobile': ['Aref Ruqaa', 'serif'],
+        'headline-md': ['Aref Ruqaa', 'serif'],
+        'headline-sm': ['Aref Ruqaa', 'serif'],
+        'body-lg': ['Tajawal', 'sans-serif'],
+        'body-md': ['Tajawal', 'sans-serif'],
+        'label-md': ['Tajawal', 'sans-serif'],
+        caption: ['Tajawal', 'sans-serif'],
+      },
+      fontSize: {
+        'display-lg': ['48px', { lineHeight: '1.2', fontWeight: '700' }],
+        'display-lg-mobile': ['32px', { lineHeight: '1.2', fontWeight: '700' }],
+        'headline-md': ['32px', { lineHeight: '1.3', fontWeight: '400' }],
+        'headline-sm': ['24px', { lineHeight: '1.4', fontWeight: '400' }],
+        'body-lg': ['18px', { lineHeight: '1.6', fontWeight: '400' }],
+        'body-md': ['16px', { lineHeight: '1.6', fontWeight: '400' }],
+        'label-md': ['14px', { lineHeight: '1.2', letterSpacing: '0.02em', fontWeight: '500' }],
+        caption: ['12px', { lineHeight: '1.2', fontWeight: '400' }],
       },
       borderRadius: {
+        sm: '0.25rem',
+        DEFAULT: '0.5rem',
         card: '0.75rem',
+        md: '0.75rem',
+        lg: '1rem',
+        xl: '1.5rem',
+      },
+      spacing: {
+        base: '8px',
+        xs: '4px',
+        sm: '12px',
+        md: '24px',
+        lg: '48px',
+        xl: '80px',
+        gutter: '24px',
+        'margin-mobile': '16px',
+        'margin-desktop': '64px',
       },
       boxShadow: {
         soft: '0 16px 40px -28px rgba(18, 34, 74, 0.45)',

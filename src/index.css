@@ -13,8 +13,8 @@ html {
 }
 body {
   font-family: 'Tajawal', system-ui, sans-serif;
-  color: #262B21;
-  background: linear-gradient(to bottom, #f1f4ec 0%, #d3dec6 30%, #788768 70%, #2d3328 100%);
+  color: #181d15;
+  background: linear-gradient(135deg, #f1f4ec 0%, #d3dec6 33%, #788768 66%, #2d3328 100%);
   background-attachment: fixed;
 }
 /* Diagonal tiled logo watermark, fixed behind the floating section cards,
@@ -32,46 +32,51 @@ body {
   background-size: 240px 240px;
   background-position: 0 0, 120px 120px;
   background-repeat: repeat;
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.16) 0%, rgba(0, 0, 0, 0.03) 75%, transparent 100%);
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.16) 0%, rgba(0, 0, 0, 0.03) 75%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.02) 75%, transparent 100%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.02) 75%, transparent 100%);
   mix-blend-mode: multiply;
 }
 .font-display {
   font-family: 'Aref Ruqaa', 'Tajawal', serif;
   line-height: 1.7;
 }
-/* Islamic pointed-arch silhouette used on top of cards and media */
+/* Islamic pointed-arch silhouette (Mihrab motif) used on top of cards and media */
 .arch-top {
   border-radius: 46% 46% 0.5rem 0.5rem / 22% 22% 0.5rem 0.5rem;
 }
 .arch-full {
   border-radius: 46% 46% 0.75rem 0.75rem / 18% 18% 0.75rem 0.75rem;
 }
-/* Fine silver double frame for ornate cards */
+/* "Mihrab-lite" corner treatment for donation/campaign cards: a large radius
+   on every corner except one, which is squared off — alternated left/right
+   across a row so the row reads as a row of pointed niches. */
+.mihrab-corner-start {
+  border-radius: 2rem 2rem 2rem 0;
+}
+.mihrab-corner-end {
+  border-radius: 2rem 2rem 0 2rem;
+}
+/* Gold double-border used for featured/illuminated surfaces: a 1px outer
+   gold line and a 0.5px inner gold line with a gap, evoking manuscript
+   illumination borders. */
 .frame-ornate {
-  box-shadow: inset 0 0 0 1px rgba(38, 43, 33, 0.14), inset 0 0 0 5px #ffffff,
-    inset 0 0 0 6px rgba(38, 43, 33, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(224, 195, 135, 0.6), inset 0 0 0 5px #ffffff,
+    inset 0 0 0 6px rgba(224, 195, 135, 0.45);
 }
 .frame-ornate-dark {
-  box-shadow: inset 0 0 0 1px rgba(199, 206, 190, 0.28),
-    inset 0 0 0 5px rgba(22, 24, 19, 1), inset 0 0 0 6px rgba(199, 206, 190, 0.16);
+  box-shadow: inset 0 0 0 1px rgba(224, 195, 135, 0.35),
+    inset 0 0 0 5px rgba(45, 50, 41, 1), inset 0 0 0 6px rgba(224, 195, 135, 0.22);
 }
-/* Subtle geometric lattice */
+/* Girih: eight-point star lattice (two overlapping squares), tiled as a low-
+   opacity texture — -dark is gold-on-transparent for dark surfaces, -light
+   is ink-on-transparent for pale surfaces. */
 .pattern-geo {
-  background-image: linear-gradient(45deg, rgba(199, 206, 190, 0.09) 25%, transparent 25%,
-      transparent 75%, rgba(199, 206, 190, 0.09) 75%),
-    linear-gradient(45deg, rgba(199, 206, 190, 0.09) 25%, transparent 25%,
-      transparent 75%, rgba(199, 206, 190, 0.09) 75%);
-  background-size: 28px 28px;
-  background-position: 0 0, 14px 14px;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc2NCcgaGVpZ2h0PSc2NCc+PGcgZmlsbD0nbm9uZScgc3Ryb2tlPScjRTBDMzg3JyBzdHJva2Utd2lkdGg9JzEnIHN0cm9rZS1vcGFjaXR5PScwLjUnPjxyZWN0IHg9JzE2JyB5PScxNicgd2lkdGg9JzMyJyBoZWlnaHQ9JzMyJy8+PHJlY3QgeD0nMTYnIHk9JzE2JyB3aWR0aD0nMzInIGhlaWdodD0nMzInIHRyYW5zZm9ybT0ncm90YXRlKDQ1IDMyIDMyKScvPjxjaXJjbGUgY3g9JzAnIGN5PScwJyByPSc0Jy8+PGNpcmNsZSBjeD0nNjQnIGN5PScwJyByPSc0Jy8+PGNpcmNsZSBjeD0nMCcgY3k9JzY0JyByPSc0Jy8+PGNpcmNsZSBjeD0nNjQnIGN5PSc2NCcgcj0nNCcvPjwvZz48L3N2Zz4K");
+  background-size: 64px 64px;
 }
 .pattern-geo-light {
-  background-image: linear-gradient(45deg, rgba(38, 43, 33, 0.045) 25%, transparent 25%,
-      transparent 75%, rgba(38, 43, 33, 0.045) 75%),
-    linear-gradient(45deg, rgba(38, 43, 33, 0.045) 25%, transparent 25%,
-      transparent 75%, rgba(38, 43, 33, 0.045) 75%);
-  background-size: 28px 28px;
-  background-position: 0 0, 14px 14px;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc2NCcgaGVpZ2h0PSc2NCc+PGcgZmlsbD0nbm9uZScgc3Ryb2tlPScjMTgxZDE1JyBzdHJva2Utd2lkdGg9JzEnIHN0cm9rZS1vcGFjaXR5PScwLjMnPjxyZWN0IHg9JzE2JyB5PScxNicgd2lkdGg9JzMyJyBoZWlnaHQ9JzMyJy8+PHJlY3QgeD0nMTYnIHk9JzE2JyB3aWR0aD0nMzInIGhlaWdodD0nMzInIHRyYW5zZm9ybT0ncm90YXRlKDQ1IDMyIDMyKScvPjxjaXJjbGUgY3g9JzAnIGN5PScwJyByPSc0Jy8+PGNpcmNsZSBjeD0nNjQnIGN5PScwJyByPSc0Jy8+PGNpcmNsZSBjeD0nMCcgY3k9JzY0JyByPSc0Jy8+PGNpcmNsZSBjeD0nNjQnIGN5PSc2NCcgcj0nNCcvPjwvZz48L3N2Zz4K");
+  background-size: 64px 64px;
 }
 .material-symbols-outlined {
   font-family: 'Material Symbols Outlined';
@@ -96,6 +101,6 @@ body {
   scrollbar-width: none;
 }
 ::selection {
-  background-color: #788768;
+  background-color: #526044;
   color: #ffffff;
 }
