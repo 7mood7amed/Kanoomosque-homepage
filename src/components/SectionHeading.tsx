@@ -1,4 +1,5 @@
 import React from 'react';
+import { Ornament } from './Ornament';
 
 type SectionHeadingProps = {
   eyebrow: string;
@@ -22,21 +23,24 @@ export function SectionHeading({
       'max-w-2xl',
       align === 'center' ? 'mx-auto text-center' : 'text-start'].
       join(' ')}>
-      
+
       <span
         className={[
-        'inline-block rounded-full px-4 py-1.5 text-xs font-bold tracking-[0.2em]',
+        'inline-block rounded-full px-4 py-1.5 text-label-md tracking-[0.15em]',
         isDark ?
-        'bg-white/10 text-silver-400' :
-        'bg-primary-container/40 text-primary'].
+        'bg-white/10 text-tertiary-fixed-dim' :
+        'bg-secondary-container/60 text-on-secondary-container'].
         join(' ')}>
 
         {eyebrow}
       </span>
+      <div className="mt-4">
+        <Ornament tone={tone} align={align} />
+      </div>
       <h2
         className={[
-        'font-display mt-4 text-4xl leading-[1.6] lg:text-5xl',
-        isDark ? 'text-pearl' : 'text-navy-900'].
+        'font-headline-md mt-4 text-4xl leading-[1.6] lg:text-5xl',
+        isDark ? 'text-inverse-on-surface' : 'text-on-surface'].
         join(' ')}>
 
         {title}
@@ -44,8 +48,8 @@ export function SectionHeading({
       {description &&
       <p
         className={[
-        'mt-4 text-lg leading-relaxed',
-        isDark ? 'text-silver-200/75' : 'text-navy-500'].
+        'mt-4 text-body-lg leading-relaxed',
+        isDark ? 'text-secondary-fixed-dim/85' : 'text-on-surface-variant'].
         join(' ')}>
 
           {description}
