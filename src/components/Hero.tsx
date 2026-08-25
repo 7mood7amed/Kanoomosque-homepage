@@ -11,10 +11,13 @@ export function Hero() {
       
       <img
         src={images.hero}
-        alt="حلقة قرآنية في قاعة المركز عند الغروب"
+        alt="مئذنة مركز عبدالرحمن كانو عند الغروب"
         className="absolute inset-0 -z-20 h-full w-full object-cover" />
-      
-      <div className="absolute inset-0 -z-10 bg-navy-950/85" aria-hidden="true" />
+
+      <div className="absolute inset-0 -z-10 bg-navy-950/45" aria-hidden="true" />
+      <div
+        className="absolute inset-0 -z-10 bg-gradient-to-t from-navy-950/95 via-navy-950/35 to-transparent"
+        aria-hidden="true" />
 
       <div className="mx-auto w-full max-w-7xl px-4 pb-20 pt-32 sm:px-6 lg:px-8">
         <motion.div
