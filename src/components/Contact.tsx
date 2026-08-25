@@ -13,7 +13,7 @@ type Fields = {
 const empty: Fields = { name: '', email: '', phone: '', subject: '', message: '' };
 
 const inputClass =
-'w-full border-b border-outline-variant bg-transparent px-1 py-3 text-[15px] text-on-surface placeholder:text-on-surface-variant/50 transition-colors focus:border-tertiary focus:outline-none';
+'w-full border-b border-white/20 bg-transparent px-1 py-3 text-[15px] text-inverse-on-surface placeholder:text-secondary-fixed-dim/50 transition-colors focus:border-tertiary-fixed-dim focus:outline-none';
 
 export function Contact() {
   const [values, setValues] = useState<Fields>(empty);
@@ -31,20 +31,21 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="relative w-full overflow-hidden rounded-lg border border-tertiary-fixed-dim/20 bg-surface-container-lowest/85 py-20 shadow-[0_25px_60px_-30px_rgba(24,29,21,0.35)] backdrop-blur-2xl sm:py-28">
-      <div className="pattern-geo-light absolute inset-0 opacity-[0.6]" aria-hidden="true" />
+    <section id="contact" className="relative w-full overflow-hidden rounded-lg bg-inverse-surface py-20 shadow-[0_25px_60px_-30px_rgba(24,29,21,0.55)] sm:py-28">
+      <div className="pattern-geo absolute inset-0 opacity-[0.08]" aria-hidden="true" />
       <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="تواصل معنا"
           title="لديك سؤال أو ترغب بالتسجيل؟"
-          description="اترك بياناتك وسيتواصل معك فريق المركز في أقرب وقت بإذن الله." />
+          description="اترك بياناتك وسيتواصل معك فريق المركز في أقرب وقت بإذن الله."
+          tone="dark" />
 
 
-        <div className="mt-12 rounded-lg border border-outline-variant bg-surface-container p-5 shadow-sm sm:p-9">
+        <div className="mt-12 rounded-2xl bg-white/10 p-5 shadow-sm backdrop-blur-xl sm:p-9">
             <form onSubmit={onSubmit}>
               <div className="grid gap-6 sm:grid-cols-2">
                 <div>
-                  <label htmlFor="name" className="mb-2 block text-label-md text-on-surface">
+                  <label htmlFor="name" className="mb-2 block text-label-md text-inverse-on-surface">
                     الاسم الكامل
                   </label>
                   <input
@@ -59,7 +60,7 @@ export function Contact() {
 
                 </div>
                 <div>
-                  <label htmlFor="email" className="mb-2 block text-label-md text-on-surface">
+                  <label htmlFor="email" className="mb-2 block text-label-md text-inverse-on-surface">
                     البريد الإلكتروني
                   </label>
                   <input
@@ -75,7 +76,7 @@ export function Contact() {
 
                 </div>
                 <div>
-                  <label htmlFor="phone" className="mb-2 block text-label-md text-on-surface">
+                  <label htmlFor="phone" className="mb-2 block text-label-md text-inverse-on-surface">
                     رقم الهاتف
                   </label>
                   <input
@@ -90,7 +91,7 @@ export function Contact() {
 
                 </div>
                 <div>
-                  <label htmlFor="subject" className="mb-2 block text-label-md text-on-surface">
+                  <label htmlFor="subject" className="mb-2 block text-label-md text-inverse-on-surface">
                     الموضوع
                   </label>
                   <input
@@ -107,7 +108,7 @@ export function Contact() {
               </div>
 
               <div className="mt-6">
-                <label htmlFor="message" className="mb-2 block text-label-md text-on-surface">
+                <label htmlFor="message" className="mb-2 block text-label-md text-inverse-on-surface">
                   الرسالة
                 </label>
                 <textarea
@@ -124,7 +125,7 @@ export function Contact() {
 
               <button
                 type="submit"
-                className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-tertiary-container px-8 py-4 text-body-md font-bold text-on-tertiary shadow-xl transition-all hover:scale-[1.02] hover:bg-tertiary hover:shadow-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-tertiary focus-visible:ring-offset-2 sm:w-auto">
+                className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-tertiary-container px-8 py-4 text-body-md font-bold text-on-tertiary shadow-xl transition-all hover:scale-[1.02] hover:bg-tertiary hover:shadow-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-tertiary-fixed-dim focus-visible:ring-offset-2 focus-visible:ring-offset-inverse-surface sm:w-auto">
 
                 <SendIcon className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
                 إرسال الرسالة
@@ -132,7 +133,7 @@ export function Contact() {
 
               <p aria-live="polite" className="mt-4 min-h-[1.5rem] text-body-md">
                 {sent &&
-                <span className="inline-flex items-center gap-2 font-bold text-primary">
+                <span className="inline-flex items-center gap-2 font-bold text-tertiary-fixed-dim">
                     <CheckCircle2Icon className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
                     تم استلام رسالتك، سنتواصل معك قريباً بإذن الله.
                   </span>

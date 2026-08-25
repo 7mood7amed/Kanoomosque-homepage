@@ -4,15 +4,18 @@ import { ArrowLeftIcon } from 'lucide-react';
 import { courses } from '../data/site';
 import { SectionHeading } from './SectionHeading';
 
+const cardCorner = ['mihrab-corner-start', 'mihrab-corner-end'];
+
 export function Courses() {
   return (
-    <section id="courses" className="relative w-full overflow-hidden rounded-lg border border-tertiary-fixed-dim/20 bg-surface-container-lowest/85 py-20 shadow-[0_25px_60px_-30px_rgba(24,29,21,0.35)] backdrop-blur-2xl sm:py-28">
-      <div className="pattern-geo-light absolute inset-0 opacity-[0.6]" aria-hidden="true" />
+    <section id="courses" className="relative w-full overflow-hidden rounded-lg bg-inverse-surface py-20 shadow-[0_25px_60px_-30px_rgba(24,29,21,0.55)] sm:py-28">
+      <div className="pattern-geo absolute inset-0 opacity-[0.08]" aria-hidden="true" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="مسارات التعليم"
           title="ابدأ من حيث أنت، وارتقِ بكتاب الله"
-          description="مساران أساسيان يغطيان رحلة الطالب من تصحيح الحرف إلى إتقان الحفظ، بإشراف معلمين مجازين ومتابعة دورية." />
+          description="مساران أساسيان يغطيان رحلة الطالب من تصحيح الحرف إلى إتقان الحفظ، بإشراف معلمين مجازين ومتابعة دورية."
+          tone="dark" />
 
 
         <div className="mt-14 grid gap-8 md:grid-cols-2">
@@ -23,7 +26,7 @@ export function Courses() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.5, delay: i * 0.1, ease: 'easeOut' }}
-            className="group rounded-lg border border-outline-variant bg-surface-container p-3 shadow-sm transition-shadow hover:shadow-md">
+            className={`group overflow-hidden bg-white/10 p-3 shadow-sm backdrop-blur-xl transition-colors hover:bg-white/[0.14] ${cardCorner[i] || 'rounded-2xl'}`}>
 
               <div className="arch-full relative h-60 overflow-hidden sm:h-72">
                 <img
@@ -43,15 +46,15 @@ export function Courses() {
               </div>
 
               <div className="px-5 pb-5 pt-7 text-center">
-                <h3 className="font-headline-sm text-2xl leading-[1.7] text-on-surface">
+                <h3 className="font-headline-sm text-2xl leading-[1.7] text-inverse-on-surface">
                   {course.title}
                 </h3>
-                <p className="mt-3 text-body-md leading-8 text-on-surface-variant">
+                <p className="mt-3 text-body-md leading-8 text-secondary-fixed-dim/80">
                   {course.description}
                 </p>
                 <a
                 href="#contact"
-                className="mt-6 inline-flex items-center gap-2 border-b border-tertiary/40 pb-1 text-label-md text-on-surface transition-colors hover:border-tertiary hover:text-tertiary">
+                className="mt-6 inline-flex items-center gap-2 border-b border-tertiary-fixed-dim/40 pb-1 text-label-md text-inverse-on-surface transition-colors hover:border-tertiary-fixed-dim hover:text-tertiary-fixed-dim">
 
                   سجّل في المسار
                   <ArrowLeftIcon className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
