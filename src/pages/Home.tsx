@@ -16,7 +16,7 @@ export function Home() {
   return (
     <>
       <Hero />
-      <div className="relative z-10 mx-auto flex w-full max-w-[1280px] flex-col gap-10 px-4 py-12 sm:gap-16 sm:px-8 sm:py-20 lg:px-12">
+      <div className="relative z-10 flex w-full flex-col">
         <About />
         <Stats />
         <Courses />

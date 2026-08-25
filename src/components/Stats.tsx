@@ -6,7 +6,7 @@ import { StarMark } from './Ornament';
 
 export function Stats() {
   return (
-    <section id="stats" className="relative w-full overflow-hidden rounded-lg bg-inverse-surface py-20 shadow-[0_25px_60px_-30px_rgba(24,29,21,0.55)] sm:py-28">
+    <section id="stats" className="relative w-full overflow-hidden border-t border-tertiary-fixed-dim/15 bg-inverse-surface py-20 sm:py-28">
       <div className="pattern-geo absolute inset-0 opacity-[0.08]" aria-hidden="true" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading

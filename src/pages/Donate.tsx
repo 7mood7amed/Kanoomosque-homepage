@@ -163,8 +163,7 @@ export function Donate() {
         </div>
       </section>
 
-      <div className="relative z-10 mx-auto flex w-full max-w-[1280px] flex-col px-4 py-12 sm:px-8 sm:py-20 lg:px-12">
-      <section className="relative w-full overflow-hidden rounded-lg border border-tertiary-fixed-dim/20 bg-surface-container-lowest/85 py-16 shadow-[0_25px_60px_-30px_rgba(24,29,21,0.35)] backdrop-blur-2xl sm:py-24">
+      <section className="relative w-full overflow-hidden border-t border-tertiary-fixed-dim/20 bg-surface-container-lowest py-16 sm:py-24">
         <div className="pattern-geo-light absolute inset-0 opacity-[0.6]" aria-hidden="true" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-3 lg:gap-12">
@@ -469,7 +468,6 @@ export function Donate() {
           </div>
         </div>
       </section>
-      </div>
     </>);
 
 }
