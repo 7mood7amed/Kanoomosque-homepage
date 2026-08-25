@@ -13,6 +13,13 @@ const pillars = [
 export function About() {
   return (
     <section id="about" className="relative w-full overflow-hidden bg-inverse-surface py-20 sm:py-28">
+      <img
+        src={images.donation}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover opacity-25" />
+
+      <div className="absolute inset-0 bg-inverse-surface/80" aria-hidden="true" />
       <div className="pattern-geo absolute inset-0 opacity-[0.08]" aria-hidden="true" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
@@ -32,9 +39,6 @@ export function About() {
 
               </div>
             </div>
-            <span className="absolute -top-4 start-8 flex h-12 w-12 items-center justify-center rounded-full border border-tertiary-fixed-dim/50 bg-inverse-surface text-tertiary-fixed-dim shadow-lg sm:-top-5 sm:start-12">
-              <StarMark className="h-5 w-5" />
-            </span>
           </motion.div>
 
           <div>
