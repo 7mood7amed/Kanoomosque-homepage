@@ -48,8 +48,8 @@ export function Initiatives() {
           <div className="relative grid gap-8 md:grid-cols-2">
             <div className="flex flex-col justify-center gap-6">
               <div>
-                <h3 className="font-headline-md text-inverse-on-surface">التبرع المباشر</h3>
-                <p className="mt-1 text-body-md text-secondary-fixed-dim/80">
+                <h3 className="font-headline-md text-2xl text-inverse-on-surface sm:text-3xl">التبرع المباشر</h3>
+                <p className="mt-1 text-base text-secondary-fixed-dim/80 sm:text-lg">
                   دعم عام لمشاريع وأنشطة المركز
                 </p>
               </div>
@@ -65,7 +65,7 @@ export function Initiatives() {
                       setCustomAmount('');
                     }}
                     className={[
-                    'rounded-lg py-3 text-label-md transition-all duration-300',
+                    'rounded-lg py-3 text-base transition-all duration-300 sm:py-4 sm:text-lg',
                     !customAmount && amount === value ?
                     'border border-tertiary-fixed-dim/30 bg-tertiary/40 text-tertiary-fixed-dim shadow-[0_0_15px_rgba(224,195,135,0.15)]' :
                     'bg-white/10 text-inverse-on-surface backdrop-blur-md hover:bg-tertiary/30'].
@@ -90,7 +90,7 @@ export function Initiatives() {
                 </div>
                 <Link
                   to={donateHref}
-                  className="group mt-2 flex w-full items-center justify-center gap-2 rounded-xl bg-tertiary-container py-4 text-label-md text-on-tertiary shadow-lg transition-all duration-300 hover:bg-tertiary">
+                  className="group mt-2 flex w-full items-center justify-center gap-2 rounded-xl bg-tertiary-container py-4 text-base text-on-tertiary shadow-lg transition-all duration-300 hover:bg-tertiary sm:py-5 sm:text-lg">
 
                   <span>تبرع الآن</span>
                   <ArrowLeftIcon className="h-4 w-4 transition-transform group-hover:-translate-x-1" strokeWidth={1.5} aria-hidden="true" />
@@ -121,7 +121,7 @@ export function Initiatives() {
 
       <div className="relative mx-auto mt-8 max-w-7xl px-4 sm:mt-14 sm:px-6 lg:px-8">
         <div className="mb-4 flex items-end justify-between border-b border-secondary-fixed-dim/20 pb-3 sm:mb-6">
-          <h3 className="font-headline-md text-inverse-on-surface">أبواب الكفالة الشهرية</h3>
+          <h3 className="font-headline-md text-2xl text-inverse-on-surface sm:text-3xl">أبواب الكفالة الشهرية</h3>
           <Link
             to="/donate"
             className="inline-flex items-center gap-1.5 text-label-md text-tertiary-fixed-dim transition-colors hover:text-tertiary-fixed">
@@ -147,21 +147,21 @@ export function Initiatives() {
                   alt={tier.title}
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
 
-                <span className="absolute end-2 top-2 rounded-full bg-white/30 px-2 py-0.5 text-sm text-inverse-on-surface backdrop-blur-md sm:end-3 sm:top-3 sm:px-3 sm:py-1 sm:text-caption">
+                <span className="absolute end-2 top-2 rounded-full bg-white/30 px-2 py-0.5 text-sm text-inverse-on-surface backdrop-blur-md sm:end-3 sm:top-3 sm:px-3.5 sm:py-1.5 sm:text-sm">
                   كفالة شهرية
                 </span>
               </div>
-              <h4 className="font-headline-sm mb-1 line-clamp-1 text-lg text-inverse-on-surface sm:mb-2">{tier.title}</h4>
-              <p className="mb-3 line-clamp-2 text-base text-secondary-fixed-dim/75 sm:mb-4 sm:text-body-md">
+              <h4 className="font-headline-sm mb-1 line-clamp-1 text-lg text-inverse-on-surface sm:mb-2 sm:text-2xl">{tier.title}</h4>
+              <p className="mb-3 line-clamp-2 text-base text-secondary-fixed-dim/75 sm:mb-4 sm:text-lg">
                 {tier.details}
               </p>
               <div className="mb-3 flex items-baseline justify-between sm:mb-4">
-                <span className="text-lg font-bold text-tertiary-fixed-dim">{tier.price}</span>
-                <span className="text-sm text-secondary-fixed-dim/70 sm:text-caption">{tier.unit}</span>
+                <span className="text-lg font-bold text-tertiary-fixed-dim sm:text-2xl">{tier.price}</span>
+                <span className="text-sm text-secondary-fixed-dim/70 sm:text-base">{tier.unit}</span>
               </div>
               <Link
                 to={`/donate?tier=${i}`}
-                className="flex w-full items-center justify-center gap-2 rounded-lg bg-white/10 py-2.5 text-base text-inverse-on-surface transition-colors hover:bg-primary-container sm:py-3 sm:text-label-md">
+                className="flex w-full items-center justify-center gap-2 rounded-lg bg-white/10 py-2.5 text-base text-inverse-on-surface transition-colors hover:bg-primary-container sm:py-3.5 sm:text-lg">
 
                 المساهمة
               </Link>

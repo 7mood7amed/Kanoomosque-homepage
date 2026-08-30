@@ -37,8 +37,8 @@ export function Stats() {
               stat.value
               }
               </p>
-              <p className="mt-1 text-body-md font-bold text-inverse-on-surface sm:mt-2">{stat.label}</p>
-              <p className="mt-1 text-caption leading-6 text-secondary-fixed-dim/75">{stat.caption}</p>
+              <p className="mt-1 text-body-md font-bold text-inverse-on-surface sm:mt-2 sm:text-lg">{stat.label}</p>
+              <p className="mt-1 text-caption leading-6 text-secondary-fixed-dim/75 sm:text-sm">{stat.caption}</p>
             </motion.div>
           )}
         </div>
