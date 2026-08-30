@@ -40,9 +40,9 @@ export function Header() {
           </span>
           <span className="leading-tight">
             <span className="font-headline-sm block text-inverse-on-surface sm:text-xl">
-              مركز عبدالرحمن كانو
+              عبد الرحمن جاسم كانو
             </span>
-            <span className="block text-[11px] tracking-wide text-secondary-fixed-dim">
+            <span className="font-headline-sm block text-[11px] tracking-wide text-secondary-fixed-dim">
               لتعليم القرآن الكريم وعلومه
             </span>
           </span>

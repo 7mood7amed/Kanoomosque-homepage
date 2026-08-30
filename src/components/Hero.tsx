@@ -32,7 +32,7 @@ export function Hero() {
             التسجيل مفتوح الآن
           </span>
 
-          <p className="font-headline-sm mt-8 text-tertiary-fixed-dim/90">
+          <p className="mt-8 text-body-lg font-bold text-tertiary-fixed-dim/90">
             وَمَا أَنفَقْتُم مِّن شَيْءٍ فَهُوَ يُخْلِفُهُ
           </p>
           <h1 className="font-display-lg mt-3 text-[40px] leading-[1.3] text-inverse-on-surface sm:text-[56px] lg:text-[72px]">

@@ -23,7 +23,7 @@ export function Camps() {
           onPhoto />
 
 
-        <div className="mt-8 grid grid-cols-2 gap-3 sm:mt-14 sm:gap-6">
+        <div className="mt-8 grid grid-cols-2 gap-4 sm:mt-14 sm:gap-6">
           {camps.map((camp, i) =>
           <motion.article
             key={camp.title}
@@ -33,7 +33,7 @@ export function Camps() {
             transition={{ duration: 0.45, delay: i * 0.07, ease: 'easeOut' }}
             className={`group overflow-hidden bg-white/10 shadow-none backdrop-blur-none transition-colors hover:bg-white/[0.14] sm:shadow-sm sm:backdrop-blur-xl ${cardCorner[i] || 'rounded-2xl'}`}>
 
-              <div className="relative h-20 overflow-hidden sm:h-48">
+              <div className="relative h-28 overflow-hidden sm:h-48">
                 <img
                   src={camp.image}
                   alt={camp.title}
@@ -42,7 +42,7 @@ export function Camps() {
                 <div className="absolute inset-0 bg-inverse-surface/10" aria-hidden="true" />
                 <span
                   className={[
-                  'absolute end-2 top-2 inline-flex items-center gap-1 rounded-full bg-white/30 px-2 py-0.5 text-xs font-bold text-inverse-on-surface shadow-sm backdrop-blur-md sm:end-4 sm:top-4 sm:gap-1.5 sm:px-3 sm:py-1 sm:text-caption'].
+                  'absolute end-2 top-2 inline-flex items-center gap-1.5 rounded-full bg-white/30 px-2.5 py-1 text-sm font-bold text-inverse-on-surface shadow-sm backdrop-blur-md sm:end-4 sm:top-4 sm:gap-1.5 sm:px-3 sm:py-1 sm:text-caption'].
                   join(' ')}>
 
                   <span
@@ -56,21 +56,21 @@ export function Camps() {
                 </span>
               </div>
 
-              <div className="p-2 sm:p-6">
-                <h3 className="font-headline-sm line-clamp-2 text-base leading-snug text-inverse-on-surface sm:text-xl sm:leading-[1.7]">
+              <div className="p-3 sm:p-6">
+                <h3 className="font-headline-sm line-clamp-2 text-lg leading-snug text-inverse-on-surface sm:text-xl sm:leading-[1.7]">
                   {camp.title}
                 </h3>
-                <p className="mt-1 line-clamp-2 text-sm leading-5 text-secondary-fixed-dim/80 sm:mt-2 sm:line-clamp-3 sm:text-body-md sm:leading-8">
+                <p className="mt-1.5 line-clamp-3 text-base leading-6 text-secondary-fixed-dim/80 sm:mt-2 sm:line-clamp-3 sm:text-body-md sm:leading-8">
                   {camp.description}
                 </p>
-                <div className="mt-2 border-t border-white/10 pt-2 sm:mt-5 sm:flex sm:items-center sm:justify-between sm:pt-4">
+                <div className="mt-3 border-t border-white/10 pt-3 sm:mt-5 sm:flex sm:items-center sm:justify-between sm:pt-4">
                   <a
                     href="#contact"
                     aria-label={`سجّل في ${camp.title}`}
-                    className="inline-flex items-center gap-1.5 text-sm text-inverse-on-surface transition-colors hover:text-tertiary-fixed-dim sm:gap-2 sm:text-label-md">
+                    className="inline-flex items-center gap-1.5 text-base text-inverse-on-surface transition-colors hover:text-tertiary-fixed-dim sm:gap-2 sm:text-label-md">
 
                     اقرأ المزيد
-                    <ArrowLeftIcon className="h-3 w-3 sm:h-4 sm:w-4" strokeWidth={1.5} aria-hidden="true" />
+                    <ArrowLeftIcon className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
                   </a>
                   <span className="mt-1.5 hidden items-center gap-1.5 text-caption text-secondary-fixed-dim/70 sm:mt-0 sm:flex">
                     <CalendarDaysIcon className="h-3.5 w-3.5" strokeWidth={1.5} aria-hidden="true" />

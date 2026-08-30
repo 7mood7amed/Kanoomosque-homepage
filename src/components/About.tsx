@@ -37,7 +37,7 @@ export function About() {
           </motion.div>
 
           <div>
-            <span className="inline-block rounded-full bg-white/10 px-4 py-1.5 text-label-md tracking-[0.15em] text-tertiary-fixed-dim">
+            <span className="inline-block rounded-full bg-white/10 px-5 py-2 text-base font-bold tracking-[0.12em] text-tertiary-fixed-dim sm:text-lg">
               من نحن
             </span>
             <h2 className="text-shadow-photo font-headline-md mt-4 text-4xl font-bold leading-[1.35] text-inverse-on-surface sm:text-5xl sm:leading-[1.3] lg:text-6xl">

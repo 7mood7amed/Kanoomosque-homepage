@@ -374,7 +374,7 @@ export function Donate() {
                       <div className="mx-auto mt-4 w-fit rounded-xl bg-white p-4 shadow-inner">
                         <QRCodeSVG value={benefitPayPayload} size={168} />
                       </div>
-                      <p className="font-headline-sm mt-4 text-2xl text-on-surface">
+                      <p className="mt-4 text-2xl font-bold text-on-surface">
                         {toArabicNumber(finalAmount)} د.ب
                       </p>
                       <p className="mt-1 text-caption text-on-surface-variant">
@@ -449,7 +449,7 @@ export function Donate() {
                   <div className="mt-4 space-y-3 text-body-md">
                     <div className="flex items-center justify-between">
                       <span className="text-secondary-fixed-dim/70">الفئة</span>
-                      <span className="font-headline-sm text-inverse-on-surface">{selectedCategory.title}</span>
+                      <span className="font-bold text-inverse-on-surface">{selectedCategory.title}</span>
                     </div>
                     <div className="flex items-center justify-between">
                       <span className="text-secondary-fixed-dim/70">التكرار</span>
@@ -457,7 +457,7 @@ export function Donate() {
                     </div>
                     <div className="flex items-center justify-between border-t border-white/10 pt-3">
                       <span className="text-secondary-fixed-dim/70">المبلغ</span>
-                      <span className="font-headline-sm text-lg text-inverse-on-surface">
+                      <span className="text-lg font-bold text-inverse-on-surface">
                         {toArabicNumber(finalAmount)} د.ب
                       </span>
                     </div>

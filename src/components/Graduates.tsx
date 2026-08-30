@@ -20,7 +20,7 @@ export function Graduates() {
           onPhoto />
 
 
-        <ul className="no-scrollbar mt-8 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2 sm:mt-14 sm:gap-5 lg:grid lg:grid-cols-5 lg:overflow-visible">
+        <ul className="no-scrollbar mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 sm:mt-14 sm:gap-5 lg:grid lg:grid-cols-5 lg:overflow-visible">
           {graduates.map((grad, i) =>
           <motion.li
             key={grad.name}
@@ -28,24 +28,24 @@ export function Graduates() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.45, delay: i * 0.06, ease: 'easeOut' }}
-            className="w-36 shrink-0 snap-start sm:w-64 lg:w-auto">
+            className="w-44 shrink-0 snap-start sm:w-64 lg:w-auto">
 
-              <figure className="group rounded-md bg-white/10 p-1.5 shadow-none backdrop-blur-none transition-colors hover:bg-white/[0.14] sm:rounded-2xl sm:p-2.5 sm:shadow-sm sm:backdrop-blur-xl">
+              <figure className="group rounded-lg bg-white/10 p-2 shadow-none backdrop-blur-none transition-colors hover:bg-white/[0.14] sm:rounded-2xl sm:p-2.5 sm:shadow-sm sm:backdrop-blur-xl">
                 <div className="arch-full relative aspect-[7/10] overflow-hidden">
                   <img
                   src={grad.image}
                   alt={grad.name}
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
 
-                  <span className="absolute end-2 top-4 rounded-full bg-tertiary-container/90 px-2 py-0.5 text-xs font-bold text-on-tertiary backdrop-blur-sm sm:end-3 sm:top-6 sm:px-2.5 sm:py-1 sm:text-caption">
+                  <span className="absolute end-2 top-4 rounded-full bg-tertiary-container/90 px-2.5 py-1 text-sm font-bold text-on-tertiary backdrop-blur-sm sm:end-3 sm:top-6 sm:px-2.5 sm:py-1 sm:text-caption">
                     {grad.year}
                   </span>
                 </div>
-                <figcaption className="px-1 py-2 text-center sm:px-2 sm:py-4">
-                  <p className="font-headline-sm line-clamp-1 text-sm leading-snug text-inverse-on-surface sm:text-base sm:leading-[1.7]">
+                <figcaption className="px-1 py-3 text-center sm:px-2 sm:py-4">
+                  <p className="font-headline-sm line-clamp-1 text-base leading-snug text-inverse-on-surface sm:text-base sm:leading-[1.7]">
                     {grad.name}
                   </p>
-                  <p className="mt-0.5 text-xs text-secondary-fixed-dim/75 sm:mt-1 sm:text-caption">إجازة بالسند المتصل</p>
+                  <p className="mt-1 text-sm text-secondary-fixed-dim/75 sm:mt-1 sm:text-caption">إجازة بالسند المتصل</p>
                 </figcaption>
               </figure>
             </motion.li>

@@ -22,7 +22,7 @@ export function Initiatives() {
       <SectionDivider />
       <div className="relative mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
         <div className="relative inline-block">
-          <p className="font-headline-sm text-tertiary-fixed-dim/90">
+          <p className="text-body-lg font-bold text-tertiary-fixed-dim/90">
             وَمَا أَنفَقْتُم مِّن شَيْءٍ فَهُوَ يُخْلِفُهُ
           </p>
           <h2 className="font-display-lg mt-2 text-4xl font-bold leading-[1.35] text-inverse-on-surface sm:text-5xl sm:leading-[1.3] lg:text-6xl">
@@ -131,7 +131,7 @@ export function Initiatives() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 gap-3 sm:gap-6 md:grid-cols-3">
+        <div className="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-3">
           {tiers.map((tier, i) =>
           <motion.article
             key={tier.title}
@@ -139,29 +139,29 @@ export function Initiatives() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.45, delay: i * 0.08, ease: 'easeOut' }}
-            className={`group relative overflow-hidden bg-white/10 p-2 backdrop-blur-none transition-all duration-500 hover:-translate-y-2 sm:p-4 sm:backdrop-blur-xl ${cardCorner[i] || 'rounded-2xl'}`}>
+            className={`group relative overflow-hidden bg-white/10 p-3 backdrop-blur-none transition-all duration-500 hover:-translate-y-2 sm:p-4 sm:backdrop-blur-xl ${cardCorner[i] || 'rounded-2xl'}`}>
 
-              <div className="relative mb-2 h-20 overflow-hidden rounded-lg sm:mb-4 sm:h-48 sm:rounded-xl">
+              <div className="relative mb-3 h-28 overflow-hidden rounded-lg sm:mb-4 sm:h-48 sm:rounded-xl">
                 <img
                   src={tier.image}
                   alt={tier.title}
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
 
-                <span className="absolute end-2 top-2 rounded-full bg-white/30 px-2 py-0.5 text-xs text-inverse-on-surface backdrop-blur-md sm:end-3 sm:top-3 sm:px-3 sm:py-1 sm:text-caption">
+                <span className="absolute end-2 top-2 rounded-full bg-white/30 px-2 py-0.5 text-sm text-inverse-on-surface backdrop-blur-md sm:end-3 sm:top-3 sm:px-3 sm:py-1 sm:text-caption">
                   كفالة شهرية
                 </span>
               </div>
-              <h4 className="font-headline-sm mb-1 line-clamp-1 text-base text-inverse-on-surface sm:mb-2 sm:text-lg">{tier.title}</h4>
-              <p className="mb-2 line-clamp-2 text-sm text-secondary-fixed-dim/75 sm:mb-4 sm:text-body-md">
+              <h4 className="font-headline-sm mb-1 line-clamp-1 text-lg text-inverse-on-surface sm:mb-2">{tier.title}</h4>
+              <p className="mb-3 line-clamp-2 text-base text-secondary-fixed-dim/75 sm:mb-4 sm:text-body-md">
                 {tier.details}
               </p>
-              <div className="mb-2 flex items-baseline justify-between sm:mb-4">
-                <span className="font-headline-sm text-base text-tertiary-fixed-dim sm:text-lg">{tier.price}</span>
-                <span className="text-xs text-secondary-fixed-dim/70 sm:text-caption">{tier.unit}</span>
+              <div className="mb-3 flex items-baseline justify-between sm:mb-4">
+                <span className="text-lg font-bold text-tertiary-fixed-dim">{tier.price}</span>
+                <span className="text-sm text-secondary-fixed-dim/70 sm:text-caption">{tier.unit}</span>
               </div>
               <Link
                 to={`/donate?tier=${i}`}
-                className="flex w-full items-center justify-center gap-2 rounded-lg bg-white/10 py-2 text-sm text-inverse-on-surface transition-colors hover:bg-primary-container sm:py-3 sm:text-label-md">
+                className="flex w-full items-center justify-center gap-2 rounded-lg bg-white/10 py-2.5 text-base text-inverse-on-surface transition-colors hover:bg-primary-container sm:py-3 sm:text-label-md">
 
                 المساهمة
               </Link>

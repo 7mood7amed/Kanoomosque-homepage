@@ -15,7 +15,7 @@ type Fields = {
 const empty: Fields = { name: '', email: '', phone: '', subject: '', message: '' };
 
 const inputClass =
-'w-full border-b border-white/20 bg-transparent px-1 py-3 text-[15px] text-inverse-on-surface placeholder:text-secondary-fixed-dim/50 transition-colors focus:border-tertiary-fixed-dim focus:outline-none';
+'w-full border-b border-white/20 bg-transparent px-1 py-3 text-base text-inverse-on-surface placeholder:text-secondary-fixed-dim/50 transition-colors focus:border-tertiary-fixed-dim focus:outline-none';
 
 export function Contact() {
   const [values, setValues] = useState<Fields>(empty);
@@ -51,9 +51,9 @@ export function Contact() {
           tone="dark" />
 
 
-        <div className="mt-6 rounded-md bg-white/10 p-3 shadow-sm backdrop-blur-xl sm:mt-12 sm:rounded-2xl sm:p-9">
+        <div className="mt-6 rounded-lg bg-white/10 p-4 shadow-sm backdrop-blur-xl sm:mt-12 sm:rounded-2xl sm:p-9">
             <form onSubmit={onSubmit}>
-              <div className="grid gap-3 sm:grid-cols-2 sm:gap-6">
+              <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
                 <div>
                   <label htmlFor="name" className="mb-2 block text-label-md text-inverse-on-surface">
                     الاسم الكامل
