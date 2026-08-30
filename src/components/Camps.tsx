@@ -57,7 +57,7 @@ export function Camps() {
               </div>
 
               <div className="p-3 sm:p-7">
-                <h3 className="font-headline-sm line-clamp-2 text-lg leading-snug text-inverse-on-surface sm:text-2xl sm:leading-[1.5] lg:text-3xl">
+                <h3 className="line-clamp-2 text-lg leading-snug text-inverse-on-surface sm:text-2xl sm:leading-[1.5] lg:text-3xl">
                   {camp.title}
                 </h3>
                 <p className="mt-1.5 line-clamp-3 text-base leading-6 text-secondary-fixed-dim/80 sm:mt-3 sm:line-clamp-3 sm:text-lg sm:leading-8 lg:text-xl">

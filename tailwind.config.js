@@ -68,6 +68,7 @@ export default {content: [
       },
       fontFamily: {
         sans: ['Tajawal', 'system-ui', 'sans-serif'],
+        quran: ['Amiri Quran', 'serif'],
         display: ['Aref Ruqaa', 'Tajawal', 'serif'],
         'display-lg': ['Aref Ruqaa', 'serif'],
         'display-lg-mobile': ['Aref Ruqaa', 'serif'],

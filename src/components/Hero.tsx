@@ -33,7 +33,7 @@ export function Hero() {
           </span>
 
           <p className="mt-8 text-body-lg font-bold text-tertiary-fixed-dim/90">
-            وَمَا أَنفَقْتُم مِّن شَيْءٍ فَهُوَ يُخْلِفُهُ
+            إِنَّهُ لَقُرْآنٌ كَرِيمٌ (77) فِي كِتَابٍ مَّكْنُونٍ (78)
           </p>
           <h1 className="font-display-lg mt-3 text-[40px] leading-[1.3] text-inverse-on-surface sm:text-[56px] lg:text-[72px]">
             كن من أهل القرآن…

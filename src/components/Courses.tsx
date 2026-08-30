@@ -55,7 +55,7 @@ export function Courses() {
               </div>
 
               <div className="px-2 pb-2 pt-3 text-center sm:px-7 sm:pb-7 sm:pt-9">
-                <h3 className="font-headline-sm line-clamp-2 text-lg leading-snug text-inverse-on-surface sm:text-3xl sm:leading-[1.5] lg:text-4xl">
+                <h3 className="line-clamp-2 text-lg leading-snug text-inverse-on-surface sm:text-3xl sm:leading-[1.5] lg:text-4xl">
                   {course.title}
                 </h3>
                 <p className="mt-1.5 line-clamp-3 text-base leading-6 text-secondary-fixed-dim/80 sm:mt-4 sm:line-clamp-none sm:text-lg sm:leading-8 lg:text-xl">

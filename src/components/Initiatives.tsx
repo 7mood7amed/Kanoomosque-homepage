@@ -25,7 +25,7 @@ export function Initiatives() {
           <p className="text-body-lg font-bold text-tertiary-fixed-dim/90">
             وَمَا أَنفَقْتُم مِّن شَيْءٍ فَهُوَ يُخْلِفُهُ
           </p>
-          <h2 className="font-display-lg mt-2 text-4xl font-bold leading-[1.35] text-inverse-on-surface sm:text-5xl sm:leading-[1.3] lg:text-6xl">
+          <h2 className="mt-2 text-4xl font-bold leading-[1.35] text-inverse-on-surface sm:text-5xl sm:leading-[1.3] lg:text-6xl">
             استثمر في أعظم مشروع
           </h2>
           <div className="absolute -top-4 -end-12 -z-10 h-24 w-24 rounded-full bg-tertiary-fixed-dim/10 blur-2xl" aria-hidden="true" />
@@ -48,7 +48,7 @@ export function Initiatives() {
           <div className="relative grid gap-8 md:grid-cols-2">
             <div className="flex flex-col justify-center gap-6">
               <div>
-                <h3 className="font-headline-md text-2xl text-inverse-on-surface sm:text-3xl lg:text-4xl">التبرع المباشر</h3>
+                <h3 className="text-2xl text-inverse-on-surface sm:text-3xl lg:text-4xl">التبرع المباشر</h3>
                 <p className="mt-1 text-base text-secondary-fixed-dim/80 sm:text-lg lg:text-xl">
                   دعم عام لمشاريع وأنشطة المركز
                 </p>
@@ -121,7 +121,7 @@ export function Initiatives() {
 
       <div className="relative mx-auto mt-8 max-w-7xl px-4 sm:mt-14 sm:px-6 lg:px-8">
         <div className="mb-4 flex items-end justify-between border-b border-secondary-fixed-dim/20 pb-3 sm:mb-6">
-          <h3 className="font-headline-md text-2xl text-inverse-on-surface sm:text-3xl lg:text-4xl">أبواب الكفالة الشهرية</h3>
+          <h3 className="text-2xl text-inverse-on-surface sm:text-3xl lg:text-4xl">أبواب الكفالة الشهرية</h3>
           <Link
             to="/donate"
             className="inline-flex items-center gap-1.5 text-label-md text-tertiary-fixed-dim transition-colors hover:text-tertiary-fixed">
@@ -151,7 +151,7 @@ export function Initiatives() {
                   كفالة شهرية
                 </span>
               </div>
-              <h4 className="font-headline-sm mb-1 line-clamp-1 text-lg text-inverse-on-surface sm:mb-2 sm:text-2xl lg:text-3xl">{tier.title}</h4>
+              <h4 className="mb-1 line-clamp-1 text-lg text-inverse-on-surface sm:mb-2 sm:text-2xl lg:text-3xl">{tier.title}</h4>
               <p className="mb-3 line-clamp-2 text-base text-secondary-fixed-dim/75 sm:mb-4 sm:text-lg lg:text-xl">
                 {tier.details}
               </p>
