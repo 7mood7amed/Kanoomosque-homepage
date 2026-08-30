@@ -30,15 +30,15 @@ export function Stats() {
             transition={{ duration: 0.45, delay: i * 0.06, ease: 'easeOut' }}
             className="rounded-lg bg-white/10 px-3 pb-3 pt-4 text-center shadow-none backdrop-blur-none transition-colors hover:bg-white/[0.14] sm:px-6 sm:pb-6 sm:pt-8 sm:shadow-sm sm:backdrop-blur-md">
 
-              <p className="text-2xl font-bold leading-[1.4] text-inverse-on-surface sm:text-4xl sm:leading-[1.5]">
+              <p className="text-2xl font-bold leading-[1.4] text-inverse-on-surface sm:text-4xl sm:leading-[1.5] lg:text-5xl">
                 {stat.value === '—' ?
-              <span className="text-lg text-secondary-fixed-dim sm:text-2xl">مقرئون</span> :
+              <span className="text-lg text-secondary-fixed-dim sm:text-2xl lg:text-3xl">مقرئون</span> :
 
               stat.value
               }
               </p>
-              <p className="mt-1 text-body-md font-bold text-inverse-on-surface sm:mt-2 sm:text-lg">{stat.label}</p>
-              <p className="mt-1 text-caption leading-6 text-secondary-fixed-dim/75 sm:text-sm">{stat.caption}</p>
+              <p className="mt-1 text-body-md font-bold text-inverse-on-surface sm:mt-3 sm:text-xl">{stat.label}</p>
+              <p className="mt-1 text-caption leading-6 text-secondary-fixed-dim/75 sm:text-base">{stat.caption}</p>
             </motion.div>
           )}
         </div>

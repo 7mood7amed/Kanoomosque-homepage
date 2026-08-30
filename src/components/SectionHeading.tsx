@@ -30,7 +30,7 @@ export function SectionHeading({
 
       <span
         className={[
-        'inline-block rounded-full px-5 py-2 text-base font-bold tracking-[0.12em] sm:text-lg',
+        'inline-block rounded-full px-5 py-2 text-base font-bold tracking-[0.12em] sm:px-6 sm:py-2.5 sm:text-xl lg:text-2xl',
         isDark ?
         'bg-white/10 text-tertiary-fixed-dim' :
         'bg-secondary-container/60 text-on-secondary-container'].

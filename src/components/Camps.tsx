@@ -42,7 +42,7 @@ export function Camps() {
                 <div className="absolute inset-0 bg-inverse-surface/10" aria-hidden="true" />
                 <span
                   className={[
-                  'absolute end-2 top-2 inline-flex items-center gap-1.5 rounded-full bg-white/30 px-2.5 py-1 text-sm font-bold text-inverse-on-surface shadow-sm backdrop-blur-md sm:end-4 sm:top-4 sm:gap-2 sm:px-4 sm:py-1.5 sm:text-sm'].
+                  'absolute end-2 top-2 inline-flex items-center gap-1.5 rounded-full bg-white/30 px-2.5 py-1 text-sm font-bold text-inverse-on-surface shadow-sm backdrop-blur-md sm:end-4 sm:top-4 sm:gap-2 sm:px-4 sm:py-1.5 sm:text-base'].
                   join(' ')}>
 
                   <span
@@ -56,23 +56,23 @@ export function Camps() {
                 </span>
               </div>
 
-              <div className="p-3 sm:p-6">
-                <h3 className="font-headline-sm line-clamp-2 text-lg leading-snug text-inverse-on-surface sm:text-2xl sm:leading-[1.5]">
+              <div className="p-3 sm:p-7">
+                <h3 className="font-headline-sm line-clamp-2 text-lg leading-snug text-inverse-on-surface sm:text-2xl sm:leading-[1.5] lg:text-3xl">
                   {camp.title}
                 </h3>
-                <p className="mt-1.5 line-clamp-3 text-base leading-6 text-secondary-fixed-dim/80 sm:mt-3 sm:line-clamp-3 sm:text-lg sm:leading-8">
+                <p className="mt-1.5 line-clamp-3 text-base leading-6 text-secondary-fixed-dim/80 sm:mt-3 sm:line-clamp-3 sm:text-lg sm:leading-8 lg:text-xl">
                   {camp.description}
                 </p>
-                <div className="mt-3 border-t border-white/10 pt-3 sm:mt-5 sm:flex sm:items-center sm:justify-between sm:pt-4">
+                <div className="mt-3 border-t border-white/10 pt-3 sm:mt-6 sm:flex sm:items-center sm:justify-between sm:pt-5">
                   <a
                     href="#contact"
                     aria-label={`سجّل في ${camp.title}`}
-                    className="inline-flex items-center gap-1.5 text-base text-inverse-on-surface transition-colors hover:text-tertiary-fixed-dim sm:gap-2 sm:text-base">
+                    className="inline-flex items-center gap-1.5 text-base text-inverse-on-surface transition-colors hover:text-tertiary-fixed-dim sm:gap-2 sm:text-lg">
 
                     اقرأ المزيد
-                    <ArrowLeftIcon className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
+                    <ArrowLeftIcon className="h-4 w-4 sm:h-5 sm:w-5" strokeWidth={1.5} aria-hidden="true" />
                   </a>
-                  <span className="mt-1.5 hidden items-center gap-1.5 text-caption text-secondary-fixed-dim/70 sm:mt-0 sm:flex sm:text-sm">
+                  <span className="mt-1.5 hidden items-center gap-1.5 text-caption text-secondary-fixed-dim/70 sm:mt-0 sm:flex sm:text-base">
                     <CalendarDaysIcon className="h-3.5 w-3.5" strokeWidth={1.5} aria-hidden="true" />
                     {camp.period}
                   </span>

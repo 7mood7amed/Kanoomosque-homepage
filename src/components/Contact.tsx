@@ -15,7 +15,7 @@ type Fields = {
 const empty: Fields = { name: '', email: '', phone: '', subject: '', message: '' };
 
 const inputClass =
-'w-full border-b border-white/20 bg-transparent px-1 py-3 text-base text-inverse-on-surface placeholder:text-secondary-fixed-dim/50 transition-colors focus:border-tertiary-fixed-dim focus:outline-none';
+'w-full border-b border-white/20 bg-transparent px-1 py-3 text-base text-inverse-on-surface placeholder:text-secondary-fixed-dim/50 transition-colors focus:border-tertiary-fixed-dim focus:outline-none sm:py-4 sm:text-lg';
 
 export function Contact() {
   const [values, setValues] = useState<Fields>(empty);
@@ -55,7 +55,7 @@ export function Contact() {
             <form onSubmit={onSubmit}>
               <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
                 <div>
-                  <label htmlFor="name" className="mb-2 block text-label-md text-inverse-on-surface">
+                  <label htmlFor="name" className="mb-2 block text-label-md text-inverse-on-surface sm:text-lg">
                     الاسم الكامل
                   </label>
                   <input
@@ -70,7 +70,7 @@ export function Contact() {
 
                 </div>
                 <div>
-                  <label htmlFor="email" className="mb-2 block text-label-md text-inverse-on-surface">
+                  <label htmlFor="email" className="mb-2 block text-label-md text-inverse-on-surface sm:text-lg">
                     البريد الإلكتروني
                   </label>
                   <input
@@ -86,7 +86,7 @@ export function Contact() {
 
                 </div>
                 <div>
-                  <label htmlFor="phone" className="mb-2 block text-label-md text-inverse-on-surface">
+                  <label htmlFor="phone" className="mb-2 block text-label-md text-inverse-on-surface sm:text-lg">
                     رقم الهاتف
                   </label>
                   <input
@@ -101,7 +101,7 @@ export function Contact() {
 
                 </div>
                 <div>
-                  <label htmlFor="subject" className="mb-2 block text-label-md text-inverse-on-surface">
+                  <label htmlFor="subject" className="mb-2 block text-label-md text-inverse-on-surface sm:text-lg">
                     الموضوع
                   </label>
                   <input
@@ -118,7 +118,7 @@ export function Contact() {
               </div>
 
               <div className="mt-6">
-                <label htmlFor="message" className="mb-2 block text-label-md text-inverse-on-surface">
+                <label htmlFor="message" className="mb-2 block text-label-md text-inverse-on-surface sm:text-lg">
                   الرسالة
                 </label>
                 <textarea
@@ -135,7 +135,7 @@ export function Contact() {
 
               <button
                 type="submit"
-                className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-tertiary-container px-8 py-4 text-body-md font-bold text-on-tertiary shadow-xl transition-all hover:scale-[1.02] hover:bg-tertiary hover:shadow-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-tertiary-fixed-dim focus-visible:ring-offset-2 focus-visible:ring-offset-inverse-surface sm:w-auto">
+                className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-tertiary-container px-8 py-4 text-body-md font-bold text-on-tertiary shadow-xl transition-all hover:scale-[1.02] hover:bg-tertiary hover:shadow-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-tertiary-fixed-dim focus-visible:ring-offset-2 focus-visible:ring-offset-inverse-surface sm:w-auto sm:px-10 sm:py-5 sm:text-lg">
 
                 <SendIcon className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
                 إرسال الرسالة
