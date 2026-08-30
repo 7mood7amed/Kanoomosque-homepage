@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { CheckCircle2Icon, SendIcon } from 'lucide-react';
+import { images } from '../data/site';
 import { SectionHeading } from './SectionHeading';
+import { SectionDivider } from './SectionDivider';
 
 type Fields = {
   name: string;
@@ -31,8 +33,16 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="relative w-full overflow-hidden border-t border-tertiary-fixed-dim/15 bg-inverse-surface py-20 sm:py-28">
+    <section id="contact" className="relative w-full overflow-hidden border-t border-tertiary-fixed-dim/15 bg-inverse-surface py-10 sm:py-28">
+      <img
+        src={images.about}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover opacity-25" />
+
+      <div className="absolute inset-0 bg-inverse-surface/80" aria-hidden="true" />
       <div className="pattern-geo absolute inset-0 opacity-[0.08]" aria-hidden="true" />
+      <SectionDivider />
       <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="تواصل معنا"
@@ -41,9 +51,9 @@ export function Contact() {
           tone="dark" />
 
 
-        <div className="mt-12 rounded-2xl bg-white/10 p-5 shadow-sm backdrop-blur-xl sm:p-9">
+        <div className="mt-6 rounded-md bg-white/10 p-3 shadow-sm backdrop-blur-xl sm:mt-12 sm:rounded-2xl sm:p-9">
             <form onSubmit={onSubmit}>
-              <div className="grid gap-6 sm:grid-cols-2">
+              <div className="grid gap-3 sm:grid-cols-2 sm:gap-6">
                 <div>
                   <label htmlFor="name" className="mb-2 block text-label-md text-inverse-on-surface">
                     الاسم الكامل

@@ -1,21 +1,26 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { stats } from '../data/site';
+import { images, stats } from '../data/site';
 import { SectionHeading } from './SectionHeading';
 import { StarMark } from './Ornament';
+import { ParallaxBackground } from './ParallaxBackground';
+import { SectionDivider } from './SectionDivider';
 
 export function Stats() {
   return (
-    <section id="stats" className="relative w-full overflow-hidden border-t border-tertiary-fixed-dim/15 bg-inverse-surface py-20 sm:py-28">
-      <div className="pattern-geo absolute inset-0 opacity-[0.08]" aria-hidden="true" />
+    <section id="stats" className="relative w-full overflow-hidden border-t border-tertiary-fixed-dim/15 bg-inverse-surface py-10 sm:py-28">
+      <ParallaxBackground src={images.hero} />
+      <div className="absolute inset-0 bg-gradient-to-b from-inverse-surface/85 via-inverse-surface/40 via-20% to-inverse-surface/50" aria-hidden="true" />
+      <SectionDivider />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="منجزات وثمرات"
           title="أرقام تعكس بركة العمل واستمراره"
-          tone="dark" />
+          tone="dark"
+          onPhoto />
 
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-8 grid grid-cols-2 gap-3 sm:mt-14 sm:gap-5 lg:grid-cols-5">
           {stats.map((stat, i) =>
           <motion.div
             key={stat.label}
@@ -23,16 +28,16 @@ export function Stats() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.45, delay: i * 0.06, ease: 'easeOut' }}
-            className="rounded-lg bg-white/10 px-6 pb-6 pt-8 text-center shadow-sm backdrop-blur-md transition-colors hover:bg-white/[0.14]">
+            className="rounded-lg bg-white/10 px-3 pb-3 pt-4 text-center shadow-none backdrop-blur-none transition-colors hover:bg-white/[0.14] sm:px-6 sm:pb-6 sm:pt-8 sm:shadow-sm sm:backdrop-blur-md">
 
-              <p className="font-display-lg text-4xl leading-[1.5] text-inverse-on-surface">
+              <p className="font-display-lg text-2xl leading-[1.4] text-inverse-on-surface sm:text-4xl sm:leading-[1.5]">
                 {stat.value === '—' ?
-              <span className="text-2xl text-secondary-fixed-dim">مقرئون</span> :
+              <span className="text-lg text-secondary-fixed-dim sm:text-2xl">مقرئون</span> :
 
               stat.value
               }
               </p>
-              <p className="mt-2 text-body-md font-bold text-inverse-on-surface">{stat.label}</p>
+              <p className="mt-1 text-body-md font-bold text-inverse-on-surface sm:mt-2">{stat.label}</p>
               <p className="mt-1 text-caption leading-6 text-secondary-fixed-dim/75">{stat.caption}</p>
             </motion.div>
           )}
@@ -43,18 +48,18 @@ export function Stats() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="frame-ornate-dark relative mt-8 overflow-hidden rounded-3xl bg-black/20 p-3 shadow-2xl backdrop-blur-md">
+          className="frame-ornate-dark relative mt-5 overflow-hidden rounded-2xl bg-black/20 p-3 shadow-2xl backdrop-blur-md sm:mt-8 sm:rounded-3xl">
 
           <StarMark className="absolute start-6 top-6 h-6 w-6 text-tertiary-fixed-dim/50 sm:start-10 sm:top-8" />
           <StarMark className="absolute end-6 bottom-6 h-6 w-6 text-tertiary-fixed-dim/50 sm:end-10 sm:bottom-8" />
-          <div className="relative px-8 py-12 text-center sm:py-16">
-            <p className="font-display-lg text-5xl leading-[1.4] text-inverse-on-surface sm:text-7xl">
+          <div className="relative px-4 py-6 text-center sm:px-8 sm:py-16">
+            <p className="text-shadow-photo font-display-lg text-3xl leading-[1.3] text-inverse-on-surface sm:text-7xl sm:leading-[1.4]">
               ٩ سنوات
             </p>
-            <p className="font-headline-md mt-2 text-2xl text-tertiary-fixed-dim sm:text-3xl">
+            <p className="text-shadow-photo font-headline-md mt-2 text-xl text-tertiary-fixed-dim sm:text-3xl">
               من العطاء
             </p>
-            <p className="mx-auto mt-5 max-w-xl text-body-md leading-8 text-secondary-fixed-dim/80">
+            <p className="text-shadow-photo mx-auto mt-4 max-w-xl text-body-md leading-7 text-secondary-fixed-dim/80 sm:mt-5 sm:leading-8">
               تسع سنوات متواصلة في خدمة كتاب الله وأهله، حلقةً بعد حلقة، وجيلاً بعد جيل.
             </p>
           </div>

@@ -33,7 +33,7 @@ export function Header() {
       'bg-transparent'].
       join(' ')}>
 
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex min-h-20 max-w-7xl items-center justify-between gap-4 px-4 py-2 sm:px-6 lg:px-8">
         <Link to="/" className="flex items-center gap-3">
           <span className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-full border border-tertiary-fixed-dim/40 bg-white p-1.5 shadow-lg">
             <img src="/logo-mark.jpeg" alt="شعار المركز" className="h-full w-full object-contain" />

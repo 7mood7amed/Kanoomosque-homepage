@@ -1,21 +1,26 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { graduates } from '../data/site';
+import { graduates, images } from '../data/site';
 import { SectionHeading } from './SectionHeading';
+import { ParallaxBackground } from './ParallaxBackground';
+import { SectionDivider } from './SectionDivider';
 
 export function Graduates() {
   return (
-    <section id="graduates" className="relative w-full overflow-hidden border-t border-tertiary-fixed-dim/15 bg-inverse-surface py-20 sm:py-28">
-      <div className="pattern-geo absolute inset-0 opacity-[0.08]" aria-hidden="true" />
+    <section id="graduates" className="relative w-full overflow-hidden border-t border-tertiary-fixed-dim/15 bg-inverse-surface py-10 sm:py-28">
+      <ParallaxBackground src={images.reading} />
+      <div className="absolute inset-0 bg-gradient-to-b from-inverse-surface/85 via-inverse-surface/40 via-20% to-inverse-surface/50" aria-hidden="true" />
+      <SectionDivider />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="خريجونا"
           title="حفظة أتمّوا كتاب الله في مركزنا"
           description="نفخر بخريجينا الذين نالوا الإجازة القرآنية بالسند المتصل، وهم اليوم امتداد لرسالة المركز."
-          tone="dark" />
+          tone="dark"
+          onPhoto />
 
 
-        <ul className="no-scrollbar mt-14 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-2 lg:grid lg:grid-cols-5 lg:overflow-visible">
+        <ul className="no-scrollbar mt-8 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2 sm:mt-14 sm:gap-5 lg:grid lg:grid-cols-5 lg:overflow-visible">
           {graduates.map((grad, i) =>
           <motion.li
             key={grad.name}
@@ -23,24 +28,24 @@ export function Graduates() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.45, delay: i * 0.06, ease: 'easeOut' }}
-            className="w-56 shrink-0 snap-start lg:w-auto">
+            className="w-36 shrink-0 snap-start sm:w-64 lg:w-auto">
 
-              <figure className="group rounded-2xl bg-white/10 p-2.5 shadow-sm backdrop-blur-xl transition-colors hover:bg-white/[0.14]">
-                <div className="arch-full relative aspect-[4/5] overflow-hidden">
+              <figure className="group rounded-md bg-white/10 p-1.5 shadow-none backdrop-blur-none transition-colors hover:bg-white/[0.14] sm:rounded-2xl sm:p-2.5 sm:shadow-sm sm:backdrop-blur-xl">
+                <div className="arch-full relative aspect-[7/10] overflow-hidden">
                   <img
                   src={grad.image}
                   alt={grad.name}
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
 
-                  <span className="absolute end-3 top-6 rounded-full bg-tertiary-container/90 px-2.5 py-1 text-caption font-bold text-on-tertiary backdrop-blur-sm">
+                  <span className="absolute end-2 top-4 rounded-full bg-tertiary-container/90 px-2 py-0.5 text-[10px] font-bold text-on-tertiary backdrop-blur-sm sm:end-3 sm:top-6 sm:px-2.5 sm:py-1 sm:text-caption">
                     {grad.year}
                   </span>
                 </div>
-                <figcaption className="px-2 py-4 text-center">
-                  <p className="font-headline-sm text-base leading-[1.7] text-inverse-on-surface">
+                <figcaption className="px-1 py-2 text-center sm:px-2 sm:py-4">
+                  <p className="font-headline-sm line-clamp-1 text-xs leading-snug text-inverse-on-surface sm:text-base sm:leading-[1.7]">
                     {grad.name}
                   </p>
-                  <p className="mt-1 text-caption text-secondary-fixed-dim/75">إجازة بالسند المتصل</p>
+                  <p className="mt-0.5 text-[10px] text-secondary-fixed-dim/75 sm:mt-1 sm:text-caption">إجازة بالسند المتصل</p>
                 </figcaption>
               </figure>
             </motion.li>

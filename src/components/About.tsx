@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeftIcon } from 'lucide-react';
 import { images } from '../data/site';
 import { StarMark } from './Ornament';
+import { ParallaxBackground } from './ParallaxBackground';
 
 const pillars = [
 'معلمون مجازون بالسند المتصل',
@@ -12,17 +13,11 @@ const pillars = [
 
 export function About() {
   return (
-    <section id="about" className="relative w-full overflow-hidden bg-inverse-surface py-20 sm:py-28">
-      <img
-        src={images.donation}
-        alt=""
-        aria-hidden="true"
-        className="absolute inset-0 h-full w-full object-cover opacity-25" />
-
-      <div className="absolute inset-0 bg-inverse-surface/80" aria-hidden="true" />
-      <div className="pattern-geo absolute inset-0 opacity-[0.08]" aria-hidden="true" />
+    <section id="about" className="relative w-full overflow-hidden bg-inverse-surface py-14 sm:py-28">
+      <ParallaxBackground src={images.donation} />
+      <div className="absolute inset-0 bg-gradient-to-b from-inverse-surface/75 via-inverse-surface/30 via-20% to-inverse-surface/40" aria-hidden="true" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-16">
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -35,7 +30,7 @@ export function About() {
                 <img
                   src={images.about}
                   alt="طلاب في حلقة قرآنية داخل المركز"
-                  className="h-[340px] w-full object-cover sm:h-[480px]" />
+                  className="h-[240px] w-full object-cover sm:h-[480px]" />
 
               </div>
             </div>
@@ -45,10 +40,10 @@ export function About() {
             <span className="inline-block rounded-full bg-white/10 px-4 py-1.5 text-label-md tracking-[0.15em] text-tertiary-fixed-dim">
               من نحن
             </span>
-            <h2 className="font-headline-md mt-4 text-4xl leading-[1.6] text-inverse-on-surface lg:text-5xl">
+            <h2 className="text-shadow-photo font-headline-md mt-4 text-3xl leading-[1.6] text-inverse-on-surface sm:text-4xl lg:text-5xl">
               مركزٌ يحمل رسالة القرآن في مملكة البحرين
             </h2>
-            <p className="mt-5 text-body-lg leading-relaxed text-secondary-fixed-dim/80">
+            <p className="text-shadow-photo mt-5 text-body-lg leading-relaxed text-secondary-fixed-dim/80">
               مركز عبدالرحمن كانو لتعليم القرآن الكريم وعلومه هو أحد المراكز القرآنية
               العاملة تحت مظلة وزارة العدل والشؤون الإسلامية والأوقاف في مملكة البحرين.
               نسعى إلى تخريج جيل يحفظ كتاب الله ويتقن تلاوته ويعمل بأحكامه، من خلال
@@ -58,7 +53,7 @@ export function About() {
 
             <ul className="mt-7 divide-y divide-white/10">
               {pillars.map((item) =>
-              <li key={item} className="flex items-center gap-3 py-3 text-body-md text-inverse-on-surface first:pt-0">
+              <li key={item} className="text-shadow-photo flex items-center gap-3 py-3 text-body-md text-inverse-on-surface first:pt-0">
                   <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/10 text-tertiary-fixed-dim">
                     <StarMark className="h-3 w-3" />
                   </span>

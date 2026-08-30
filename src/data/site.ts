@@ -139,31 +139,31 @@ export const graduates: Graduate[] = [
 {
   name: 'عبدالله جمعة العنزي',
   year: '2024',
-  image: "/cd5fed76-7440-45d8-a6c9-18df50d2da2e.jpg"
+  image: "/graduate-abdullah-juma.jpg"
 
 },
 {
   name: 'عبدالله ربيع العنزي',
   year: '2025',
-  image: "/6fae10c9-1f3b-45e8-b4c9-c8c8abef32df.jpg"
+  image: "/graduate-abdullah-rabee.jpg"
 
 },
 {
   name: 'نوفل صديق',
   year: '2023',
-  image: "/93a96b12-26bf-47ff-8a3f-551e53b9730f.jpg"
+  image: "/graduate-nawfal.jpg"
 
 },
 {
   name: 'عبدالرحمن الهليم',
   year: '2023',
-  image: "/cd331269-840c-4eb0-ad91-2d3aa02b1638.jpg"
+  image: "/graduate-abdulrahman.jpg"
 
 },
 {
   name: 'إبراهيم العليان',
   year: '2023',
-  image: "/9efd1133-ae55-4f59-964e-3e0c476ed680.jpg"
+  image: "/graduate-ibrahim.jpg"
 
 }];
 
@@ -186,6 +186,10 @@ export const images = {
   hero: "/kanoomosque-hero.jpeg",
   about: "/52812d92-b8b4-4683-992a-b75b600486e3.jpg",
 
-  donation: "/35823f29-e800-410f-ae98-f7b008ee42f5.jpg"
+  donation: "/35823f29-e800-410f-ae98-f7b008ee42f5.jpg",
+
+  study: "/7cdb8491-8feb-4adc-a328-af3b8d8833c3.jpg",
+  gathering: "/f69e905d-5f1f-4b64-9127-0827d3948752.jpg",
+  reading: "/b89a2194-171c-420b-8b97-62e60902d97f.jpg"
 
 };

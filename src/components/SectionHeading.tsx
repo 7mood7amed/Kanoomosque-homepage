@@ -7,6 +7,9 @@ type SectionHeadingProps = {
   description?: string;
   tone?: 'light' | 'dark';
   align?: 'start' | 'center';
+  /** Set when the heading sits directly on a photo background (no card
+   * behind it) so the title/description get a text shadow for legibility. */
+  onPhoto?: boolean;
 };
 
 export function SectionHeading({
@@ -14,7 +17,8 @@ export function SectionHeading({
   title,
   description,
   tone = 'light',
-  align = 'center'
+  align = 'center',
+  onPhoto = false
 }: SectionHeadingProps) {
   const isDark = tone === 'dark';
   return (
@@ -39,8 +43,10 @@ export function SectionHeading({
       </div>
       <h2
         className={[
-        'font-headline-md mt-4 text-4xl leading-[1.6] lg:text-5xl',
-        isDark ? 'text-inverse-on-surface' : 'text-on-surface'].
+        'font-headline-md mt-4 text-3xl leading-[1.6] sm:text-4xl lg:text-5xl',
+        isDark ? 'text-inverse-on-surface' : 'text-on-surface',
+        onPhoto && 'text-shadow-photo'].
+        filter(Boolean).
         join(' ')}>
 
         {title}
@@ -49,7 +55,9 @@ export function SectionHeading({
       <p
         className={[
         'mt-4 text-body-lg leading-relaxed',
-        isDark ? 'text-secondary-fixed-dim/85' : 'text-on-surface-variant'].
+        isDark ? 'text-secondary-fixed-dim/85' : 'text-on-surface-variant',
+        onPhoto && 'text-shadow-photo'].
+        filter(Boolean).
         join(' ')}>
 
           {description}

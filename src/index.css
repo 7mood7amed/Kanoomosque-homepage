@@ -50,11 +50,17 @@ body {
 /* "Mihrab-lite" corner treatment for donation/campaign cards: a large radius
    on every corner except one, which is squared off — alternated left/right
    across a row so the row reads as a row of pointed niches. */
-.mihrab-corner-start {
-  border-radius: 2rem 2rem 2rem 0;
-}
+.mihrab-corner-start,
 .mihrab-corner-end {
-  border-radius: 2rem 2rem 0 2rem;
+  border-radius: 1rem;
+}
+@media (min-width: 640px) {
+  .mihrab-corner-start {
+    border-radius: 2rem 2rem 2rem 0;
+  }
+  .mihrab-corner-end {
+    border-radius: 2rem 2rem 0 2rem;
+  }
 }
 /* Gold double-border used for featured/illuminated surfaces: a 1px outer
    gold line and a 0.5px inner gold line with a gap, evoking manuscript
@@ -92,6 +98,12 @@ body {
   direction: ltr;
   -webkit-font-smoothing: antialiased;
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+/* Soft dark shadow for headline/body text that sits directly on a photo
+   background with no card behind it, so it stays legible over bright or
+   busy areas of the image without needing a heavier overlay tint. */
+.text-shadow-photo {
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6), 0 1px 3px rgba(0, 0, 0, 0.45);
 }
 .no-scrollbar::-webkit-scrollbar {
   display: none;

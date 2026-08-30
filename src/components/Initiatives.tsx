@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowLeftIcon, HeartHandshakeIcon } from 'lucide-react';
 import { images, tiers } from '../data/site';
+import { SectionDivider } from './SectionDivider';
 
 const quickAmounts = [10, 20, 50];
 
@@ -16,8 +17,9 @@ export function Initiatives() {
   const donateHref = `/donate?tier=3${selectedAmount ? `&amount=${selectedAmount}` : ''}`;
 
   return (
-    <section id="invest" className="relative w-full overflow-hidden border-t border-tertiary-fixed-dim/15 bg-inverse-surface py-16 sm:py-20">
+    <section id="invest" className="relative w-full overflow-hidden border-t border-tertiary-fixed-dim/15 bg-inverse-surface py-9 sm:py-20">
       <div className="pattern-geo absolute inset-0 opacity-[0.08]" aria-hidden="true" />
+      <SectionDivider />
       <div className="relative mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
         <div className="relative inline-block">
           <p className="font-headline-sm text-tertiary-fixed-dim/90">
@@ -34,13 +36,13 @@ export function Initiatives() {
         </p>
       </div>
 
-      <div className="relative mx-auto mt-12 max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto mt-6 max-w-4xl px-4 sm:mt-12 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="relative overflow-hidden rounded-2xl bg-white/10 p-6 shadow-2xl backdrop-blur-2xl sm:p-8">
+          className="relative overflow-hidden rounded-md bg-white/10 p-4 shadow-2xl backdrop-blur-2xl sm:rounded-2xl sm:p-8">
 
           <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-l from-tertiary-fixed-dim via-primary-fixed to-transparent opacity-50" aria-hidden="true" />
           <div className="relative grid gap-8 md:grid-cols-2">
@@ -117,8 +119,8 @@ export function Initiatives() {
         </motion.div>
       </div>
 
-      <div className="relative mx-auto mt-14 max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-6 flex items-end justify-between border-b border-secondary-fixed-dim/20 pb-3">
+      <div className="relative mx-auto mt-8 max-w-7xl px-4 sm:mt-14 sm:px-6 lg:px-8">
+        <div className="mb-4 flex items-end justify-between border-b border-secondary-fixed-dim/20 pb-3 sm:mb-6">
           <h3 className="font-headline-md text-inverse-on-surface">أبواب الكفالة الشهرية</h3>
           <Link
             to="/donate"
@@ -129,7 +131,7 @@ export function Initiatives() {
           </Link>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid grid-cols-2 gap-3 sm:gap-6 md:grid-cols-3">
           {tiers.map((tier, i) =>
           <motion.article
             key={tier.title}
@@ -137,29 +139,29 @@ export function Initiatives() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.45, delay: i * 0.08, ease: 'easeOut' }}
-            className={`group relative overflow-hidden bg-white/10 p-4 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 ${cardCorner[i] || 'rounded-2xl'}`}>
+            className={`group relative overflow-hidden bg-white/10 p-2 backdrop-blur-none transition-all duration-500 hover:-translate-y-2 sm:p-4 sm:backdrop-blur-xl ${cardCorner[i] || 'rounded-2xl'}`}>
 
-              <div className="relative mb-4 h-48 overflow-hidden rounded-xl">
+              <div className="relative mb-2 h-20 overflow-hidden rounded-lg sm:mb-4 sm:h-48 sm:rounded-xl">
                 <img
                   src={tier.image}
                   alt={tier.title}
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
 
-                <span className="absolute end-3 top-3 rounded-full bg-white/30 px-3 py-1 text-caption text-inverse-on-surface backdrop-blur-md">
+                <span className="absolute end-2 top-2 rounded-full bg-white/30 px-2 py-0.5 text-[10px] text-inverse-on-surface backdrop-blur-md sm:end-3 sm:top-3 sm:px-3 sm:py-1 sm:text-caption">
                   كفالة شهرية
                 </span>
               </div>
-              <h4 className="font-headline-sm mb-2 text-inverse-on-surface">{tier.title}</h4>
-              <p className="mb-4 line-clamp-2 text-body-md text-secondary-fixed-dim/75">
+              <h4 className="font-headline-sm mb-1 line-clamp-1 text-sm text-inverse-on-surface sm:mb-2 sm:text-base">{tier.title}</h4>
+              <p className="mb-2 line-clamp-2 text-xs text-secondary-fixed-dim/75 sm:mb-4 sm:text-body-md">
                 {tier.details}
               </p>
-              <div className="mb-4 flex items-baseline justify-between">
-                <span className="font-headline-sm text-tertiary-fixed-dim">{tier.price}</span>
-                <span className="text-caption text-secondary-fixed-dim/70">{tier.unit}</span>
+              <div className="mb-2 flex items-baseline justify-between sm:mb-4">
+                <span className="font-headline-sm text-sm text-tertiary-fixed-dim sm:text-base">{tier.price}</span>
+                <span className="text-[10px] text-secondary-fixed-dim/70 sm:text-caption">{tier.unit}</span>
               </div>
               <Link
                 to={`/donate?tier=${i}`}
-                className="flex w-full items-center justify-center gap-2 rounded-lg bg-white/10 py-3 text-label-md text-inverse-on-surface transition-colors hover:bg-primary-container">
+                className="flex w-full items-center justify-center gap-2 rounded-lg bg-white/10 py-2 text-xs text-inverse-on-surface transition-colors hover:bg-primary-container sm:py-3 sm:text-label-md">
 
                 المساهمة
               </Link>
