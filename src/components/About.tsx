@@ -40,7 +40,7 @@ export function About() {
             <span className="inline-block rounded-full bg-white/10 px-4 py-1.5 text-label-md tracking-[0.15em] text-tertiary-fixed-dim">
               من نحن
             </span>
-            <h2 className="text-shadow-photo font-headline-md mt-4 text-3xl leading-[1.6] text-inverse-on-surface sm:text-4xl lg:text-5xl">
+            <h2 className="text-shadow-photo font-headline-md mt-4 text-4xl font-bold leading-[1.35] text-inverse-on-surface sm:text-5xl sm:leading-[1.3] lg:text-6xl">
               مركزٌ يحمل رسالة القرآن في مملكة البحرين
             </h2>
             <p className="text-shadow-photo mt-5 text-body-lg leading-relaxed text-secondary-fixed-dim/80">

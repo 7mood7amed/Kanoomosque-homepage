@@ -43,7 +43,7 @@ export function SectionHeading({
       </div>
       <h2
         className={[
-        'font-headline-md mt-4 text-3xl leading-[1.6] sm:text-4xl lg:text-5xl',
+        'font-headline-md mt-4 text-4xl font-bold leading-[1.35] sm:text-5xl sm:leading-[1.3] lg:text-6xl',
         isDark ? 'text-inverse-on-surface' : 'text-on-surface',
         onPhoto && 'text-shadow-photo'].
         filter(Boolean).

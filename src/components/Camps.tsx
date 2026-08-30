@@ -42,7 +42,7 @@ export function Camps() {
                 <div className="absolute inset-0 bg-inverse-surface/10" aria-hidden="true" />
                 <span
                   className={[
-                  'absolute end-2 top-2 inline-flex items-center gap-1 rounded-full bg-white/30 px-2 py-0.5 text-[10px] font-bold text-inverse-on-surface shadow-sm backdrop-blur-md sm:end-4 sm:top-4 sm:gap-1.5 sm:px-3 sm:py-1 sm:text-caption'].
+                  'absolute end-2 top-2 inline-flex items-center gap-1 rounded-full bg-white/30 px-2 py-0.5 text-xs font-bold text-inverse-on-surface shadow-sm backdrop-blur-md sm:end-4 sm:top-4 sm:gap-1.5 sm:px-3 sm:py-1 sm:text-caption'].
                   join(' ')}>
 
                   <span
@@ -57,17 +57,17 @@ export function Camps() {
               </div>
 
               <div className="p-2 sm:p-6">
-                <h3 className="font-headline-sm line-clamp-2 text-sm leading-snug text-inverse-on-surface sm:text-xl sm:leading-[1.7]">
+                <h3 className="font-headline-sm line-clamp-2 text-base leading-snug text-inverse-on-surface sm:text-xl sm:leading-[1.7]">
                   {camp.title}
                 </h3>
-                <p className="mt-1 line-clamp-2 text-xs leading-5 text-secondary-fixed-dim/80 sm:mt-2 sm:line-clamp-3 sm:text-body-md sm:leading-8">
+                <p className="mt-1 line-clamp-2 text-sm leading-5 text-secondary-fixed-dim/80 sm:mt-2 sm:line-clamp-3 sm:text-body-md sm:leading-8">
                   {camp.description}
                 </p>
                 <div className="mt-2 border-t border-white/10 pt-2 sm:mt-5 sm:flex sm:items-center sm:justify-between sm:pt-4">
                   <a
                     href="#contact"
                     aria-label={`سجّل في ${camp.title}`}
-                    className="inline-flex items-center gap-1.5 text-xs text-inverse-on-surface transition-colors hover:text-tertiary-fixed-dim sm:gap-2 sm:text-label-md">
+                    className="inline-flex items-center gap-1.5 text-sm text-inverse-on-surface transition-colors hover:text-tertiary-fixed-dim sm:gap-2 sm:text-label-md">
 
                     اقرأ المزيد
                     <ArrowLeftIcon className="h-3 w-3 sm:h-4 sm:w-4" strokeWidth={1.5} aria-hidden="true" />

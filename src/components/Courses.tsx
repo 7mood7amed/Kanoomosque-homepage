@@ -46,7 +46,7 @@ export function Courses() {
                 <div className="absolute inset-0 bg-inverse-surface/20" aria-hidden="true" />
                 <span
                 className={[
-                'absolute end-2 top-2 rounded-full px-2 py-0.5 text-[10px] font-bold text-white shadow-sm sm:end-4 sm:top-8 sm:px-3 sm:py-1 sm:text-caption',
+                'absolute end-2 top-2 rounded-full px-2 py-0.5 text-xs font-bold text-white shadow-sm sm:end-4 sm:top-8 sm:px-3 sm:py-1 sm:text-caption',
                 course.badgeTone === 'active' ? 'bg-primary' : 'bg-tertiary-container'].
                 join(' ')}>
 
@@ -55,15 +55,15 @@ export function Courses() {
               </div>
 
               <div className="px-2 pb-2 pt-3 text-center sm:px-5 sm:pb-5 sm:pt-7">
-                <h3 className="font-headline-sm line-clamp-2 text-sm leading-snug text-inverse-on-surface sm:text-2xl sm:leading-[1.7]">
+                <h3 className="font-headline-sm line-clamp-2 text-base leading-snug text-inverse-on-surface sm:text-2xl sm:leading-[1.7]">
                   {course.title}
                 </h3>
-                <p className="mt-1 line-clamp-2 text-xs leading-5 text-secondary-fixed-dim/80 sm:mt-3 sm:line-clamp-none sm:text-body-md sm:leading-8">
+                <p className="mt-1 line-clamp-2 text-sm leading-5 text-secondary-fixed-dim/80 sm:mt-3 sm:line-clamp-none sm:text-body-md sm:leading-8">
                   {course.description}
                 </p>
                 <a
                 href="#contact"
-                className="mt-2 inline-flex items-center gap-1.5 border-b border-tertiary-fixed-dim/40 pb-1 text-xs text-inverse-on-surface transition-colors hover:border-tertiary-fixed-dim hover:text-tertiary-fixed-dim sm:mt-6 sm:gap-2 sm:text-label-md">
+                className="mt-2 inline-flex items-center gap-1.5 border-b border-tertiary-fixed-dim/40 pb-1 text-sm text-inverse-on-surface transition-colors hover:border-tertiary-fixed-dim hover:text-tertiary-fixed-dim sm:mt-6 sm:gap-2 sm:text-label-md">
 
                   سجّل في المسار
                   <ArrowLeftIcon className="h-3 w-3 sm:h-4 sm:w-4" strokeWidth={1.5} aria-hidden="true" />

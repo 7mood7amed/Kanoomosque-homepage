@@ -37,15 +37,15 @@ export function Graduates() {
                   alt={grad.name}
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
 
-                  <span className="absolute end-2 top-4 rounded-full bg-tertiary-container/90 px-2 py-0.5 text-[10px] font-bold text-on-tertiary backdrop-blur-sm sm:end-3 sm:top-6 sm:px-2.5 sm:py-1 sm:text-caption">
+                  <span className="absolute end-2 top-4 rounded-full bg-tertiary-container/90 px-2 py-0.5 text-xs font-bold text-on-tertiary backdrop-blur-sm sm:end-3 sm:top-6 sm:px-2.5 sm:py-1 sm:text-caption">
                     {grad.year}
                   </span>
                 </div>
                 <figcaption className="px-1 py-2 text-center sm:px-2 sm:py-4">
-                  <p className="font-headline-sm line-clamp-1 text-xs leading-snug text-inverse-on-surface sm:text-base sm:leading-[1.7]">
+                  <p className="font-headline-sm line-clamp-1 text-sm leading-snug text-inverse-on-surface sm:text-base sm:leading-[1.7]">
                     {grad.name}
                   </p>
-                  <p className="mt-0.5 text-[10px] text-secondary-fixed-dim/75 sm:mt-1 sm:text-caption">إجازة بالسند المتصل</p>
+                  <p className="mt-0.5 text-xs text-secondary-fixed-dim/75 sm:mt-1 sm:text-caption">إجازة بالسند المتصل</p>
                 </figcaption>
               </figure>
             </motion.li>

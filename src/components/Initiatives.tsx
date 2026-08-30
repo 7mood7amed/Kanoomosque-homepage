@@ -25,7 +25,7 @@ export function Initiatives() {
           <p className="font-headline-sm text-tertiary-fixed-dim/90">
             وَمَا أَنفَقْتُم مِّن شَيْءٍ فَهُوَ يُخْلِفُهُ
           </p>
-          <h2 className="font-display-lg mt-2 text-4xl leading-[1.3] text-inverse-on-surface lg:text-5xl">
+          <h2 className="font-display-lg mt-2 text-4xl font-bold leading-[1.35] text-inverse-on-surface sm:text-5xl sm:leading-[1.3] lg:text-6xl">
             استثمر في أعظم مشروع
           </h2>
           <div className="absolute -top-4 -end-12 -z-10 h-24 w-24 rounded-full bg-tertiary-fixed-dim/10 blur-2xl" aria-hidden="true" />
@@ -147,21 +147,21 @@ export function Initiatives() {
                   alt={tier.title}
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
 
-                <span className="absolute end-2 top-2 rounded-full bg-white/30 px-2 py-0.5 text-[10px] text-inverse-on-surface backdrop-blur-md sm:end-3 sm:top-3 sm:px-3 sm:py-1 sm:text-caption">
+                <span className="absolute end-2 top-2 rounded-full bg-white/30 px-2 py-0.5 text-xs text-inverse-on-surface backdrop-blur-md sm:end-3 sm:top-3 sm:px-3 sm:py-1 sm:text-caption">
                   كفالة شهرية
                 </span>
               </div>
-              <h4 className="font-headline-sm mb-1 line-clamp-1 text-sm text-inverse-on-surface sm:mb-2 sm:text-base">{tier.title}</h4>
-              <p className="mb-2 line-clamp-2 text-xs text-secondary-fixed-dim/75 sm:mb-4 sm:text-body-md">
+              <h4 className="font-headline-sm mb-1 line-clamp-1 text-base text-inverse-on-surface sm:mb-2 sm:text-lg">{tier.title}</h4>
+              <p className="mb-2 line-clamp-2 text-sm text-secondary-fixed-dim/75 sm:mb-4 sm:text-body-md">
                 {tier.details}
               </p>
               <div className="mb-2 flex items-baseline justify-between sm:mb-4">
-                <span className="font-headline-sm text-sm text-tertiary-fixed-dim sm:text-base">{tier.price}</span>
-                <span className="text-[10px] text-secondary-fixed-dim/70 sm:text-caption">{tier.unit}</span>
+                <span className="font-headline-sm text-base text-tertiary-fixed-dim sm:text-lg">{tier.price}</span>
+                <span className="text-xs text-secondary-fixed-dim/70 sm:text-caption">{tier.unit}</span>
               </div>
               <Link
                 to={`/donate?tier=${i}`}
-                className="flex w-full items-center justify-center gap-2 rounded-lg bg-white/10 py-2 text-xs text-inverse-on-surface transition-colors hover:bg-primary-container sm:py-3 sm:text-label-md">
+                className="flex w-full items-center justify-center gap-2 rounded-lg bg-white/10 py-2 text-sm text-inverse-on-surface transition-colors hover:bg-primary-container sm:py-3 sm:text-label-md">
 
                 المساهمة
               </Link>
