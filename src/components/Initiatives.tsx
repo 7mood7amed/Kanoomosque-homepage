@@ -20,7 +20,7 @@ export function Initiatives() {
 
   return (
     <section id="invest" className="relative w-full overflow-hidden border-t border-tertiary-fixed-dim/15 bg-inverse-surface py-9 sm:py-20">
-      <ParallaxBackground src={images.gathering} />
+      <ParallaxBackground src={images.honor} />
       <div className="absolute inset-0 bg-gradient-to-b from-inverse-surface/85 via-inverse-surface/40 via-20% to-inverse-surface/50" aria-hidden="true" />
       <div className="pattern-geo absolute inset-0 opacity-[0.08]" aria-hidden="true" />
       <SectionShadowTop />

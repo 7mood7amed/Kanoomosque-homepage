@@ -184,12 +184,13 @@ export const stats: Stat[] = [
 
 export const images = {
   hero: "/kanoomosque-hero.jpeg",
-  about: "/6fae10c9-1f3b-45e8-b4c9-c8c8abef32df.jpg",
+  about: "/طالب.jpeg",
 
   donation: "/35823f29-e800-410f-ae98-f7b008ee42f5.jpg",
 
-  study: "/b89a2194-171c-420b-8b97-62e60902d97f.jpg",
-  gathering: "/f69e905d-5f1f-4b64-9127-0827d3948752.jpg",
-  reading: "/b89a2194-171c-420b-8b97-62e60902d97f.jpg"
+  study: "/طالب كبير.jpeg",
+  gathering: "/حلقة.jpeg",
+  reading: "/تكريم الحفل السنوي.jpeg",
+  honor: "/تكريم.jpeg"
 
 };
