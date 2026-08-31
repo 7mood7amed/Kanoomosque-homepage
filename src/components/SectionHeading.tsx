@@ -24,7 +24,7 @@ export function SectionHeading({
   return (
     <div
       className={[
-      'max-w-2xl',
+      'max-w-4xl',
       align === 'center' ? 'mx-auto text-center' : 'text-start'].
       join(' ')}>
 
@@ -43,7 +43,7 @@ export function SectionHeading({
       </div>
       <h2
         className={[
-        'mt-4 text-4xl font-bold leading-[1.35] sm:text-5xl sm:leading-[1.3] lg:text-6xl',
+        'mt-4 text-4xl font-bold leading-[1.35] tracking-wide sm:text-5xl sm:leading-[1.3] sm:tracking-wider lg:text-6xl',
         isDark ? 'text-inverse-on-surface' : 'text-on-surface',
         onPhoto && 'text-shadow-photo'].
         filter(Boolean).
@@ -54,7 +54,7 @@ export function SectionHeading({
       {description &&
       <p
         className={[
-        'mt-4 text-body-lg leading-relaxed',
+        'mx-auto mt-4 max-w-2xl text-body-lg leading-relaxed',
         isDark ? 'text-secondary-fixed-dim/85' : 'text-on-surface-variant',
         onPhoto && 'text-shadow-photo'].
         filter(Boolean).
