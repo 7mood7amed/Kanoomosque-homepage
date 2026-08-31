@@ -31,7 +31,7 @@ export const courses: Course[] = [
 
 },
 {
-  title: 'التأسيس على القراءة الصحيحة / اقرأ وارتقِ',
+  title: 'اقرأ وارتقِ',
   badge: 'قريب الانتهاء',
   badgeTone: 'ending',
   description:
