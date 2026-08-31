@@ -9,7 +9,7 @@ import { SectionShadowTop } from './SectionShadowTop';
 export function Graduates() {
   return (
     <section id="graduates" className="relative w-full overflow-hidden border-t border-tertiary-fixed-dim/15 bg-inverse-surface py-10 sm:py-28">
-      <ParallaxBackground src={images.reading} />
+      <ParallaxBackground src={images.reading} position="object-[center_35%] sm:object-center" />
       <div className="absolute inset-0 bg-gradient-to-b from-inverse-surface/85 via-inverse-surface/40 via-20% to-inverse-surface/50" aria-hidden="true" />
       <SectionShadowTop />
       <SectionDivider />

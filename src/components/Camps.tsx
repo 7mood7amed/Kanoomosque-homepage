@@ -12,7 +12,7 @@ const cardCorner = ['mihrab-corner-start', 'mihrab-corner-end', 'mihrab-corner-s
 export function Camps() {
   return (
     <section id="camps" className="relative w-full overflow-hidden border-t border-tertiary-fixed-dim/15 bg-inverse-surface py-10 sm:py-28">
-      <ParallaxBackground src={images.gathering} />
+      <ParallaxBackground src={images.gathering} position="object-[center_28%] sm:object-center" />
       <div className="absolute inset-0 bg-gradient-to-b from-inverse-surface/75 via-inverse-surface/30 via-20% to-inverse-surface/40" aria-hidden="true" />
       <SectionShadowTop />
       <SectionDivider />

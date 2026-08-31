@@ -191,6 +191,7 @@ export const images = {
   study: "/طالب كبير.jpeg",
   gathering: "/حلقة.jpeg",
   reading: "/تكريم الحفل السنوي.jpeg",
-  honor: "/تكريم.jpeg"
+  honor: "/تكريم.jpeg",
+  legacy: "/تكريم الشيخ راشد 2.jpeg"
 
 };

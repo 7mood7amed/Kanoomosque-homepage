@@ -32,7 +32,7 @@ export function About() {
                 <img
                   src={images.about}
                   alt="طلاب في حلقة قرآنية داخل المركز"
-                  className="h-[240px] w-full object-cover sm:h-[480px]" />
+                  className="h-[240px] w-full object-cover object-[center_30%] sm:h-[480px] sm:object-center" />
 
               </div>
             </div>

@@ -42,7 +42,7 @@ export function Header() {
             <span className="font-headline-sm block text-inverse-on-surface sm:text-xl">
               عبد الرحمن جاسم كانو
             </span>
-            <span className="font-headline-sm block text-[11px] tracking-wide text-secondary-fixed-dim">
+            <span className="block text-[11px] tracking-wide text-secondary-fixed-dim">
               لتعليم القرآن الكريم وعلومه
             </span>
           </span>

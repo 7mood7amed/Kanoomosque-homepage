@@ -39,7 +39,7 @@ export function Contact() {
         src={images.about}
         alt=""
         aria-hidden="true"
-        className="absolute inset-0 h-full w-full object-cover opacity-25" />
+        className="absolute inset-0 h-full w-full object-cover object-[center_30%] opacity-25 sm:object-center" />
 
       <div className="absolute inset-0 bg-inverse-surface/80" aria-hidden="true" />
       <div className="pattern-geo absolute inset-0 opacity-[0.08]" aria-hidden="true" />
