@@ -3,21 +3,19 @@ import { motion } from 'framer-motion';
 import { ArrowLeftIcon } from 'lucide-react';
 import { courses, images } from '../data/site';
 import { SectionHeading } from './SectionHeading';
+import { ParallaxBackground } from './ParallaxBackground';
 import { SectionDivider } from './SectionDivider';
+import { SectionShadowTop } from './SectionShadowTop';
 
 const cardCorner = ['mihrab-corner-start', 'mihrab-corner-end'];
 
 export function Courses() {
   return (
     <section id="courses" className="relative w-full overflow-hidden border-t border-tertiary-fixed-dim/15 bg-inverse-surface py-10 sm:py-28">
-      <img
-        src={images.study}
-        alt=""
-        aria-hidden="true"
-        className="absolute inset-0 h-full w-full object-cover opacity-25" />
-
-      <div className="absolute inset-0 bg-inverse-surface/80" aria-hidden="true" />
+      <ParallaxBackground src={images.study} />
+      <div className="absolute inset-0 bg-gradient-to-b from-inverse-surface/85 via-inverse-surface/40 via-20% to-inverse-surface/50" aria-hidden="true" />
       <div className="pattern-geo absolute inset-0 opacity-[0.08]" aria-hidden="true" />
+      <SectionShadowTop />
       <SectionDivider />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading

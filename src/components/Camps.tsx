@@ -5,6 +5,7 @@ import { camps, images } from '../data/site';
 import { SectionHeading } from './SectionHeading';
 import { ParallaxBackground } from './ParallaxBackground';
 import { SectionDivider } from './SectionDivider';
+import { SectionShadowTop } from './SectionShadowTop';
 
 const cardCorner = ['mihrab-corner-start', 'mihrab-corner-end', 'mihrab-corner-start', 'mihrab-corner-end'];
 
@@ -13,6 +14,7 @@ export function Camps() {
     <section id="camps" className="relative w-full overflow-hidden border-t border-tertiary-fixed-dim/15 bg-inverse-surface py-10 sm:py-28">
       <ParallaxBackground src={images.gathering} />
       <div className="absolute inset-0 bg-gradient-to-b from-inverse-surface/75 via-inverse-surface/30 via-20% to-inverse-surface/40" aria-hidden="true" />
+      <SectionShadowTop />
       <SectionDivider />
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeading

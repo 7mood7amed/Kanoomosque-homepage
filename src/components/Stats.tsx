@@ -5,12 +5,14 @@ import { SectionHeading } from './SectionHeading';
 import { StarMark } from './Ornament';
 import { ParallaxBackground } from './ParallaxBackground';
 import { SectionDivider } from './SectionDivider';
+import { SectionShadowTop } from './SectionShadowTop';
 
 export function Stats() {
   return (
     <section id="stats" className="relative w-full overflow-hidden border-t border-tertiary-fixed-dim/15 bg-inverse-surface py-10 sm:py-28">
       <ParallaxBackground src={images.hero} />
       <div className="absolute inset-0 bg-gradient-to-b from-inverse-surface/85 via-inverse-surface/40 via-20% to-inverse-surface/50" aria-hidden="true" />
+      <SectionShadowTop />
       <SectionDivider />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading

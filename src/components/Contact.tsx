@@ -3,6 +3,7 @@ import { CheckCircle2Icon, SendIcon } from 'lucide-react';
 import { images } from '../data/site';
 import { SectionHeading } from './SectionHeading';
 import { SectionDivider } from './SectionDivider';
+import { SectionShadowTop } from './SectionShadowTop';
 
 type Fields = {
   name: string;
@@ -42,6 +43,7 @@ export function Contact() {
 
       <div className="absolute inset-0 bg-inverse-surface/80" aria-hidden="true" />
       <div className="pattern-geo absolute inset-0 opacity-[0.08]" aria-hidden="true" />
+      <SectionShadowTop />
       <SectionDivider />
       <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <SectionHeading

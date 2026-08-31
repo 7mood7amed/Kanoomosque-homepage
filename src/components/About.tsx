@@ -4,6 +4,7 @@ import { ArrowLeftIcon } from 'lucide-react';
 import { images } from '../data/site';
 import { StarMark } from './Ornament';
 import { ParallaxBackground } from './ParallaxBackground';
+import { SectionShadowTop } from './SectionShadowTop';
 
 const pillars = [
 'معلمون مجازون بالسند المتصل',
@@ -16,6 +17,7 @@ export function About() {
     <section id="about" className="relative w-full overflow-hidden bg-inverse-surface py-14 sm:py-28">
       <ParallaxBackground src={images.donation} />
       <div className="absolute inset-0 bg-gradient-to-b from-inverse-surface/75 via-inverse-surface/30 via-20% to-inverse-surface/40" aria-hidden="true" />
+      <SectionShadowTop />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-16">
           <motion.div

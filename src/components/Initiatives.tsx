@@ -3,7 +3,9 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowLeftIcon, HeartHandshakeIcon } from 'lucide-react';
 import { images, tiers } from '../data/site';
+import { ParallaxBackground } from './ParallaxBackground';
 import { SectionDivider } from './SectionDivider';
+import { SectionShadowTop } from './SectionShadowTop';
 
 const quickAmounts = [10, 20, 50];
 
@@ -18,7 +20,10 @@ export function Initiatives() {
 
   return (
     <section id="invest" className="relative w-full overflow-hidden border-t border-tertiary-fixed-dim/15 bg-inverse-surface py-9 sm:py-20">
+      <ParallaxBackground src={images.gathering} />
+      <div className="absolute inset-0 bg-gradient-to-b from-inverse-surface/85 via-inverse-surface/40 via-20% to-inverse-surface/50" aria-hidden="true" />
       <div className="pattern-geo absolute inset-0 opacity-[0.08]" aria-hidden="true" />
+      <SectionShadowTop />
       <SectionDivider />
       <div className="relative mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
         <div className="relative inline-block">
