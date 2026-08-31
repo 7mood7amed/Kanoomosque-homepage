@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeftIcon } from 'lucide-react';
 import { images } from '../data/site';
+import { SectionShadowTop } from './SectionShadowTop';
 
 export function Hero() {
   return (
@@ -19,6 +20,7 @@ export function Hero() {
         className="absolute inset-0 -z-10 bg-gradient-to-t from-inverse-surface/95 via-inverse-surface/35 to-transparent"
         aria-hidden="true" />
       <div className="absolute -top-10 end-1/4 -z-10 h-72 w-72 rounded-full bg-tertiary-fixed-dim/15 blur-3xl" aria-hidden="true" />
+      <SectionShadowTop />
 
       <div className="mx-auto w-full max-w-7xl px-4 pb-20 pt-32 sm:px-6 lg:px-8">
         <motion.div
