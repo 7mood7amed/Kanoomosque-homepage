@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { ArrowLeftIcon } from 'lucide-react';
 import { graduates, images } from '../data/site';
 import { SectionHeading } from './SectionHeading';
 import { ParallaxBackground } from './ParallaxBackground';
@@ -53,6 +55,16 @@ export function Graduates() {
             </motion.li>
           )}
         </ul>
+
+        <div className="mt-8 text-center sm:mt-12">
+          <Link
+            to="/graduates"
+            className="inline-flex items-center gap-2 text-body-lg text-tertiary-fixed-dim transition-colors hover:text-inverse-on-surface">
+
+            أعرف أيضاً
+            <ArrowLeftIcon className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
+          </Link>
+        </div>
       </div>
     </section>);
 

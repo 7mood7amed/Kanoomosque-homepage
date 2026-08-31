@@ -65,7 +65,7 @@ export function Header() {
 
         <div className="flex items-center gap-2 sm:gap-3">
           <Link
-            to={homeHref('#contact')}
+            to="/login"
             className="hidden text-label-md text-secondary-fixed-dim transition-colors hover:text-tertiary-fixed-dim lg:inline-block">
 
             تسجيل الدخول
@@ -141,7 +141,7 @@ export function Header() {
                   اشترك الآن
                 </Link>
                 <Link
-                to={homeHref('#contact')}
+                to="/login"
                 onClick={() => setOpen(false)}
                 className="flex-1 rounded-lg border border-tertiary-fixed-dim/50 px-5 py-3 text-center text-label-md text-inverse-on-surface">
 

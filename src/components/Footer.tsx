@@ -15,7 +15,11 @@ const socials = [
 { label: 'تيليجرام', Icon: SendIcon }];
 
 
-const aboutLinks = ['عن المركز', 'الدعم الفني', 'سياسة الخصوصية', 'الأسئلة الشائعة'];
+const aboutLinks = [
+{ label: 'عن المركز', to: '/about' },
+{ label: 'الدعم الفني', to: '/support' },
+{ label: 'سياسة الخصوصية', to: '/privacy' },
+{ label: 'الأسئلة الشائعة', to: '/faq' }];
 
 export function Footer() {
   const { pathname } = useLocation();
@@ -82,10 +86,10 @@ export function Footer() {
               من نحن
             </h2>
             <ul className="mt-5 space-y-3">
-              {aboutLinks.map((label) =>
+              {aboutLinks.map(({ label, to }) =>
               <li key={label}>
                   <Link
-                  to={homeHref('#about')}
+                  to={to}
                   className="text-body-md text-secondary-fixed-dim/85 transition-colors hover:text-tertiary-fixed-dim">
 
                     {label}

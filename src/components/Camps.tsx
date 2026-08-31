@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { ArrowLeftIcon, CalendarDaysIcon } from 'lucide-react';
 import { camps, images } from '../data/site';
 import { SectionHeading } from './SectionHeading';
@@ -60,20 +61,22 @@ export function Camps() {
 
               <div className="p-3 sm:p-7">
                 <h3 className="line-clamp-2 text-lg leading-snug text-inverse-on-surface sm:text-2xl sm:leading-[1.5] lg:text-3xl">
-                  {camp.title}
+                  <Link to={`/camps/${i}`} className="hover:text-tertiary-fixed-dim">
+                    {camp.title}
+                  </Link>
                 </h3>
                 <p className="mt-1.5 line-clamp-3 text-base leading-6 text-secondary-fixed-dim/80 sm:mt-3 sm:line-clamp-3 sm:text-lg sm:leading-8 lg:text-xl">
                   {camp.description}
                 </p>
                 <div className="mt-3 border-t border-white/10 pt-3 sm:mt-6 sm:flex sm:items-center sm:justify-between sm:pt-5">
-                  <a
-                    href="#contact"
-                    aria-label={`سجّل في ${camp.title}`}
+                  <Link
+                    to={`/camps/${i}`}
+                    aria-label={`اقرأ المزيد عن ${camp.title}`}
                     className="inline-flex items-center gap-1.5 text-base text-inverse-on-surface transition-colors hover:text-tertiary-fixed-dim sm:gap-2 sm:text-lg">
 
                     اقرأ المزيد
                     <ArrowLeftIcon className="h-4 w-4 sm:h-5 sm:w-5" strokeWidth={1.5} aria-hidden="true" />
-                  </a>
+                  </Link>
                   <span className="mt-1.5 hidden items-center gap-1.5 text-caption text-secondary-fixed-dim/70 sm:mt-0 sm:flex sm:text-base">
                     <CalendarDaysIcon className="h-3.5 w-3.5" strokeWidth={1.5} aria-hidden="true" />
                     {camp.period}

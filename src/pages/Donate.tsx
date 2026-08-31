@@ -3,7 +3,6 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { QRCodeSVG } from 'qrcode.react';
 import {
-  ArrowRightIcon,
   BanknoteIcon,
   Building2Icon,
   CheckCircle2Icon,
@@ -17,8 +16,8 @@ import {
   UserIcon,
   UsersIcon } from
 'lucide-react';
-import { Ornament } from '../components/Ornament';
-import { images, tiers } from '../data/site';
+import { PageHero } from '../components/PageHero';
+import { tiers } from '../data/site';
 
 const arabicDigits = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
 const toArabicNumber = (n: number) =>
@@ -65,7 +64,7 @@ type Donor = {
 const emptyDonor: Donor = { name: '', email: '', phone: '', note: '' };
 
 const inputClass =
-'w-full rounded-lg border border-outline-variant bg-surface-container-low px-4 py-3 text-[15px] text-on-surface placeholder:text-on-surface-variant/50 transition-colors focus:border-tertiary focus:outline-none focus:ring-2 focus:ring-tertiary/20';
+'w-full rounded-lg border border-white/15 bg-white/5 px-4 py-3 text-[15px] text-inverse-on-surface placeholder:text-secondary-fixed-dim/50 transition-colors focus:border-tertiary-fixed-dim focus:outline-none focus:ring-2 focus:ring-tertiary-fixed-dim/20';
 
 export function Donate() {
   const [searchParams] = useSearchParams();
@@ -136,41 +135,20 @@ export function Donate() {
 
   return (
     <>
-      <section className="relative w-full overflow-hidden bg-inverse-surface pb-16 pt-32 sm:pb-20 sm:pt-36">
-        <div className="pattern-geo absolute inset-0 opacity-40" aria-hidden="true" />
-        <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 text-body-md text-secondary-fixed-dim transition-colors hover:text-inverse-on-surface">
+      <PageHero
+        eyebrow="تبرّع"
+        title="كن شريكاً في الأجر"
+        backLabel="العودة إلى الرئيسية"
+        description="اختر باب الصدقة الجارية الذي يناسبك، وحدد المبلغ، وأتمم تبرعك في دقائق. كل مساهمة منك تفتح باباً لطالب أو معلّم أو حلقة قرآنية كاملة." />
 
-            <ArrowRightIcon className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
-            العودة إلى الرئيسية
-          </Link>
-
-          <span className="mt-8 inline-block rounded-full bg-white/10 px-4 py-1.5 text-label-md tracking-[0.15em] text-tertiary-fixed-dim">
-            تبرّع
-          </span>
-          <h1 className="font-display-lg mt-4 text-4xl leading-[1.6] text-inverse-on-surface lg:text-5xl">
-            كن شريكاً في الأجر
-          </h1>
-          <p className="mx-auto mt-5 max-w-2xl text-body-lg leading-relaxed text-secondary-fixed-dim/80">
-            اختر باب الصدقة الجارية الذي يناسبك، وحدد المبلغ، وأتمم تبرعك في دقائق. كل
-            مساهمة منك تفتح باباً لطالب أو معلّم أو حلقة قرآنية كاملة.
-          </p>
-          <div className="mt-6 flex justify-center">
-            <Ornament tone="dark" />
-          </div>
-        </div>
-      </section>
-
-      <section className="relative w-full overflow-hidden border-t border-tertiary-fixed-dim/20 bg-surface-container-lowest py-16 sm:py-24">
-        <div className="pattern-geo-light absolute inset-0 opacity-[0.6]" aria-hidden="true" />
+      <section className="relative w-full overflow-hidden border-t border-tertiary-fixed-dim/15 bg-inverse-surface py-16 sm:py-24">
+        <div className="pattern-geo absolute inset-0 opacity-[0.08]" aria-hidden="true" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-3 lg:gap-12">
             <div className="lg:col-span-2">
               <div>
-                <span className="text-label-md font-bold text-tertiary">الخطوة ١</span>
-                <h2 className="font-headline-md mt-2 text-2xl text-on-surface">اختر باب الكفالة</h2>
+                <span className="text-label-md font-bold text-tertiary-fixed-dim">الخطوة ١</span>
+                <h2 className="font-headline-md mt-2 text-2xl text-inverse-on-surface">اختر باب الكفالة</h2>
                 <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                   {categories.map((category, i) => {
                     const isSelected = i === selectedIndex;
@@ -184,36 +162,36 @@ export function Donate() {
                         className={[
                         'rounded-2xl border-2 p-5 text-start transition-all',
                         isSelected ?
-                        'border-tertiary bg-tertiary-container/15 shadow-lg' :
-                        'border-outline-variant bg-surface-container-lowest hover:border-tertiary/40 hover:shadow-md'].
+                        'border-tertiary-fixed-dim bg-tertiary-container/15 shadow-lg' :
+                        'border-white/15 bg-white/5 hover:border-tertiary-fixed-dim/40 hover:shadow-md'].
                         join(' ')}>
 
                         <span
                           className={[
                           'flex h-11 w-11 items-center justify-center rounded-full',
-                          isSelected ? 'bg-tertiary text-white' : 'bg-surface-variant text-tertiary'].
+                          isSelected ? 'bg-tertiary-fixed-dim text-inverse-surface' : 'bg-white/10 text-tertiary-fixed-dim'].
                           join(' ')}>
 
                           <Icon className="h-5 w-5" strokeWidth={1.5} aria-hidden="true" />
                         </span>
-                        <p className="font-headline-sm mt-4 text-lg text-on-surface">
+                        <p className="font-headline-sm mt-4 text-lg text-inverse-on-surface">
                           {category.title}
                         </p>
-                        <p className="mt-1 text-caption text-on-surface-variant">
+                        <p className="mt-1 text-caption text-secondary-fixed-dim/70">
                           {category.unit ? `${category.price} ${category.unit}` : category.price}
                         </p>
                       </button>);
 
                   })}
                 </div>
-                <p className="mt-4 text-body-md leading-7 text-on-surface-variant">
+                <p className="mt-4 text-body-md leading-7 text-secondary-fixed-dim/80">
                   {selectedCategory.details}
                 </p>
               </div>
 
               <div className="mt-10">
-                <span className="text-label-md font-bold text-tertiary">الخطوة ٢</span>
-                <h2 className="font-headline-md mt-2 text-2xl text-on-surface">نوع التبرع</h2>
+                <span className="text-label-md font-bold text-tertiary-fixed-dim">الخطوة ٢</span>
+                <h2 className="font-headline-md mt-2 text-2xl text-inverse-on-surface">نوع التبرع</h2>
                 <div className="mt-6 flex flex-wrap gap-3">
                   {frequencies.map(({ id, label, icon: Icon }) =>
                   <button
@@ -225,7 +203,7 @@ export function Donate() {
                     'inline-flex items-center gap-2 rounded-full px-6 py-3 text-label-md transition-colors',
                     frequency === id ?
                     'bg-tertiary-container text-on-tertiary shadow-md' :
-                    'border border-outline-variant bg-surface-container-lowest text-on-surface hover:border-tertiary/40'].
+                    'border border-white/15 bg-white/5 text-inverse-on-surface hover:border-tertiary-fixed-dim/40'].
                     join(' ')}>
 
                       <Icon className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
@@ -236,8 +214,8 @@ export function Donate() {
               </div>
 
               <div className="mt-10">
-                <span className="text-label-md font-bold text-tertiary">الخطوة ٣</span>
-                <h2 className="font-headline-md mt-2 text-2xl text-on-surface">حدد مبلغ التبرع</h2>
+                <span className="text-label-md font-bold text-tertiary-fixed-dim">الخطوة ٣</span>
+                <h2 className="font-headline-md mt-2 text-2xl text-inverse-on-surface">حدد مبلغ التبرع</h2>
                 <div className="mt-6 flex flex-wrap gap-3">
                   {presetAmounts.map((value) =>
                   <button
@@ -251,7 +229,7 @@ export function Donate() {
                     'rounded-full px-6 py-3 text-label-md transition-colors',
                     !customOpen && amount === value ?
                     'bg-tertiary-container text-on-tertiary shadow-md' :
-                    'border border-outline-variant bg-surface-container-lowest text-on-surface hover:border-tertiary/40'].
+                    'border border-white/15 bg-white/5 text-inverse-on-surface hover:border-tertiary-fixed-dim/40'].
                     join(' ')}>
 
                       {toArabicNumber(value)} د.ب
@@ -264,7 +242,7 @@ export function Donate() {
                     'rounded-full px-6 py-3 text-label-md transition-colors',
                     customOpen ?
                     'bg-tertiary-container text-on-tertiary shadow-md' :
-                    'border border-outline-variant bg-surface-container-lowest text-on-surface hover:border-tertiary/40'].
+                    'border border-white/15 bg-white/5 text-inverse-on-surface hover:border-tertiary-fixed-dim/40'].
                     join(' ')}>
 
                     مبلغ آخر
@@ -272,7 +250,7 @@ export function Donate() {
                 </div>
                 {customOpen &&
                 <div className="mt-4 max-w-xs">
-                    <label htmlFor="customAmount" className="mb-2 block text-label-md text-on-surface">
+                    <label htmlFor="customAmount" className="mb-2 block text-label-md text-inverse-on-surface">
                       المبلغ (د.ب)
                     </label>
                     <input
@@ -290,13 +268,13 @@ export function Donate() {
               </div>
 
               <form onSubmit={onSubmit} className="mt-10">
-                <span className="text-label-md font-bold text-tertiary">الخطوة ٤</span>
-                <h2 className="font-headline-md mt-2 text-2xl text-on-surface">بيانات المتبرع</h2>
+                <span className="text-label-md font-bold text-tertiary-fixed-dim">الخطوة ٤</span>
+                <h2 className="font-headline-md mt-2 text-2xl text-inverse-on-surface">بيانات المتبرع</h2>
 
-                <div className="mt-6 rounded-2xl bg-surface-container-lowest p-5 shadow-xl sm:p-7">
+                <div className="mt-6 rounded-2xl bg-white/10 p-5 shadow-xl backdrop-blur-md sm:p-7">
                   <div className="grid gap-5 sm:grid-cols-2">
                     <div>
-                      <label htmlFor="donorName" className="mb-2 block text-label-md text-on-surface">
+                      <label htmlFor="donorName" className="mb-2 block text-label-md text-inverse-on-surface">
                         الاسم الكامل
                       </label>
                       <input
@@ -310,7 +288,7 @@ export function Donate() {
 
                     </div>
                     <div>
-                      <label htmlFor="donorEmail" className="mb-2 block text-label-md text-on-surface">
+                      <label htmlFor="donorEmail" className="mb-2 block text-label-md text-inverse-on-surface">
                         البريد الإلكتروني
                       </label>
                       <input
@@ -325,7 +303,7 @@ export function Donate() {
 
                     </div>
                     <div>
-                      <label htmlFor="donorPhone" className="mb-2 block text-label-md text-on-surface">
+                      <label htmlFor="donorPhone" className="mb-2 block text-label-md text-inverse-on-surface">
                         رقم الهاتف
                       </label>
                       <input
@@ -339,7 +317,7 @@ export function Donate() {
 
                     </div>
                     <div>
-                      <span className="mb-2 block text-label-md text-on-surface">طريقة الدفع</span>
+                      <span className="mb-2 block text-label-md text-inverse-on-surface">طريقة الدفع</span>
                       <div className="flex flex-wrap gap-2">
                         {paymentMethods.map(({ id, label, icon: Icon }) =>
                         <button
@@ -349,8 +327,8 @@ export function Donate() {
                           className={[
                           'inline-flex items-center gap-1.5 rounded-full border px-4 py-2.5 text-body-md transition-colors',
                           paymentMethod === id ?
-                          'border-tertiary bg-tertiary-container/15 text-tertiary' :
-                          'border-outline-variant text-on-surface-variant hover:border-tertiary/40'].
+                          'border-tertiary-fixed-dim bg-tertiary-container/15 text-tertiary-fixed-dim' :
+                          'border-white/15 text-secondary-fixed-dim/80 hover:border-tertiary-fixed-dim/40'].
                           join(' ')}>
 
                             <Icon className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
@@ -359,7 +337,7 @@ export function Donate() {
                         )}
                       </div>
                       {paymentMethod === 'benefit' &&
-                      <p className="mt-2 text-caption text-on-surface-variant">
+                      <p className="mt-2 text-caption text-secondary-fixed-dim/70">
                           خدمة بنفت باي متاحة داخل مملكة البحرين فقط
                         </p>
                       }
@@ -367,20 +345,20 @@ export function Donate() {
                   </div>
 
                   {paymentMethod === 'benefit' &&
-                  <div className="mt-6 rounded-2xl border border-outline-variant bg-surface-container-low p-6 text-center">
-                      <p className="text-label-md text-on-surface">
+                  <div className="mt-6 rounded-2xl border border-white/15 bg-white/5 p-6 text-center">
+                      <p className="text-label-md text-inverse-on-surface">
                         امسح الرمز عبر تطبيق بنفت باي لإتمام الدفع
                       </p>
                       <div className="mx-auto mt-4 w-fit rounded-xl bg-white p-4 shadow-inner">
                         <QRCodeSVG value={benefitPayPayload} size={168} />
                       </div>
-                      <p className="mt-4 text-2xl font-bold text-on-surface">
+                      <p className="mt-4 text-2xl font-bold text-inverse-on-surface">
                         {toArabicNumber(finalAmount)} د.ب
                       </p>
-                      <p className="mt-1 text-caption text-on-surface-variant">
+                      <p className="mt-1 text-caption text-secondary-fixed-dim/70">
                         {selectedCategory.title} · {frequencyLabel} · مرجع {donationRef}
                       </p>
-                      <p className="mt-3 text-[11px] leading-5 text-on-surface-variant/70">
+                      <p className="mt-3 text-[11px] leading-5 text-secondary-fixed-dim/60">
                         * رمز تجريبي يعرض تفاصيل تبرعك، وسيُربط ببوابة بنفت باي الرسمية عند
                         التفعيل الكامل للدفع الإلكتروني.
                       </p>
@@ -388,7 +366,7 @@ export function Donate() {
                   }
 
                   <div className="mt-5">
-                    <label htmlFor="donorNote" className="mb-2 block text-label-md text-on-surface">
+                    <label htmlFor="donorNote" className="mb-2 block text-label-md text-inverse-on-surface">
                       ملاحظات (اختياري)
                     </label>
                     <textarea
@@ -404,7 +382,7 @@ export function Donate() {
                   <button
                     type="submit"
                     disabled={finalAmount <= 0}
-                    className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-tertiary-container px-8 py-4 text-body-md font-bold text-on-tertiary shadow-xl transition-all hover:scale-[1.02] hover:bg-tertiary hover:shadow-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-tertiary focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto">
+                    className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-tertiary-container px-8 py-4 text-body-md font-bold text-on-tertiary shadow-xl transition-all hover:scale-[1.02] hover:bg-tertiary hover:shadow-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-tertiary-fixed-dim focus-visible:ring-offset-2 focus-visible:ring-offset-inverse-surface disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto">
 
                     <HeartHandshakeIcon className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
                     {paymentMethod === 'benefit' ?
@@ -414,7 +392,7 @@ export function Donate() {
 
                   <p aria-live="polite" className="mt-4 min-h-[1.5rem] text-body-md">
                     {submitted &&
-                    <span className="inline-flex items-center gap-2 font-bold text-primary">
+                    <span className="inline-flex items-center gap-2 font-bold text-tertiary-fixed-dim">
                         <CheckCircle2Icon className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
                         جزاك الله خيراً، تم استلام تبرعك وسنتواصل معك لإتمام العملية بإذن الله.
                       </span>
@@ -432,17 +410,7 @@ export function Donate() {
                 transition={{ duration: 0.5, ease: 'easeOut' }}
                 className="lg:sticky lg:top-28">
 
-                <div className="frame-ornate rounded-[32px] bg-surface-container-lowest p-3 shadow-2xl">
-                  <div className="arch-full overflow-hidden">
-                    <img
-                      src={images.donation}
-                      alt="مصحف مفتوح على حامل خشبي بجانب فانوس نحاسي"
-                      className="h-52 w-full object-cover" />
-
-                  </div>
-                </div>
-
-                <div className="mt-5 rounded-2xl bg-inverse-surface p-6 text-inverse-on-surface shadow-xl">
+                <div className="rounded-2xl bg-white/10 p-6 text-inverse-on-surface shadow-xl backdrop-blur-md">
                   <p className="text-label-md tracking-[0.15em] text-tertiary-fixed-dim">
                     ملخص التبرع
                   </p>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { ArrowLeftIcon } from 'lucide-react';
 import { courses, images } from '../data/site';
 import { SectionHeading } from './SectionHeading';
@@ -54,7 +55,9 @@ export function Courses() {
 
               <div className="px-2 pb-2 pt-3 text-center sm:px-7 sm:pb-7 sm:pt-9">
                 <h3 className="line-clamp-2 text-lg leading-snug text-inverse-on-surface sm:text-3xl sm:leading-[1.5] lg:text-4xl">
-                  {course.title}
+                  <Link to={`/courses/${i}`} className="hover:text-tertiary-fixed-dim">
+                    {course.title}
+                  </Link>
                 </h3>
                 <p className="mt-1.5 line-clamp-3 text-base leading-6 text-secondary-fixed-dim/80 sm:mt-4 sm:line-clamp-none sm:text-lg sm:leading-8 lg:text-xl">
                   {course.description}
@@ -69,6 +72,16 @@ export function Courses() {
               </div>
             </motion.article>
           )}
+        </div>
+
+        <div className="mt-8 text-center sm:mt-12">
+          <Link
+            to="/courses"
+            className="inline-flex items-center gap-2 text-body-lg text-tertiary-fixed-dim transition-colors hover:text-inverse-on-surface">
+
+            مشاهدة المزيد
+            <ArrowLeftIcon className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
+          </Link>
         </div>
       </div>
     </section>);
