@@ -144,7 +144,7 @@ export function Initiatives() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.45, delay: i * 0.08, ease: 'easeOut' }}
-            className={`group relative overflow-hidden bg-white/10 p-3 backdrop-blur-none transition-all duration-500 hover:-translate-y-2 sm:p-4 sm:backdrop-blur-xl ${cardCorner[i] || 'rounded-2xl'}`}>
+            className={`group relative overflow-hidden bg-white/10 p-3 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 sm:p-4 ${cardCorner[i] || 'rounded-2xl'}`}>
 
               <div className="relative mb-3 h-28 overflow-hidden rounded-lg sm:mb-4 sm:h-48 sm:rounded-xl lg:h-56">
                 <img

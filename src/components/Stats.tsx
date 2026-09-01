@@ -30,7 +30,7 @@ export function Stats() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.45, delay: i * 0.06, ease: 'easeOut' }}
-            className="rounded-lg bg-white/10 px-3 pb-3 pt-4 text-center shadow-none backdrop-blur-none transition-colors hover:bg-white/[0.14] sm:px-6 sm:pb-6 sm:pt-8 sm:shadow-sm sm:backdrop-blur-md">
+            className="rounded-lg bg-white/10 px-3 pb-3 pt-4 text-center shadow-sm backdrop-blur-md transition-colors hover:bg-white/[0.14] sm:px-6 sm:pb-6 sm:pt-8">
 
               <p className="text-2xl font-bold leading-[1.4] text-inverse-on-surface sm:text-4xl sm:leading-[1.5] lg:text-5xl">
                 {stat.value === '—' ?

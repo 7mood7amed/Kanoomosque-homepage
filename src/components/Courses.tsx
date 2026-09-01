@@ -34,7 +34,7 @@ export function Courses() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.5, delay: i * 0.1, ease: 'easeOut' }}
-            className={`group overflow-hidden bg-white/10 p-3 shadow-none backdrop-blur-none transition-colors hover:bg-white/[0.14] sm:p-3 sm:shadow-sm sm:backdrop-blur-xl ${cardCorner[i] || 'rounded-2xl'}`}>
+            className={`group overflow-hidden bg-white/10 p-3 shadow-sm backdrop-blur-xl transition-colors hover:bg-white/[0.14] ${cardCorner[i] || 'rounded-2xl'}`}>
 
               <div className="arch-full relative h-32 overflow-hidden sm:h-72">
                 <img

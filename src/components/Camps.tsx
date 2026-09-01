@@ -34,7 +34,7 @@ export function Camps() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.45, delay: i * 0.07, ease: 'easeOut' }}
-            className={`group overflow-hidden bg-white/10 shadow-none backdrop-blur-none transition-colors hover:bg-white/[0.14] sm:shadow-sm sm:backdrop-blur-xl ${cardCorner[i] || 'rounded-2xl'}`}>
+            className={`group overflow-hidden bg-white/10 shadow-sm backdrop-blur-xl transition-colors hover:bg-white/[0.14] ${cardCorner[i] || 'rounded-2xl'}`}>
 
               <div className="relative h-28 overflow-hidden sm:h-48">
                 <img

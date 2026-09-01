@@ -123,7 +123,7 @@ export function CourseDetail() {
               transition={{ duration: 0.45, delay: i * 0.06, ease: 'easeOut' }}
               className="w-44 shrink-0 snap-start sm:w-64 lg:w-auto">
 
-                  <figure className="group rounded-lg bg-white/10 p-2 shadow-none backdrop-blur-none transition-colors hover:bg-white/[0.14] sm:rounded-2xl sm:p-2.5 sm:shadow-sm sm:backdrop-blur-xl">
+                  <figure className="group rounded-lg bg-white/10 p-2 shadow-sm backdrop-blur-xl transition-colors hover:bg-white/[0.14] sm:rounded-2xl sm:p-2.5">
                     <div className="arch-full relative aspect-[7/10] overflow-hidden">
                       <img
                     src={teacher.image}
