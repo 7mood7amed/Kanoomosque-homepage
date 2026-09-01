@@ -364,14 +364,15 @@ export type Stat = {
   value: string;
   label: string;
   caption: string;
+  note?: string;
 };
 
 export const stats: Stat[] = [
-{ value: '٢٠٠', label: 'الطلاب', caption: 'طالب وطالبة في حلقاتنا' },
-{ value: '—', label: 'المعلمون', caption: 'مقرئون متخصصون' },
-{ value: '١٨', label: 'الحلقات', caption: 'حلقة قرآنية أسبوعية' },
-{ value: '٩', label: 'الأنشطة', caption: 'نشاط ومسابقة سنوية' },
-{ value: '١١', label: 'الإجازات القرآنية', caption: 'خريجاً بالسند المتصل' }];
+{ value: '٤٧٣', label: 'الطلاب', caption: 'طالباً حالياً', note: '١ خرّيجًا حافظًا لكتاب الله.' },
+{ value: '٣٨', label: 'المعلمون', caption: 'مقرئين متخصصين في القرآن الكريم' },
+{ value: '٢٤', label: 'الحلقات النشطة', caption: 'حلقة قرآنية' },
+{ value: '٢', label: 'الأنشطة والمبادرات', caption: 'برنامجاً وفعالية' },
+{ value: '١', label: 'الإجازات القرآنية - الإقراء', caption: 'بالسند المتصل إلى رسول الله صلى الله عليه وسلم' }];
 
 
 export const images = {

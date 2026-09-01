@@ -17,7 +17,7 @@ export function Stats() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="منجزات وثمرات"
-          title="أرقام تعكس بركة العمل واستمراره"
+          title="حصاد سنوات من العطاء في خدمة كتاب الله وأبنائنا الطلاب."
           tone="dark"
           onPhoto />
 
@@ -33,14 +33,13 @@ export function Stats() {
             className="rounded-lg bg-white/10 px-3 pb-3 pt-4 text-center shadow-sm backdrop-blur-md transition-colors hover:bg-white/[0.14] sm:px-6 sm:pb-6 sm:pt-8">
 
               <p className="text-2xl font-bold leading-[1.4] text-inverse-on-surface sm:text-4xl sm:leading-[1.5] lg:text-5xl">
-                {stat.value === '—' ?
-              <span className="text-lg text-secondary-fixed-dim sm:text-2xl lg:text-3xl">مقرئون</span> :
-
-              stat.value
-              }
+                {stat.value}
               </p>
               <p className="mt-1 text-body-md font-bold text-inverse-on-surface sm:mt-3 sm:text-xl">{stat.label}</p>
               <p className="mt-1 text-caption leading-6 text-secondary-fixed-dim/75 sm:text-base">{stat.caption}</p>
+              {stat.note &&
+            <p className="mt-1 text-caption leading-6 text-tertiary-fixed-dim/80 sm:text-base">{stat.note}</p>
+            }
             </motion.div>
           )}
         </div>
@@ -56,13 +55,10 @@ export function Stats() {
           <StarMark className="absolute end-6 bottom-6 h-6 w-6 text-tertiary-fixed-dim/50 sm:end-10 sm:bottom-8" />
           <div className="relative px-4 py-6 text-center sm:px-8 sm:py-16">
             <p className="text-shadow-photo text-3xl font-bold leading-[1.3] text-inverse-on-surface sm:text-7xl sm:leading-[1.4]">
-              ٩ سنوات
+              ٩
             </p>
             <p className="text-shadow-photo mt-2 text-xl font-bold text-tertiary-fixed-dim sm:text-3xl">
-              من العطاء
-            </p>
-            <p className="text-shadow-photo mx-auto mt-4 max-w-xl text-body-md leading-7 text-secondary-fixed-dim/80 sm:mt-5 sm:leading-8">
-              تسع سنوات متواصلة في خدمة كتاب الله وأهله، حلقةً بعد حلقة، وجيلاً بعد جيل.
+              سنوات من العطاء والتأسيس
             </p>
           </div>
         </motion.div>
