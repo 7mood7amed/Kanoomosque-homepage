@@ -119,7 +119,7 @@ export function CampDetail() {
           </div>
         }
 
-        <div className="relative mx-auto mt-10 max-w-3xl px-4 sm:px-6 lg:px-8">
+        <div className={`relative mx-auto mt-10 px-4 sm:px-6 lg:px-8 ${camp.details?.levels ? 'max-w-6xl' : 'max-w-3xl'}`}>
           <div className="rounded-2xl bg-white/10 p-6 shadow-xl backdrop-blur-md sm:p-9">
             <h2 className="font-headline-md text-2xl text-inverse-on-surface">تفاصيل البرنامج</h2>
             <p className="mt-4 text-body-md leading-8 text-secondary-fixed-dim/85">{camp.description}</p>
