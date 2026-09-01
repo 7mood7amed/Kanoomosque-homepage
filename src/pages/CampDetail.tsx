@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { ArrowLeftIcon, CalendarDaysIcon, CheckCircle2Icon, SparklesIcon } from 'lucide-react';
+import { ArrowLeftIcon, BookOpenIcon, CalendarDaysIcon, CheckCircle2Icon, SparklesIcon } from 'lucide-react';
 import { camps } from '../data/site';
 import { PageHero } from '../components/PageHero';
 
@@ -40,7 +40,11 @@ export function CampDetail() {
       <section className="relative w-full overflow-hidden border-t border-tertiary-fixed-dim/15 bg-inverse-surface py-16 sm:py-24">
         <div className="pattern-geo absolute inset-0 opacity-[0.08]" aria-hidden="true" />
         <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="overflow-hidden rounded-2xl shadow-xl">
+            <img src={camp.image} alt={camp.title} className="h-56 w-full object-cover sm:h-80" />
+          </div>
+
+          <div className="mt-6 flex flex-wrap items-center gap-3">
             <span
               className={[
               'inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-sm font-bold text-inverse-on-surface',
@@ -55,6 +59,14 @@ export function CampDetail() {
             </span>
             <span className="text-sm text-secondary-fixed-dim/60">البرنامج {camp.index}</span>
           </div>
+
+          {camp.details?.organizer &&
+          <div className="mt-6 space-y-1.5 border-s-2 border-tertiary-fixed-dim/40 ps-4">
+              {camp.details.organizer.map((line) =>
+            <p key={line} className="text-body-md text-secondary-fixed-dim/85">{line}</p>
+            )}
+            </div>
+          }
 
           {(camp.details?.ageGroup || camp.details?.fee || camp.details?.duration) &&
           <div className="mt-6 flex flex-wrap gap-3">
@@ -75,8 +87,40 @@ export function CampDetail() {
             }
             </div>
           }
+        </div>
 
-          <div className="mt-6 rounded-2xl bg-white/10 p-6 shadow-xl backdrop-blur-md sm:p-9">
+        {camp.details?.levels &&
+        <div className="relative mx-auto mt-10 max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between gap-3">
+              <h2 className="font-headline-md text-2xl text-inverse-on-surface sm:text-3xl">مستويات الدورة</h2>
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 text-tertiary-fixed-dim">
+                <BookOpenIcon className="h-5 w-5" strokeWidth={1.5} aria-hidden="true" />
+              </span>
+            </div>
+
+            <div className="mt-8 grid gap-6 sm:mt-10 lg:grid-cols-3">
+              {camp.details.levels.map((level, i) =>
+            <div key={level.title} className="overflow-hidden rounded-2xl bg-white/10 p-6 shadow-xl backdrop-blur-md">
+                  <span className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-sm text-tertiary-fixed-dim">
+                    {['المستوى الأول', 'المستوى الثاني', 'المستوى الثالث'][i] ?? `المستوى ${i + 1}`}
+                  </span>
+                  <h3 className="mt-4 text-xl font-bold text-inverse-on-surface">{level.title}</h3>
+                  <ul className="mt-4 space-y-2.5">
+                    {level.points.map((point) =>
+                <li key={point} className="flex items-start gap-2.5 text-body-md text-secondary-fixed-dim/85">
+                        <CheckCircle2Icon className="mt-0.5 h-4 w-4 shrink-0 text-tertiary-fixed-dim" strokeWidth={2} aria-hidden="true" />
+                        {point}
+                      </li>
+                )}
+                  </ul>
+                </div>
+            )}
+            </div>
+          </div>
+        }
+
+        <div className="relative mx-auto mt-10 max-w-3xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl bg-white/10 p-6 shadow-xl backdrop-blur-md sm:p-9">
             <h2 className="font-headline-md text-2xl text-inverse-on-surface">تفاصيل البرنامج</h2>
             <p className="mt-4 text-body-md leading-8 text-secondary-fixed-dim/85">{camp.description}</p>
 
@@ -94,9 +138,44 @@ export function CampDetail() {
               </>
             }
 
+            {camp.details?.conditions &&
+            <>
+                <h3 className="mt-6 text-label-md font-bold text-tertiary-fixed-dim">شروط المسابقة</h3>
+                <ol className="mt-3 space-y-3">
+                  {camp.details.conditions.map((item, i) =>
+                <li key={item} className="flex items-start gap-3 text-body-md text-secondary-fixed-dim/85">
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/10 text-sm font-bold text-tertiary-fixed-dim">
+                        {i + 1}
+                      </span>
+                      {item}
+                    </li>
+                )}
+                </ol>
+              </>
+            }
+
+            {camp.details?.conditionGroups &&
+            <>
+                <h3 className="mt-6 text-label-md font-bold text-tertiary-fixed-dim">شروط الالتحاق بالدورة</h3>
+                {camp.details.conditionGroups.map((group) =>
+              <div key={group.title} className="mt-4">
+                    <h4 className="text-body-md font-bold text-inverse-on-surface">{group.title}</h4>
+                    <ul className="mt-2.5 space-y-2.5">
+                      {group.items.map((item) =>
+                  <li key={item} className="flex items-start gap-3 text-body-md text-secondary-fixed-dim/85">
+                          <CheckCircle2Icon className="mt-0.5 h-5 w-5 shrink-0 text-tertiary-fixed-dim" strokeWidth={1.5} aria-hidden="true" />
+                          {item}
+                        </li>
+                  )}
+                    </ul>
+                  </div>
+              )}
+              </>
+            }
+
             {camp.details?.prerequisites &&
             <>
-                <h3 className="mt-6 text-label-md font-bold text-tertiary-fixed-dim">شروط الالتحاق</h3>
+                <h3 className="mt-6 text-label-md font-bold text-tertiary-fixed-dim">شروط التسجيل</h3>
                 <ul className="mt-3 space-y-3">
                   {camp.details.prerequisites.map((item) =>
                 <li key={item} className="flex items-start gap-3 text-body-md text-secondary-fixed-dim/85">
