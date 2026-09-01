@@ -65,7 +65,7 @@ export function About() {
             </ul>
 
             <a
-              href="#contact"
+              href="#courses"
               className="group mt-9 inline-flex items-center gap-2 rounded-xl bg-tertiary-container px-8 py-4 text-body-md font-bold text-on-tertiary shadow-xl transition-all hover:scale-[1.02] hover:bg-tertiary hover:shadow-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-tertiary-fixed-dim focus-visible:ring-offset-2 focus-visible:ring-offset-inverse-surface">
 
               انضمّ إلى حلقاتنا

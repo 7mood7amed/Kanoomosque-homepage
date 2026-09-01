@@ -48,8 +48,8 @@ export function Contact() {
       <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="تواصل معنا"
-          title="لديك سؤال أو ترغب بالتسجيل؟"
-          description="اترك بياناتك وسيتواصل معك فريق المركز في أقرب وقت بإذن الله."
+          title="لديك سؤال أو استفسار؟"
+          description="اترك بياناتك وسؤالك، وسيتواصل معك فريق المركز للإجابة عنه في أقرب وقت بإذن الله."
           tone="dark" />
 
 

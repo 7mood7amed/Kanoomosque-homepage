@@ -62,26 +62,18 @@ export function Courses() {
                 <p className="mt-1.5 line-clamp-3 text-base leading-6 text-secondary-fixed-dim/80 sm:mt-4 sm:line-clamp-none sm:text-lg sm:leading-8 lg:text-xl">
                   {course.description}
                 </p>
-                <a
-                href="#contact"
-                className="mt-3 inline-flex items-center gap-1.5 border-b border-tertiary-fixed-dim/40 pb-1 text-base text-inverse-on-surface transition-colors hover:border-tertiary-fixed-dim hover:text-tertiary-fixed-dim sm:mt-8 sm:gap-2 sm:text-xl">
+                <div>
+                  <Link
+                  to={`/courses/${i}`}
+                  className="mt-3 inline-flex items-center gap-1.5 border-b border-tertiary-fixed-dim/40 pb-1 text-base text-tertiary-fixed-dim transition-colors hover:border-tertiary-fixed-dim hover:text-inverse-on-surface sm:mt-8 sm:gap-2 sm:text-xl">
 
-                  سجّل في المسار
-                  <ArrowLeftIcon className="h-4 w-4 sm:h-6 sm:w-6" strokeWidth={1.5} aria-hidden="true" />
-                </a>
+                    للتسجيل
+                    <ArrowLeftIcon className="h-4 w-4 sm:h-6 sm:w-6" strokeWidth={1.5} aria-hidden="true" />
+                  </Link>
+                </div>
               </div>
             </motion.article>
           )}
-        </div>
-
-        <div className="mt-8 text-center sm:mt-12">
-          <Link
-            to="/courses"
-            className="inline-flex items-center gap-2 text-body-lg text-tertiary-fixed-dim transition-colors hover:text-inverse-on-surface">
-
-            مشاهدة المزيد
-            <ArrowLeftIcon className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
-          </Link>
         </div>
       </div>
     </section>);

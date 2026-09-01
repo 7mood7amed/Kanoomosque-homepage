@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { ArrowLeftIcon, CalendarDaysIcon, SparklesIcon } from 'lucide-react';
+import { ArrowLeftIcon, CalendarDaysIcon, CheckCircle2Icon, SparklesIcon } from 'lucide-react';
 import { camps } from '../data/site';
 import { PageHero } from '../components/PageHero';
 
@@ -56,15 +56,67 @@ export function CampDetail() {
             <span className="text-sm text-secondary-fixed-dim/60">البرنامج {camp.index}</span>
           </div>
 
+          {(camp.details?.ageGroup || camp.details?.fee || camp.details?.duration) &&
+          <div className="mt-6 flex flex-wrap gap-3">
+              {camp.details.duration &&
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/15 px-3 py-1 text-sm text-secondary-fixed-dim/80">
+                  {camp.details.duration}
+                </span>
+            }
+              {camp.details.ageGroup &&
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/15 px-3 py-1 text-sm text-secondary-fixed-dim/80">
+                  {camp.details.ageGroup}
+                </span>
+            }
+              {camp.details.fee &&
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/15 px-3 py-1 text-sm text-secondary-fixed-dim/80">
+                  {camp.details.fee}
+                </span>
+            }
+            </div>
+          }
+
           <div className="mt-6 rounded-2xl bg-white/10 p-6 shadow-xl backdrop-blur-md sm:p-9">
             <h2 className="font-headline-md text-2xl text-inverse-on-surface">تفاصيل البرنامج</h2>
             <p className="mt-4 text-body-md leading-8 text-secondary-fixed-dim/85">{camp.description}</p>
+
+            {camp.details?.whatsIncluded &&
+            <>
+                <h3 className="mt-6 text-label-md font-bold text-tertiary-fixed-dim">ماذا يشمل البرنامج؟</h3>
+                <ul className="mt-3 space-y-3">
+                  {camp.details.whatsIncluded.map((item) =>
+                <li key={item} className="flex items-start gap-3 text-body-md text-secondary-fixed-dim/85">
+                      <CheckCircle2Icon className="mt-0.5 h-5 w-5 shrink-0 text-tertiary-fixed-dim" strokeWidth={1.5} aria-hidden="true" />
+                      {item}
+                    </li>
+                )}
+                </ul>
+              </>
+            }
+
+            {camp.details?.prerequisites &&
+            <>
+                <h3 className="mt-6 text-label-md font-bold text-tertiary-fixed-dim">شروط الالتحاق</h3>
+                <ul className="mt-3 space-y-3">
+                  {camp.details.prerequisites.map((item) =>
+                <li key={item} className="flex items-start gap-3 text-body-md text-secondary-fixed-dim/85">
+                      <CheckCircle2Icon className="mt-0.5 h-5 w-5 shrink-0 text-tertiary-fixed-dim" strokeWidth={1.5} aria-hidden="true" />
+                      {item}
+                    </li>
+                )}
+                </ul>
+              </>
+            }
+
+            {camp.details?.note &&
+            <p className="mt-6 text-body-sm text-secondary-fixed-dim/70">{camp.details.note}</p>
+            }
 
             <Link
               to="/#contact"
               className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-tertiary-container px-8 py-4 text-body-md font-bold text-on-tertiary shadow-xl transition-all hover:scale-[1.02] hover:bg-tertiary hover:shadow-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-tertiary-fixed-dim focus-visible:ring-offset-2 focus-visible:ring-offset-inverse-surface sm:w-auto">
 
-              سجّل في هذا البرنامج
+              لديك استفسار حول هذا البرنامج؟ تواصل معنا
               <ArrowLeftIcon className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
             </Link>
           </div>
