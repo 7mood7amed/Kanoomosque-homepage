@@ -64,7 +64,7 @@ export function Courses() {
                 </p>
                 <div>
                   <Link
-                  to={`/courses/${i}`}
+                  to={`/register/${i}`}
                   className="mt-3 inline-flex items-center gap-1.5 border-b border-tertiary-fixed-dim/40 pb-1 text-base text-tertiary-fixed-dim transition-colors hover:border-tertiary-fixed-dim hover:text-inverse-on-surface sm:mt-8 sm:gap-2 sm:text-xl">
 
                     للتسجيل

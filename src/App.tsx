@@ -7,6 +7,7 @@ import { Donate } from './pages/Donate';
 import { Login } from './pages/Login';
 import { CoursesList } from './pages/CoursesList';
 import { CourseDetail } from './pages/CourseDetail';
+import { Register } from './pages/Register';
 import { CampDetail } from './pages/CampDetail';
 import { GraduatesList } from './pages/GraduatesList';
 import { AboutPage } from './pages/AboutPage';
@@ -50,6 +51,7 @@ export function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/courses" element={<CoursesList />} />
             <Route path="/courses/:id" element={<CourseDetail />} />
+            <Route path="/register/:id" element={<Register />} />
             <Route path="/camps/:id" element={<CampDetail />} />
             <Route path="/graduates" element={<GraduatesList />} />
             <Route path="/about" element={<AboutPage />} />

@@ -156,13 +156,21 @@ export function CourseDetail() {
               )}
             </ul>
 
-            <Link
-              to="/#contact"
-              className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-tertiary-container px-8 py-4 text-body-md font-bold text-on-tertiary shadow-xl transition-all hover:scale-[1.02] hover:bg-tertiary hover:shadow-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-tertiary-fixed-dim focus-visible:ring-offset-2 focus-visible:ring-offset-inverse-surface sm:w-auto">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link
+                to={`/register/${index}`}
+                className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-tertiary-container px-8 py-4 text-body-md font-bold text-on-tertiary shadow-xl transition-all hover:scale-[1.02] hover:bg-tertiary hover:shadow-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-tertiary-fixed-dim focus-visible:ring-offset-2 focus-visible:ring-offset-inverse-surface sm:flex-none">
 
-              لديك استفسار حول هذا المسار؟ تواصل معنا
-              <ArrowLeftIcon className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
-            </Link>
+                سجّل الآن
+                <ArrowLeftIcon className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
+              </Link>
+              <Link
+                to="/#contact"
+                className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl border border-white/15 px-8 py-4 text-body-md text-inverse-on-surface transition-colors hover:bg-white/10 sm:flex-none">
+
+                لديك استفسار حول هذا المسار؟ تواصل معنا
+              </Link>
+            </div>
           </div>
 
           <div className="mt-10 rounded-2xl bg-white/10 p-6 shadow-xl backdrop-blur-md sm:p-9">
