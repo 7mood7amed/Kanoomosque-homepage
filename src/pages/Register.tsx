@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { CheckCircle2Icon, ClipboardListIcon, PaperclipIcon, UploadCloudIcon } from 'lucide-react';
 import { courses } from '../data/site';
@@ -45,6 +45,13 @@ const inputClass =
 
 const errorClass = 'border-red-400/60 focus:border-red-400 focus:ring-red-400/20';
 
+const numericFields = new Set<keyof FormValues>(['idNumber', 'guardianPhone', 'altPhone']);
+
+const toEnglishDigits = (value: string) =>
+value.
+replace(/[٠-٩]/g, (d) => String(d.charCodeAt(0) - 0x0660)).
+replace(/[۰-۹]/g, (d) => String(d.charCodeAt(0) - 0x06f0));
+
 export function Register() {
   const { id } = useParams();
   const index = Number(id);
@@ -58,6 +65,16 @@ export function Register() {
   const [idPhoto, setIdPhoto] = useState<File | null>(null);
   const [fileError, setFileError] = useState<Partial<Record<'photo' | 'idPhoto', string>>>({});
   const [submitted, setSubmitted] = useState(false);
+  const formTopRef = useRef<HTMLDivElement>(null);
+  const hasMounted = useRef(false);
+
+  useEffect(() => {
+    if (!hasMounted.current) {
+      hasMounted.current = true;
+      return;
+    }
+    formTopRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, [step, submitted]);
 
   useEffect(() => {
     document.title = course ?
@@ -78,7 +95,9 @@ export function Register() {
 
   const update = (key: keyof FormValues) =>
   (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setValues((v) => ({ ...v, [key]: e.target.value }));
+    const raw = e.target.value;
+    const value = numericFields.has(key) ? toEnglishDigits(raw) : raw;
+    setValues((v) => ({ ...v, [key]: value }));
     setErrors((er) => ({ ...er, [key]: undefined }));
   };
 
@@ -98,11 +117,23 @@ export function Register() {
       if (!values.address.trim()) next.address = 'هذا الحقل مطلوب';
     }
     setErrors(next);
-    return Object.keys(next).length === 0;
+    return next;
+  };
+
+  const fieldOrder: Record<StepId, (keyof FormValues)[]> = {
+    1: ['fullName', 'idNumber', 'gender'],
+    2: ['guardianPhone', 'altPhone', 'email', 'address'],
+    3: []
   };
 
   const goNext = () => {
-    if (!validateStep(step)) return;
+    const stepErrors = validateStep(step);
+    if (Object.keys(stepErrors).length > 0) {
+      const firstInvalid = fieldOrder[step].find((key) => stepErrors[key]);
+      const target = document.getElementById(firstInvalid === 'gender' ? 'genderGroup' : firstInvalid ?? '');
+      target?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
     const nextStep = (step + 1) as StepId;
     setStep(nextStep);
     setMaxReached((m) => nextStep > m ? nextStep : m);
@@ -132,7 +163,8 @@ export function Register() {
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!validateStep(2)) {
+    if (step !== 3) return;
+    if (Object.keys(validateStep(2)).length > 0) {
       setStep(2);
       return;
     }
@@ -151,7 +183,7 @@ export function Register() {
 
       <section className="relative w-full overflow-hidden border-t border-tertiary-fixed-dim/15 bg-inverse-surface py-16 sm:py-24">
         <div className="pattern-geo absolute inset-0 opacity-[0.08]" aria-hidden="true" />
-        <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+        <div ref={formTopRef} className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
 
           {course.details?.registration &&
           <div className="rounded-2xl bg-white/10 p-6 shadow-xl backdrop-blur-md sm:p-9">
@@ -271,7 +303,7 @@ export function Register() {
                       {errors.idNumber && <p className="mt-1 text-sm text-red-400">{errors.idNumber}</p>}
                     </div>
 
-                    <div>
+                    <div id="genderGroup">
                       <span className="mb-2 block text-label-md text-inverse-on-surface">
                         الجنس <span className="text-red-400">*</span>
                       </span>
@@ -433,6 +465,7 @@ export function Register() {
                 }
                   {step < 3 ?
                 <button
+                  key="next"
                   type="button"
                   onClick={goNext}
                   className="flex-1 rounded-xl bg-tertiary-container px-8 py-3 text-body-md font-bold text-on-tertiary shadow-lg transition-all hover:scale-[1.02] hover:bg-tertiary sm:flex-none">
@@ -441,6 +474,7 @@ export function Register() {
                     </button> :
 
                 <button
+                  key="submit"
                   type="submit"
                   className="flex-1 rounded-xl bg-tertiary-container px-8 py-3 text-body-md font-bold text-on-tertiary shadow-lg transition-all hover:scale-[1.02] hover:bg-tertiary sm:flex-none">
 

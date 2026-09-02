@@ -1,23 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowLeftIcon, HeartHandshakeIcon } from 'lucide-react';
+import { ArrowLeftIcon } from 'lucide-react';
 import { images, tiers } from '../data/site';
 import { ParallaxBackground } from './ParallaxBackground';
 import { SectionDivider } from './SectionDivider';
 import { SectionShadowTop } from './SectionShadowTop';
 
-const quickAmounts = [10, 20, 50];
-
 const cardCorner = ['mihrab-corner-start', '', 'mihrab-corner-end'];
 
 export function Initiatives() {
-  const [amount, setAmount] = useState<number | null>(50);
-  const [customAmount, setCustomAmount] = useState('');
-
-  const selectedAmount = customAmount ? Number(customAmount) || 0 : amount ?? 0;
-  const donateHref = `/donate?tier=3${selectedAmount ? `&amount=${selectedAmount}` : ''}`;
-
   return (
     <section id="invest" className="relative w-full overflow-hidden border-t border-tertiary-fixed-dim/15 bg-inverse-surface py-9 sm:py-20">
       <ParallaxBackground src={images.honor} position="object-[center_30%] sm:object-center" />
@@ -39,89 +31,6 @@ export function Initiatives() {
           كفالة طالب، أو دعم حلقة، أو المساهمة في برامج تعليم القرآن الكريم: صدقةٌ جاريةٌ يمتد
           أثرها ما دام القرآن يُتلى ويُحفَظ. اختر مبادرتك وشاركنا صناعة هذا الأثر المبارك.
         </p>
-      </div>
-
-      <div className="relative mx-auto mt-6 max-w-4xl px-4 sm:mt-12 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="relative overflow-hidden rounded-md bg-white/10 p-4 shadow-2xl backdrop-blur-2xl sm:rounded-2xl sm:p-8">
-
-          <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-l from-tertiary-fixed-dim via-primary-fixed to-transparent opacity-50" aria-hidden="true" />
-          <div className="relative grid gap-8 md:grid-cols-2">
-            <div className="flex flex-col justify-center gap-6">
-              <div>
-                <h3 className="text-2xl text-inverse-on-surface sm:text-3xl lg:text-4xl">التبرع المباشر</h3>
-                <p className="mt-1 text-base text-secondary-fixed-dim/80 sm:text-lg lg:text-xl">
-                  دعم عام لمشاريع وأنشطة المركز
-                </p>
-              </div>
-
-              <div className="space-y-4">
-                <div className="grid grid-cols-3 gap-3">
-                  {quickAmounts.map((value) =>
-                  <button
-                    key={value}
-                    type="button"
-                    onClick={() => {
-                      setAmount(value);
-                      setCustomAmount('');
-                    }}
-                    className={[
-                    'rounded-lg py-3 text-base transition-all duration-300 sm:py-4 sm:text-lg lg:text-xl',
-                    !customAmount && amount === value ?
-                    'border border-tertiary-fixed-dim/30 bg-tertiary/40 text-tertiary-fixed-dim shadow-[0_0_15px_rgba(224,195,135,0.15)]' :
-                    'bg-white/10 text-inverse-on-surface backdrop-blur-md hover:bg-tertiary/30'].
-                    join(' ')}>
-
-                      {value} د.ب
-                    </button>
-                  )}
-                </div>
-                <div className="relative">
-                  <input
-                    type="number"
-                    min={1}
-                    value={customAmount}
-                    onChange={(e) => setCustomAmount(e.target.value)}
-                    placeholder="مبلغ آخر"
-                    className="w-full border-b border-secondary-fixed-dim/30 bg-transparent px-2 py-3 text-body-lg text-inverse-on-surface placeholder:text-secondary-fixed-dim/50 focus:border-tertiary-fixed-dim focus:outline-none" />
-
-                  <span className="pointer-events-none absolute start-2 top-1/2 -translate-y-1/2 text-label-md text-tertiary-fixed-dim">
-                    د.ب
-                  </span>
-                </div>
-                <Link
-                  to={donateHref}
-                  className="group mt-2 flex w-full items-center justify-center gap-2 rounded-xl bg-tertiary-container py-4 text-base text-on-tertiary shadow-lg transition-all duration-300 hover:bg-tertiary sm:py-5 sm:text-xl">
-
-                  <span>تبرع الآن</span>
-                  <ArrowLeftIcon className="h-4 w-4 transition-transform group-hover:-translate-x-1" strokeWidth={1.5} aria-hidden="true" />
-                </Link>
-              </div>
-            </div>
-
-            <div className="relative hidden h-64 overflow-hidden rounded-xl md:block">
-              <img
-                src={images.donation}
-                alt="مصحف مفتوح على حامل خشبي"
-                className="absolute inset-0 h-full w-full object-cover opacity-80 [mix-blend-mode:luminosity]" />
-
-              <div className="absolute inset-0 bg-gradient-to-t from-inverse-surface via-transparent to-transparent" aria-hidden="true" />
-              <div className="absolute inset-x-4 bottom-4 flex items-center gap-3 rounded-lg border border-white/10 bg-white/10 p-3 backdrop-blur-md">
-                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-tertiary/20 text-tertiary-fixed-dim">
-                  <HeartHandshakeIcon className="h-5 w-5" strokeWidth={1.5} aria-hidden="true" />
-                </span>
-                <div>
-                  <span className="block text-label-md text-inverse-on-surface">مساهماتكم نور</span>
-                  <span className="block text-caption text-secondary-fixed-dim/70">يصل أثرها إلى آلاف الطلاب</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </div>
 
       <div className="relative mx-auto mt-8 max-w-7xl px-4 sm:mt-14 sm:px-6 lg:px-8">
