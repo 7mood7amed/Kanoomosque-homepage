@@ -294,17 +294,17 @@ export function Register() {
                     </div>
 
                     <div className="grid gap-5 sm:grid-cols-2">
-                      <div>
+                      <div className="min-w-0">
                         <label htmlFor="birthDate" className="mb-2 block text-label-md text-inverse-on-surface">تاريخ الميلاد</label>
                         <input
                       id="birthDate"
                       type="date"
                       value={values.birthDate}
                       onChange={update('birthDate')}
-                      className={inputClass} />
+                      className={`${inputClass} min-w-0`} />
 
                       </div>
-                      <div>
+                      <div className="min-w-0">
                         <label htmlFor="nationality" className="mb-2 block text-label-md text-inverse-on-surface">الجنسية</label>
                         <select
                       id="nationality"
